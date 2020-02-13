@@ -6,4 +6,4 @@ Landing page for **borntofrappe**. The idea is to use SVG syntax to draw a very 
 
 - `Icons.svelte` specifies a plain circle in the moment the input attribute doesn't match a known icon. Design a more appealing icon.
 
-- create separate `.svg` files describing the individual icons. Easier to store and reuse.
+- [x] create separate `.svg` files describing the individual icons. Easier to store and reuse.
