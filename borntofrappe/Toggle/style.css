@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --color-light: hsl(280, 40%, 10%);
+  --color-dark: hsl(250, 45%, 90%);
+  --background-light: hsl(35, 45%, 98%);
+  --background-dark: hsl(245, 25%, 5%);
+
+  --color: var(--color-light);
+  --background: var(--background-light);
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color);
+  background: var(--background);
+  --duration: 1.5s;
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: color var(--duration) var(--ease-in-out-quad), background var(--duration) var(--ease-in-out-quad);
+}
+
+label {
+  position: relative;
+}
+label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+label > svg {
+  font-size: 3.5rem;
+  display: block;
+  width: 1em;
+  height: 1em;
+  color: inherit;
+  border: 0.1em solid currentColor;
+  transition: color 0.25s ease-in-out;
+  border-radius: 50%;
+}
+label input:hover + svg,
+label input:focus + svg,
+label input:active + svg {
+  color: hsl(340, 80%, 55%);
+}
+label input + svg .rotate {
+  transition: transform var(--duration) var(--ease-in-out-quad);
+}
+
+label input.checked + svg .rotate {
+  transform: rotate(180deg);
+}
+label input + svg .flip {
+  transition: transform var(--duration) step-end;
+}
+label input.checked + svg .flip {
+  transform: scale(-1, 1);
+}
