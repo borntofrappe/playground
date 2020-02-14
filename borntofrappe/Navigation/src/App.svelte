@@ -27,7 +27,7 @@
 
 <nav>
   <!-- wrapping SVG -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-250 -250 500 500" width="500" height="500">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-225 -225 450 450" width="450" height="450">
     <defs>
       <!-- path elements describing the circles
       path-c and path-cc are used to map the text around the smaller `path` element
@@ -60,12 +60,12 @@
     <g class="loaded">
       <!-- wrap each icon in an anchor link to make the shape click-able and focus-able -->
       {#each links as {name, href}, i}
-      <!-- WARNING MAGIC NUMBER: 170
+      <!-- WARNING MAGIC NUMBER: 140
       makes sense considering the 500 viewBox, but still
       -->
-      <g transform="rotate({360 / links.length * i}) translate(0 -170) rotate({360 / links.length * i * -1})">
+      <g transform="rotate({360 / links.length * i}) translate(0 -140) rotate({360 / links.length * i * -1})">
         <a href="{href}" aria-label="{name}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="150" height="150" x="-75" y="-75">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="140" height="140" x="-70" y="-70">
             <g>
               <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
               <!-- rotate the text around the center -->
@@ -107,14 +107,14 @@
     */
     --duration: 4s;
     --jump: 0.25s;
-    --pop: 0.5s;
+    --pop: 0.4s;
     --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   svg {
-    max-width: 500px;
+    max-width: 600px;
     width: 100vmin;
     height: auto;
     display: block;
@@ -147,8 +147,9 @@
   /* for the hover/focus transition, update the color and scale of the icon */
   a {
     color: inherit;
-    transform: scale(0.9);
-    transition: color 0.3s linear, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(0.8);
+    transition: color 0.4s linear, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: color var(--pop) linear, transform var(--pop) var(--ease-in-out-back);
     outline: none;
     text-decoration: none;
   }
@@ -159,8 +160,9 @@
   }
   /* scale the group wrapping the text element to also show the label on hover/focus */
   a .text {
-    transform: scale(0.5);
-    transition: transform 0.3s 0.05s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform var(--pop) var(--ease-out-back);
   }
   a:hover .text,
   a:focus .text {
@@ -182,7 +184,7 @@
 
   @keyframes scale-back {
     95% {
-      transform: scale(0.8);
+      transform: scale(0.7);
     }
   }
 
