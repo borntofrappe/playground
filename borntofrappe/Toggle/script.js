@@ -1,4 +1,17 @@
+const LOCAL_STORAGE_KEY = 'color-mode';
 const checkbox = document.querySelector('input');
+
+const mode = localStorage.getItem(LOCAL_STORAGE_KEY);
+if(mode && mode === 'dark') {
+  checkbox.checked = true;
+  checkbox.classList.add('checked');
+  document.documentElement.style.setProperty('--color', `var(--color-dark)`);
+  document.documentElement.style.setProperty(
+    '--background',
+    `var(--background-dark)`
+  );
+}
+
 
 function updateMode() {
   const { checked } = this;
@@ -13,6 +26,8 @@ function updateMode() {
     '--background',
     `var(--background-${mode})`
   );
+
+  localStorage.setItem(LOCAL_STORAGE_KEY, mode);
 }
 
 checkbox.addEventListener('input', updateMode);
