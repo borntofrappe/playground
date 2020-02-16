@@ -27,7 +27,7 @@
 
 <nav>
   <!-- wrapping SVG -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-225 -225 450 450" width="450" height="450">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-235 -235 470 470" width="500" height="500">
     <defs>
       <!-- path elements describing the circles
       path-c and path-cc are used to map the text around the smaller `path` element
@@ -39,7 +39,8 @@
 
       <!-- mask to show the text only as it exceeds the path element encircling the icons -->
       <mask id="mask-text">
-        <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" />
+        <!-- <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" /> -->
+        <use transform="scale(2)" href="#path" fill="hsl(0, 0%, 100%)" />
         <use href="#path" fill="hsl(0, 0%, 0%)" />
       </mask>
     </defs>
@@ -60,12 +61,9 @@
     <g class="loaded">
       <!-- wrap each icon in an anchor link to make the shape click-able and focus-able -->
       {#each links as {name, href}, i}
-      <!-- WARNING MAGIC NUMBER: 140
-      makes sense considering the 500 viewBox, but still
-      -->
-      <g transform="rotate({360 / links.length * i}) translate(0 -140) rotate({360 / links.length * i * -1})">
+      <g transform="rotate({360 / links.length * i}) translate(0 -155) rotate({360 / links.length * i * -1})">
         <a href="{href}" aria-label="{name}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="140" height="140" x="-70" y="-70">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-55 -55 110 110" width="160" height="160" x="-75" y="-75">
             <g>
               <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
               <!-- rotate the text around the center -->
@@ -80,7 +78,7 @@
               </g>
 
               <!-- re-scale the icon inside the wrapping path element -->
-              <g transform="scale(0.35) translate(-50 -50)">
+              <g transform="scale(0.35) translate(-55 -55)">
                 <Icons icon="{name}" />
               </g>
 
@@ -147,7 +145,7 @@
   /* for the hover/focus transition, update the color and scale of the icon */
   a {
     color: inherit;
-    transform: scale(0.8);
+    transform: scale(0.85);
     transition: color 0.4s linear, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: color var(--pop) linear, transform var(--pop) var(--ease-in-out-back);
     outline: none;
@@ -160,7 +158,7 @@
   }
   /* scale the group wrapping the text element to also show the label on hover/focus */
   a .text {
-    transform: scale(0);
+    transform: scale(0.5);
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: transform var(--pop) var(--ease-out-back);
   }

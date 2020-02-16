@@ -4,6 +4,6 @@ Landing page for **borntofrappe**. The idea is to use SVG syntax to draw a very 
 
 ## TODO
 
-- `Icons.svelte` specifies a plain circle in the moment the input attribute doesn't match a known icon. Design a more appealing icon.
+- [ ] `Icons.svelte` specifies a plain circle in the moment the input attribute doesn't match a known icon. Design a more appealing icon. Look at the emoji for the [running shoe](https://emojipedia.org/running-shoe/) as a reference. That embodies me pretty well. Alternatively consider a question mark.
 
 - [x] create separate `.svg` files describing the individual icons. Easier to store and reuse.
