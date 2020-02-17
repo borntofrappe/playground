@@ -29,8 +29,6 @@ for (let i = 0; i < grid.length; i += 1) {
 
   if (neighbor) {
     const [r, c] = neighbor;
-    // d3.stratify
-    grid[i].parent = `${r} ${c}`;
     if (r < row) {
       grid[i].walls.north = false;
       grid[r * size + c].walls.south = false;
@@ -76,4 +74,5 @@ const markup = `
 </svg>
 `;
 
-document.body.innerHTML += markup;
+// assuming an `html` file which references the script
+// document.body.innerHTML = markup;
