@@ -23,11 +23,42 @@
       href: "https://github.com/borntofrappe"
     }
   ];
+
+  const size = 470;
+  const iconSize = 110;
+
+  const circle = 5;
+  const circles = 10;
+  const rounds = Array(circles)
+    .fill("")
+    .map((v, indexRounds) => {
+      const delay = indexRounds * (0.5 / links.length);
+      const translate = (size / 2.1 / circles) * (indexRounds + 1);
+      const particles = circle * (indexRounds + 1);
+      const round = Array(particles)
+        .fill("")
+        .map((v, indexRound) => {
+          const scale = (indexRounds + 1) ** 0.5 + Math.random();
+          const angle = 360 / particles;
+          const rotate = indexRounds % 2 === 1 ? angle / 2 + angle * indexRound : angle * indexRound;
+
+          return {
+            scale,
+            rotate
+          };
+        });
+
+      return {
+        delay,
+        translate,
+        round
+      };
+    });
 </script>
 
 <nav>
   <!-- wrapping SVG -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-235 -235 470 470" width="500" height="500">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{size / 2} -{size / 2} {size} {size}" width="{size}" height="{size}">
     <defs>
       <!-- path elements describing the circles
       path-c and path-cc are used to map the text around the smaller `path` element
@@ -43,7 +74,32 @@
         <use transform="scale(2)" href="#path" fill="hsl(0, 0%, 100%)" />
         <use href="#path" fill="hsl(0, 0%, 0%)" />
       </mask>
+
+      <mask id="mask-icons">
+        <rect x="-{size / 2}" y="-{size / 2}" width="{size}" height="{size}" fill="hsl(0, 0%, 100%)" />
+        <use transform="scale(1.5)" href="#path" fill="hsl(0, 0%, 0%)" />
+        {#each links as link, i}
+        <g transform="rotate({360 / links.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / links.length * i * -1})">
+          <use href="#path-c" fill="hsl(0, 0%, 0%)" />
+        </g>
+        {/each}
+      </mask>
     </defs>
+
+    <!-- group describing a few particles as a backdrop -->
+    <g mask="url(#mask-icons)">
+      <g class="loaded">
+        {#each rounds as {delay, translate, round}}
+        <g class="loading" transform="scale(1)" style="animation-delay: {delay}s;">
+          {#each round as {scale, rotate}}
+          <g transform="rotate({rotate}) translate(0 {translate}) rotate(-{rotate})">
+            <circle r="0.5" transform="scale({scale})" />
+          </g>
+          {/each}
+        </g>
+        {/each}
+      </g>
+    </g>
 
     <!-- circle and check mark
     see **Loading Animation**
@@ -61,9 +117,9 @@
     <g class="loaded">
       <!-- wrap each icon in an anchor link to make the shape click-able and focus-able -->
       {#each links as {name, href}, i}
-      <g transform="rotate({360 / links.length * i}) translate(0 -155) rotate({360 / links.length * i * -1})">
+      <g transform="rotate({360 / links.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / links.length * i * -1})">
         <a href="{href}" aria-label="{name}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-55 -55 110 110" width="160" height="160" x="-75" y="-75">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{Math.floor(size / 3)}" height="{Math.floor(size / 3)}" x="-{Math.floor(size / 6)}" y="-{Math.floor(size / 6)}">
             <g>
               <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
               <!-- rotate the text around the center -->
@@ -78,7 +134,7 @@
               </g>
 
               <!-- re-scale the icon inside the wrapping path element -->
-              <g transform="scale(0.35) translate(-55 -55)">
+              <g transform="scale(0.35) translate(-{iconSize / 2} -{iconSize / 2})">
                 <Icons icon="{name}" />
               </g>
 
@@ -104,8 +160,8 @@
     ease-in-out-back is added for the group showing the icons
     */
     --duration: 4s;
-    --jump: 0.25s;
-    --pop: 0.4s;
+    --jump: 0.3s;
+    --pop: 0.7s;
     --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -146,8 +202,8 @@
   a {
     color: inherit;
     transform: scale(0.85);
-    transition: color 0.4s linear, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: color var(--pop) linear, transform var(--pop) var(--ease-in-out-back);
+    transition: color 0.3s linear, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: color var(--jump) linear, transform var(--jump) var(--ease-in-out-back);
     outline: none;
     text-decoration: none;
   }
@@ -159,8 +215,8 @@
   /* scale the group wrapping the text element to also show the label on hover/focus */
   a .text {
     transform: scale(0.5);
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: transform var(--pop) var(--ease-out-back);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform var(--jump) var(--ease-out-back);
   }
   a:hover .text,
   a:focus .text {
