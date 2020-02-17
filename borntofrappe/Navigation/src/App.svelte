@@ -27,20 +27,23 @@
   const size = 470;
   const iconSize = 110;
 
-  const circle = 5;
-  const circles = 10;
-  const rounds = Array(circles)
+  const { length } = links;
+
+  const rings = length + 1;
+  const ring = length + 1;
+  const rounds = Array(rings)
     .fill("")
-    .map((v, indexRounds) => {
-      const delay = indexRounds * (0.5 / links.length);
-      const translate = (size / 2.1 / circles) * (indexRounds + 1);
-      const particles = circle * (indexRounds + 1);
+    .map((v, indexRings) => {
+      const delay = indexRings * 0.1;
+      const translate = (size / 2.5 / rings) * (indexRings + 1);
+      const particles = ring * (indexRings + 1);
+
       const round = Array(particles)
         .fill("")
-        .map((v, indexRound) => {
-          const scale = (indexRounds + 1) ** 0.5 + Math.random();
+        .map((v, indexRing) => {
+          const scale = (indexRings + 1) ** 0.4;
           const angle = 360 / particles;
-          const rotate = indexRounds % 2 === 1 ? angle / 2 + angle * indexRound : angle * indexRound;
+          const rotate = indexRings % 2 === 0 ? angle / 2 + angle * indexRing : angle * indexRing;
 
           return {
             scale,
@@ -75,25 +78,27 @@
         <use href="#path" fill="hsl(0, 0%, 0%)" />
       </mask>
 
+      <!-- mask to hide the particles that would coincide with the icons -->
       <mask id="mask-icons">
         <rect x="-{size / 2}" y="-{size / 2}" width="{size}" height="{size}" fill="hsl(0, 0%, 100%)" />
-        <use transform="scale(1.5)" href="#path" fill="hsl(0, 0%, 0%)" />
+        <circle r="46" fill="hsl(0, 0%, 0%)" />
+
         {#each links as link, i}
         <g transform="rotate({360 / links.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / links.length * i * -1})">
-          <use href="#path-c" fill="hsl(0, 0%, 0%)" />
+          <use href="#path" transform="scale(1.4)" fill="hsl(0, 0%, 0%)" />
         </g>
         {/each}
       </mask>
     </defs>
 
-    <!-- group describing a few particles as a backdrop -->
+    <!-- group describing the particles as a backdrop -->
     <g mask="url(#mask-icons)">
       <g class="loaded">
-        {#each rounds as {delay, translate, round}}
-        <g class="loading" transform="scale(1)" style="animation-delay: {delay}s;">
+        {#each rounds as {delay, translate, round, opacity}}
+        <g class="loading" style="animation-delay: {delay}s;">
           {#each round as {scale, rotate}}
           <g transform="rotate({rotate}) translate(0 {translate}) rotate(-{rotate})">
-            <circle r="0.5" transform="scale({scale})" />
+            <circle r="1" transform="scale({scale})" />
           </g>
           {/each}
         </g>
@@ -106,7 +111,7 @@
     -->
     <g class="loading">
       <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-        <circle transform=" scale(-1 1) rotate(-90)" r="46" stroke-width="8" pathLength="1" />
+        <circle transform="scale(-1 1) rotate(-90)" r="46" stroke-width="8" pathLength="1" />
         <path d="M -20 -0 l 15 15 25 -25" stroke-width="10" pathLength="1" />
       </g>
     </g>
@@ -155,13 +160,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     /* see **Loading Animation** for the animation
     ease-in-out-back is added for the group showing the icons
     */
-    --duration: 4s;
-    --jump: 0.3s;
-    --pop: 0.7s;
+    --duration: 5s;
+    --jump: 0.35s;
+    --pop: 0.5s;
     --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -175,7 +179,7 @@
     margin: auto;
   }
   svg .loading {
-    animation: scale-back 5s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: scale-back 5s 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: scale-back var(--duration) var(--jump) var(--ease-out-back);
   }
 
@@ -189,12 +193,12 @@
     animation: remove-offset var(--duration) var(--ease-in-cubic) forwards;
   }
   svg .loading path {
-    animation: remove-offset 0.25s 5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    animation: remove-offset 0.35s 5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
     animation: remove-offset var(--jump) var(--duration) var(--ease-out-cubic) forwards;
   }
 
   svg .loaded {
-    animation: scale-up 0.4s 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    animation: scale-up 0.5s 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     animation: scale-up var(--pop) var(--duration) var(--ease-out-back) both;
   }
 
@@ -202,7 +206,7 @@
   a {
     color: inherit;
     transform: scale(0.85);
-    transition: color 0.3s linear, transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: color 0.35s linear, transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: color var(--jump) linear, transform var(--jump) var(--ease-in-out-back);
     outline: none;
     text-decoration: none;
@@ -215,7 +219,7 @@
   /* scale the group wrapping the text element to also show the label on hover/focus */
   a .text {
     transform: scale(0.5);
-    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: transform var(--jump) var(--ease-out-back);
   }
   a:hover .text,
@@ -237,8 +241,9 @@
   }
 
   @keyframes scale-back {
-    95% {
-      transform: scale(0.7);
+    90%,
+    92% {
+      transform: scale(0.8);
     }
   }
 
