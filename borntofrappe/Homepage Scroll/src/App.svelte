@@ -35,7 +35,16 @@
 <Navigation id="navigation" {items} />
 
 <div>
-  <a href="#navigation">Go to top</a>
+  <a href="#navigation">
+    <svg viewBox="-50 -50 100 100" width="30" height="30">
+      <g fill="none" stroke="currentColor" stroke-width="10">
+        <circle r="45"  />
+        <path d="M 0 -20 l 15 15 m -30 0 l 15 -15 v 40" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </a>
+
+
   {#each links as {name, copy, href}}
     <section id="{name}">
       <h1>{name}</h1>
@@ -59,6 +68,15 @@
   div > a {
     position: sticky;
     top: 1rem;
-    right: 1rem;
+    left: 100%;
+    text-align: right;
+    display: inline-block;
+    width: 45px;
+    margin: 1rem;
+  }
+  div > a svg {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 </style>
