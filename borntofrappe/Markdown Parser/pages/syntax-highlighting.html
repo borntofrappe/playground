@@ -11,3 +11,18 @@
 <span style="color: #89DDFF">}</span><span style="color: #FFFFFF">)</span><span style="color: #89DDFF">;</span></code></pre></code></pre>
 <p>Once this option is set, I continue parsing the markdown files as specified in the previous script.</p>
 <p>I decided to save the script in a separate file, <code>script-syntax.js</code>, to better analyze the modules contribution.</p>
+<p>I also tried to include a different theme, using night owl, and while I ended up sticking with one of the given options, it was good practice to figure out what it would take.</p>
+<ul>
+<li><p>download the theme, placing the <a href="https://github.com/sdras/night-owl-vscode-theme/blob/master/themes/Night%20Owl-color-theme.json">json file</a> in the root folder</p>
+</li>
+<li><p>use the <code>loadTheme</code> function and pipe the theme directly in the script</p>
+</li>
+</ul>
+<pre><code class="language-js"><pre class="shiki" style="background-color: #0F111A"><code><span style="color: #C792EA">const</span><span style="color: #FFFFFF"> </span><span style="color: #8F93A2">theme</span><span style="color: #FFFFFF"> </span><span style="color: #C792EA">=</span><span style="color: #FFFFFF"> </span><span style="color: #8F93A2">shiki</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">loadTheme</span><span style="color: #FFFFFF">(</span><span style="color: #89DDFF">"</span><span style="color: #C3E88D">./Night-Owl-color-theme.json</span><span style="color: #89DDFF">"</span><span style="color: #FFFFFF">)</span><span style="color: #89DDFF">;</span>
+
+<span style="color: #8F93A2">shiki</span>
+<span style="color: #FFFFFF">  </span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getHighlighter</span><span style="color: #FFFFFF">(</span><span style="color: #89DDFF">{</span>
+<span style="color: #FFFFFF">    </span><span style="color: #8F93A2">theme</span>
+<span style="color: #FFFFFF">  </span><span style="color: #89DDFF">}</span><span style="color: #FFFFFF">)</span>
+<span style="color: #FFFFFF">  </span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">then</span><span style="color: #FFFFFF">()</span><span style="color: #89DDFF">;</span></code></pre></code></pre>
+<p>Store it in the <em>good to know</em> drawer.</p>
