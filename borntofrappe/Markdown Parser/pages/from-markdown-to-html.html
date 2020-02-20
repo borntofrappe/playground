@@ -1,0 +1,93 @@
+<h1 id="from-markdown-to-html">From markdown to HTML</h1>
+<p>Using the <code>fs</code> module and the <code>marked</code> package, I set out to take this markdown file, consider the front matter and then spit out the matching markup.</p>
+<p>Bonus points if I manage to add syntax highlighting <a href="https://github.com/octref/shiki">shiki</a>.</p>
+<h2 id="fs--path">fs &amp;&amp; path</h2>
+<p>To find the actual file, it seems I need the <code>path</code> module as well.</p>
+<pre><code class="language-js">const fs = require(&quot;fs&quot;);
+const path = require(&quot;path&quot;);</code></pre>
+<p>In the current folder, I&#39;m able to read the files with two variants.</p>
+<ul>
+<li>async</li>
+</ul>
+<pre><code class="language-js">fs.readdir(&quot;./&quot;, (err, files) =&gt; {
+  files.forEach(file =&gt; {
+    if (path.extname(file) === &quot;.md&quot;) {
+      console.log(file);
+    }
+  });
+});</code></pre>
+<ul>
+<li>sync</li>
+</ul>
+<pre><code class="language-js">const files = fs.readdirSync(&quot;./&quot;, &quot;utf-8&quot;);
+files.forEach(file =&gt; {
+  if (path.extname(file) === &quot;.md&quot;) {
+    console.log(file);
+  }
+});</code></pre>
+<p>I&#39;m debating which is the best approach. Reading the markdown files seems important enough to warrant the sync, blocking variant, but I associate am open to suggestions/further research.</p>
+<p>Let&#39;s stick with the latter for the time being.</p>
+<p>To read the content of the actual file, once again, there&#39;s an async and sync variant.</p>
+<pre><code class="language-js">const markdownFiles = files.filter(file =&gt; path.extname(file) === &quot;.md&quot;);
+markdownFiles.forEach(file =&gt; {
+  const markdown = fs.readFileSync(`./${file}`, { encoding: &quot;utf-8&quot; });
+  console.log(markdown);
+});</code></pre>
+<p>I used the <code>filter</code> method to consider only the markdown files. <code>markdown</code> describes now the actual content. A string.</p>
+<h2 id="marked--front-matter">marked &amp;&amp; front matter</h2>
+<p>The <code>markdown</code> string can be processed with the <code>marked</code> module.</p>
+<pre><code class="language-js">// assuming you installed &amp; required marked
+console.log(marked(markdown));</code></pre>
+<p>Handily enough, I notice the markdown includes a <code>language-*</code> class for every code snippet. Might come in handy later. The headings are also given an <code>id</code> attribute. Helpful to navigate the document.</p>
+<p>Enough dilly-dallying though. While marked provides the markdown, it does not consider the front matter. Front matter as in the key-value pairs specified at the top of the <code>.md</code> file, in between <code>---</code> dashes <code>---</code>.</p>
+<p>I&#39;m sure there&#39;s a better way to do this, but the following regular expression does the trick.</p>
+<pre><code class="language-js">/---\r\n(\w+:\s.+\r\n)+---\r\n/;</code></pre>
+<p>This portion in particular should improved to identify the entire lines</p>
+<pre><code class="language-js">/(\w+:\s.+\r\n)/;</code></pre>
+<p>A word, a colon, a white space character, anything else before the carriage return and the new line character. With this, I am already able to strip out the front matter to use the <code>marked</code> function only on the actual content of the document.</p>
+<pre><code class="language-js">const markdown = fs.readFileSync(`./${file}`, { encoding: &quot;utf-8&quot; });
+const frontmatter = markdown.match(/---\r\n(\w+:\s.+\r\n)+---\r\n/)[0];
+const content = markdown.slice(frontmatter.length).trim();</code></pre>
+<p>Of course, I need the front matter and the associated key-value pairs.</p>
+<p>I use a similar regular expression, to separate the key value pairs an array.</p>
+<pre><code class="language-js">const keyValue = frontmatter.match(/\w+:\s.+/g);</code></pre>
+<p>This provides an array of strings, like <code>&#39;title: From markdown to HTML&#39;, &#39;date: 2020-01-20&#39;</code>.</p>
+<p>Ultimately, I want to create an object describing the different keys, alongside the markup processed through <code>marked</code>. With this in mind, I first map through the array.</p>
+<pre><code class="language-js">const keyValue = frontmatter
+  // array of strings
+  .match(/\w+:\s.+/g)
+  // 2d array describing the key-value pairs
+  .map(pair =&gt; pair.split(&quot;: &quot;));</code></pre>
+<p>And then create an object describing the different pairs in the desired schema.</p>
+<pre><code class="language-js">const keyValue = frontmatter
+  // array of strings
+  .match(/\w+:\s.+/g)
+  // 2d array describing the key-value pairs
+  .map(pair =&gt; pair.split(&quot;: &quot;))
+  // object separating the pairs
+  .reduce((acc, curr) =&gt; {
+    acc[curr[0]] = curr[1];
+    return acc;
+  }, {});</code></pre>
+<p>Took me a while to set it up, but it seems to work. With this object, I can finally add an <code>html</code> field with the <code>marked</code> content and complete the necessary instructions.</p>
+<pre><code class="language-js">const content = markdown.slice(frontmatter.length).trim();
+
+console.log(
+  Object.assign(keyValue, {
+    html: marked(content)
+  })
+);</code></pre>
+<p>Instead of logging the object in the console however, I finally change the <code>forEach</code> method to a map, and return the data structure in a posts array.</p>
+<pre><code class="language-js">const posts = markdownFiles.map(file =&gt; {
+  // create desired data structure
+  return Object.assign(keyValue, { html: marked(content) });
+}</code></pre>
+<p>This is what is ultimately picked up by sapper, but already I can create <code>.html</code> files using the <code>writeFileSync</code> function.</p>
+<pre><code class="language-js">posts.forEach(({ title, html }) =&gt; {
+  fs.writeFileSync(`${title.replace(/ /g, &quot;-&quot;).toLowerCase()}.html`, html);
+});</code></pre>
+<p>There will be a better way to create the <code>slug</code>, but it&#39;s something to consider in sapper itself.</p>
+<p>As a matter of fact, I can just use the name of the file for the slug.</p>
+<pre><code class="language-js">const slug = file.slice(0, -3);</code></pre>
+<p><code>-3</code> being the number of characters in the extension.</p>
+<p>I slightly polished the code and decided to create two folders in which to separate the actual content: <code>blog</code> contains the markdown files to be read and parsed, <code>pages</code> describes where the markup is going to be generated.</p>
