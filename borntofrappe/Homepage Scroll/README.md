@@ -1,23 +1,9 @@
 # Homapage Scroll
 
-After debating about the navigation page and its purpose, I decided to accompany the `<nav>` with at least an additional section, detailing the blog portion of the website. The idea is to have, underneath the navigation and hopefully following the navigation's animation, a section forwarding toward the actual blog (and hopefully, showcasing the latest post(s)). By clicking on the anchor link for the blog, I'd like the section to smoothly scroll into view.
+After debating about the navigation and its purpose, I decided to accompany the `<nav>` element with at least one section describing the website and specifically the blog. With this project, I set out to explore this addition.
 
-This is achieve with surprisingly little CSS:
+I expanded the logic behind the blog to every item in the navigation menu, but this is more as a proof of concept and to see how smooth scrolling could look like with more content on the page.
 
-```css
-:global(html) {
-  scroll-behavior: smooth;
-}
-```
+I also included an anchor link with position sticky, where supported, to go back up.
 
-## Update
-
-To try things out, I decided to expanded the logic of the blog to every link in the navigation. I also added an additional anchor link to scroll back to the top.
-
-Perhaps I should display only a section for the blog. At the very least, I should consider adding more than plain text to the different sections.
-
-- most recent posts
-- a selection of pens
-- freeCodeCamp certifications
-- latest tweets
-- github repos
+Again, these are not decisions which are set in stone. Consider this folder more as an exploration of possible design choices.

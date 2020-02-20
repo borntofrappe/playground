@@ -36,10 +36,26 @@
 
 <div>
   <a href="#navigation">
-    <svg viewBox="-50 -50 100 100" width="30" height="30">
-      <g fill="none" stroke="currentColor" stroke-width="10">
-        <circle r="45"  />
-        <path d="M 0 -20 l 15 15 m -30 0 l 15 -15 v 40" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg viewBox="-65 -65 130 130" width="100" height="100">
+      <defs>
+        <path id="path-navigation" d="M 0 30 a 30 30 0 0 1 0 -60 30 30 0 0 1 0 60" />
+        <mask id="mask-navigation">
+          <rect x="-60" y="-60" width="120" height="120" fill="hsl(0, 0%, 100%)" />
+          <use href="#path-navigation" fill="hsl(0, 0%, 0%)" />
+        </mask>
+      </defs>
+      <g mask="url(#mask-navigation)">
+        <g class="text">
+          <text fill="currentColor" transform="scale(1.3)">
+            <textPath href="#path-navigation" startOffset="50%" text-anchor="middle" font-family="monospace" font-size="18">
+              back up
+            </textPath>
+          </text>
+        </g>
+      </g>
+      <g fill="none" stroke="currentColor" stroke-width="6">
+        <use href="#path-navigation" />
+        <path d="M 0 -12.5 l 10 10 m -20 0 l 10 -10 v 25" stroke-linecap="round" stroke-linejoin="round" />
       </g>
     </svg>
   </a>
@@ -65,18 +81,49 @@
     justify-content: center;
     align-items: center;
   }
-  div > a {
-    position: sticky;
-    top: 1rem;
-    left: 100%;
-    text-align: right;
-    display: inline-block;
-    width: 45px;
-    margin: 1rem;
+  div {
+    position: relative;
   }
+
+  div > a {
+    text-decoration: none;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    left: initial;
+    width: 100px;
+    display: inline-block;
+    color: inherit;
+    outline: none;
+    transition: color 0.4s ease-in-out, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: scale(0.9);
+  }
+  @supports (position: sticky) {
+    div > a {
+      position: sticky;
+      top: 1rem;
+      left: 100%;
+    }
+  }
+
   div > a svg {
     display: block;
     width: 100%;
     height: auto;
   }
+
+  div > a svg .text {
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  div > a:hover,
+  div > a:focus {
+    transform: scale(1);
+    color: hsl(340, 80%, 55%);
+  }
+  div > a:hover svg .text,
+  div > a:focus svg .text {
+    transform: scale(1);
+  }
+
 </style>
