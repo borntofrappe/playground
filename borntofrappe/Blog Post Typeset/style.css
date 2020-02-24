@@ -17,7 +17,7 @@ h2 {
   font-family: "Vesper Libre", serif;
 }
 ::selection {
-  background: hsl(345, 95%, 50%);
+  background: hsl(345, 95%, 55%);
 }
 
 /* header stretching to cover the entirety of the viewport */
@@ -42,6 +42,10 @@ header svg {
   display: inline-block;
 }
 
+header svg:hover {
+  color: hsl(345, 90%, 45%);
+}
+
 /* single column layout */
 article {
   width: 95vw;
@@ -49,9 +53,6 @@ article {
   padding: 1rem;
   line-height: 1.75;
   margin: 1rem auto;
-}
-article p {
-  line-height: 1.75;
 }
 article > p + p {
   margin-top: 1rem;
@@ -86,8 +87,8 @@ article h2:after {
 }
 
 @media screen and (max-width: 700px) {
-  h2:before,
-  h3:before {
+  article h2:before,
+  article h2:before {
     flex: 1 0 0;
   }
 }
@@ -100,21 +101,21 @@ article pre {
   margin: 10px -5px;
 }
 article pre::-webkit-scrollbar {
-  height: 0.4rem;
+  height: 0.3rem;
 }
 article pre::-webkit-scrollbar-track {
-  background: hsl(229, 20%, 50%);
+  background: hsl(229, 20%, 0%);
 }
 
 article pre::-webkit-scrollbar-thumb {
-  background: hsl(229, 20%, 0%);
-  border-radius: 0.2rem;
+  background: hsl(345, 90%, 45%);
+  border-radius: 0.15rem;
 }
 article pre code {
   font-size: 0.75rem;
 }
 article p code {
-  background: hsl(229, 20%, 20%);
+  background: hsl(345, 90%, 45%);
   color: hsl(0, 0%, 97%);
   font-size: 0.9rem;
   border-radius: 5px;
@@ -126,7 +127,7 @@ article ul {
 article a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px solid hsl(345, 90%, 45%);
+  border-bottom: 3px solid hsl(345, 90%, 45%);
 }
 article a:hover {
   color: hsl(345, 90%, 45%);
