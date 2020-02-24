@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css?family=Vesper+Libre:700,900|Source+Sans+Pro:400,600,700&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  color: hsl(229, 20%, 5%);
+  background: hsl(229, 20%, 95%);
+
+  font-family: "Source Sans Pro", sans-serif;
+}
+::selection {
+  background: hsl(345, 95%, 50%);
+}
+header {
+  background: hsl(229, 20%, 5%);
+  color: hsl(0, 0%, 97%);
+  padding: 10vh 2rem;
+  align-self: stretch;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
+}
+header svg {
+  width: 35px;
+  height: 35px;
+  margin: 1rem;
+  display: inline-block;
+}
+#layout {
+  width: 95vw;
+  max-width: 550px;
+  padding: 1rem;
+  line-height: 1.75;
+  margin: 1rem auto;
+}
+#layout > p + p {
+  margin-top: 1rem;
+}
+h1,
+h2,
+h3 {
+  font-family: "Vesper Libre", serif;
+  margin: 1rem 0;
+}
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+pre {
+  border-radius: 0px;
+  overflow-x: auto;
+  padding: 10px;
+  margin: 10px 0;
+}
+pre code {
+  font-size: 0.75rem;
+  font-family: "Fira Code", monospace;
+  background: initial;
+  color: initial;
+  padding: initial;
+  border-radius: initial;
+}
+code {
+  background: hsl(229, 20%, 20%);
+  color: hsl(0, 0%, 97%);
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 0.1rem 0.4rem;
+}
+ul,
+ol {
+  list-style-position: inside;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid hsl(345, 90%, 45%);
+}
+a:hover {
+  color: hsl(345, 90%, 45%);
+}
+a:focus {
+  outline-color: hsl(345, 90%, 45%);
+}
+
+p {
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+h2,
+h3 {
+  display: flex;
+  align-items: center;
+}
+h2:before,
+h2:after,
+h3:before,
+h3:after {
+  content: "";
+  height: 3px;
+  background: currentColor;
+}
+h2:before {
+  margin-right: 0.5rem;
+}
+h2:after {
+  margin-left: 0.5rem;
+}
+h2:before,
+h3:before {
+  flex: 0 0 30px;
+  transition: flex 0.25s ease-in-out;
+}
+h2:after,
+h3:after {
+  flex: 1;
+}
+@media screen and (max-width: 700px) {
+  h2:before,
+  h3:before {
+    flex: 1 0 0;
+  }
+}
