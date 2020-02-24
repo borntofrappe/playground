@@ -50,9 +50,13 @@ article {
   line-height: 1.75;
   margin: 1rem auto;
 }
+article p {
+  line-height: 1.75;
+}
 article > p + p {
   margin-top: 1rem;
 }
+
 /* use pseudo elements to add a line around the headings */
 article h2 {
   margin: 3rem 0 1.5rem;
@@ -87,24 +91,31 @@ article h2:after {
     flex: 1 0 0;
   }
 }
-
+article code {
+  font-family: "Fira Code", monospace;
+}
 article pre {
   overflow-x: auto;
   padding: 10px;
   margin: 10px -5px;
 }
+article pre::-webkit-scrollbar {
+  height: 0.4rem;
+}
+article pre::-webkit-scrollbar-track {
+  background: hsl(229, 20%, 50%);
+}
+
+article pre::-webkit-scrollbar-thumb {
+  background: hsl(229, 20%, 0%);
+  border-radius: 0.2rem;
+}
 article pre code {
   font-size: 0.75rem;
-  font-family: "Fira Code", monospace;
-  background: initial;
-  color: initial;
-  padding: initial;
-  border-radius: initial;
 }
 article p code {
   background: hsl(229, 20%, 20%);
   color: hsl(0, 0%, 97%);
-  font-family: "Fira Code", monospace;
   font-size: 0.9rem;
   border-radius: 5px;
   padding: 0.1rem 0.4rem;
@@ -122,9 +133,4 @@ article a:hover {
 }
 article a:focus {
   outline-color: hsl(345, 90%, 45%);
-}
-
-article p {
-  line-height: 1.75;
-  font-size: 1rem;
 }
