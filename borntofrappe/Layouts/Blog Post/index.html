@@ -9,60 +9,64 @@
     <title>Blog Post</title>
   </head>
   <body>
+    <!-- frontmatter -->
     <header>
       <h1 id="from-markdown-to-html">From markdown to HTML</h1>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-        <defs>
-          <mask id="html--mask">
-            <path fill="hsl(0, 0%, 100%)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
-            <g transform="translate(50 50) scale(0.65)">
-              <g transform="translate(-50 -50)">
-                <path fill="hsl(0, 0%, 0%)" d="M 10 0 l 80 0 l -1 17 -61 0 1 17 59 0 l -3 51 l -35 15 l -35 -15 l -1 -17 l 17 0 l 0.5 8.5 l 18.5 8 l 18.5 -8 1.5 -25.5 -57 0 z" />
+      <section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <defs>
+            <mask id="html--mask">
+              <path fill="hsl(0, 0%, 100%)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
+              <g transform="translate(50 50) scale(0.65)">
+                <g transform="translate(-50 -50)">
+                  <path fill="hsl(0, 0%, 0%)" d="M 10 0 l 80 0 l -1 17 -61 0 1 17 59 0 l -3 51 l -35 15 l -35 -15 l -1 -17 l 17 0 l 0.5 8.5 l 18.5 8 l 18.5 -8 1.5 -25.5 -57 0 z" />
+                </g>
               </g>
-            </g>
-          </mask>
-        </defs>
-        <g fill="currentColor">
-          <path mask="url(#html--mask)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
-        </g>
-      </svg>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-        <defs>
-          <mask id="css--mask">
-            <path fill="hsl(0, 0%, 100%)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
-            <g transform="translate(50 50) scale(0.65)">
-              <g transform="translate(-50 -50)">
-                <path fill="hsl(0, 0%, 0%)" d="M 10 0 l 80 0 l -5 85 l -35 15 l -35 -15 l -1 -17 l 17 0 l 0.5 8.5 l 18.5 8 l 18.5 -8 1.5 -25.5 -57 0 -1 -17 59 0 1 -17 -61 0 z" />
-              </g>
-            </g>
-          </mask>
-        </defs>
-        <g fill="currentColor">
-          <path mask="url(#css--mask)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
-        </g>
-      </svg>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
-        <g stroke="currentColor" stroke-width="8" fill="currentColor">
-          <path d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
-          <path transform="rotate(45)" d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
-          <path transform="rotate(90)" d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
-          <path transform="rotate(135)" d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
-        </g>
-      </svg>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
-        <g transform="rotate(-30)">
-          <g stroke="currentColor" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" fill="none">
-            <path d="M 30 -10 h -30 h 8 a 21 21 0 0 1 0 42 h -37 a 21 21 0 0 1 0 -42" />
-            <path transform="scale(-1 -1)" d="M 30 -10 h -30 h 8 a 21 21 0 0 1 0 42 h -37 a 21 21 0 0 1 0 -42" />
+            </mask>
+          </defs>
+          <g fill="currentColor">
+            <path mask="url(#html--mask)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
           </g>
-        </g>
-      </svg>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <defs>
+            <mask id="css--mask">
+              <path fill="hsl(0, 0%, 100%)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
+              <g transform="translate(50 50) scale(0.65)">
+                <g transform="translate(-50 -50)">
+                  <path fill="hsl(0, 0%, 0%)" d="M 10 0 l 80 0 l -5 85 l -35 15 l -35 -15 l -1 -17 l 17 0 l 0.5 8.5 l 18.5 8 l 18.5 -8 1.5 -25.5 -57 0 -1 -17 59 0 1 -17 -61 0 z" />
+                </g>
+              </g>
+            </mask>
+          </defs>
+          <g fill="currentColor">
+            <path mask="url(#css--mask)" d="M 10 0 l 5 85 35 15 35 -15 5 -85 z" />
+          </g>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+          <g stroke="currentColor" stroke-width="8" fill="currentColor">
+            <path d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
+            <path transform="rotate(45)" d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
+            <path transform="rotate(90)" d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
+            <path transform="rotate(135)" d="M 0 0 v 36 a 5 5 0 0 1 0 10 5 5 0 0 1 0 -10 v -72 a 5 5 0 0 1 0 -10 5 5 0 0 1 0 10" />
+          </g>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+          <g transform="rotate(-30)">
+            <g stroke="currentColor" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" fill="none">
+              <path d="M 30 -10 h -30 h 8 a 21 21 0 0 1 0 42 h -37 a 21 21 0 0 1 0 -42" />
+              <path transform="scale(-1 -1)" d="M 30 -10 h -30 h 8 a 21 21 0 0 1 0 42 h -37 a 21 21 0 0 1 0 -42" />
+            </g>
+          </g>
+        </svg>
+      </section>
     </header>
 
-    <article>
+    <!-- content -->
+    <main>
       <p>Using the <code>fs</code> module and the <code>marked</code> package, I set out to take this markdown file, consider the front matter and then spit out the matching markup.</p>
       <p>Bonus points if I manage to add syntax highlighting <a href="https://github.com/octref/shiki">shiki</a>.</p>
       <h2 id="fs--path">fs &amp;&amp; path</h2>
@@ -155,6 +159,6 @@
       <pre><code class="language-js"><pre class="shiki" style="background-color: #292D3E"><code><span style="color: #C792EA">const</span><span style="color: #FFFFFF"> </span><span style="color: #A6ACCD">slug</span><span style="color: #FFFFFF"> </span><span style="color: #C792EA">=</span><span style="color: #FFFFFF"> </span><span style="color: #A6ACCD">file</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">slice</span><span style="color: #FFFFFF">(</span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">,</span><span style="color: #FFFFFF"> </span><span style="color: #C792EA">-</span><span style="color: #F78C6C">3</span><span style="color: #FFFFFF">)</span><span style="color: #89DDFF">;</span></code></pre></code></pre>
       <p><code>-3</code> being the number of characters in the extension.</p>
       <p>I slightly polished the code and decided to create two folders in which to separate the actual content: <code>blog</code> contains the markdown files to be read and parsed, <code>pages</code> describes where the markup is going to be generated.</p>
-    </article>
+    </main>
   </body>
 </html>

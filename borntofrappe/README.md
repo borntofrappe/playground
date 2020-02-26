@@ -27,3 +27,7 @@ Node script reading markdown documents and producing the matching markup.
 ## Theme Toggle
 
 Proof of concept for a toggle allowing to switch between light and dark theme.
+
+## Layouts
+
+Experiments with HTML-CSS-JS to describe the appearance of the most important sections in the website.
