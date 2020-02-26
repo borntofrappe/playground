@@ -2,6 +2,14 @@
 
 Systems for the design of borntofrappe.
 
+## Color
+
+Scales starting from a base color and describing 9 variants in saturation and lightness
+
+## Icons
+
+SVG icons designed for the website.
+
 ## TODOS
 
 - [ ] read the following posts on fonts and web fonts
@@ -10,11 +18,9 @@ Systems for the design of borntofrappe.
   - https://css-tricks.com/understanding-web-fonts-getting/
   - https://www.zachleat.com/web/comprehensive-webfonts/
 
-- [ ] read the following and pick colors for primary, accent, neutral values
-
-  - https://refactoringui.com/previews/building-your-color-palette/
-
 - [ ] read up on scales and sizing systems. Look at [Typography.js](https://kyleamathews.github.io/typography.js/) for a reference on how this affects the page.
+
+- [ ] build an HTML-CSS-JS demo showcasing the different choices in terms of layout and sizing scales
 
 ## Font
 
@@ -33,17 +39,3 @@ For testing, use one of the following embeds. For the website, consider a more r
 ```css
 @import url("https://fonts.googleapis.com/css?family=Catamaran:700,800|Fira+Code|Source+Sans+Pro:400,400i,700&display=swap");
 ```
-
-## Color
-
-The palette is built starting from the following colors:
-
-- primary `hsl(220, 20%, 20%)`
-
-- accent `hsl(340, 80%, 45%)`
-
-- neutral `hsl(210, 25%, 10%)`
-
-Primary is picked looking at the background for the palenight theme used in the code snippet.
-
-Neutral relates to a darker variant of primary.
