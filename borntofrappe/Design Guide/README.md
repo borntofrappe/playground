@@ -1,6 +1,6 @@
 # Design Guide
 
-Systems and guidelines used on borntofrappe. In different folders, these systems are put into practice to design important sections of the website.
+Systems for the design of borntofrappe.
 
 ## TODOS
 
