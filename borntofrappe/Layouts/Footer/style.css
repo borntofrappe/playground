@@ -110,13 +110,13 @@ footer svg g {
 }
 
 @keyframes heart-beat {
-  20%,
-  40% {
+  10%,
+  30% {
     transform: scale(0.8);
   }
   0%,
-  30%,
-  50% {
+  20%,
+  40% {
     transform: scale(1);
   }
 }

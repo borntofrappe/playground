@@ -24,8 +24,6 @@ More than a blog. Mostly a blog.
   - [ ] https://css-tricks.com/understanding-web-fonts-getting/
   - [ ] https://www.zachleat.com/web/comprehensive-webfonts/
 
-- [x] design footer
-
 ## Index
 
 ### Design Guide
