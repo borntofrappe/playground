@@ -1,11 +1,12 @@
 <script>
   import Navigation from "./Navigation.svelte";
+  import Footer from "./Footer.svelte";
   const links = [
     {
       name: "blog",
       copy: "I enjoy writing code. I try my best to explain how.",
       link: {
-        href: '/blog',
+        href: '#',
         copy: 'Go to blog',
       }
     },
@@ -85,6 +86,8 @@
   {/each}
 </div>
 
+<Footer />
+
 <style>
   section {
     min-height: 100vh;
@@ -93,6 +96,7 @@
     justify-content: center;
     align-items: flex-start;
     max-width: 35em;
+    width: 90vw;
     margin: 1rem auto;
   }
   section > * + * {
@@ -111,6 +115,9 @@
     color: inherit;
     text-decoration: none;
     border-bottom: 0.2rem solid var(--accent-5);
+    transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: color var(--link-transition-duration) var(--ease-in-out-sine);
+
   }
 
   section a:hover {
@@ -119,8 +126,6 @@
   section a:focus {
     outline-color: var(--accent-5);
   }
-
-
 
   div {
     position: relative;
@@ -136,8 +141,8 @@
     display: inline-block;
     color: inherit;
     outline: none;
-    transition: color 0.35s ease-in-out, transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: color var(--link-transition-duration) var(--ease-out-cubic), transform var(--link-transition-duration) var(--ease-in-out-back);
+    transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95), transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: color var(--link-transition-duration) var(--ease-in-out-sine), transform var(--link-transition-duration) var(--ease-in-out-back);
     transform: scale(0.9);
   }
   @supports (position: sticky) {
