@@ -10,19 +10,7 @@ Scales starting from a base color and describing 9 variants in saturation and li
 
 SVG icons designed for the website.
 
-## TODOS
-
-- [ ] read the following posts on fonts and web fonts
-
-  - https://css-tricks.com/snippets/css/using-font-face/
-  - https://css-tricks.com/understanding-web-fonts-getting/
-  - https://www.zachleat.com/web/comprehensive-webfonts/
-
-- [ ] read up on scales and sizing systems. Look at [Typography.js](https://kyleamathews.github.io/typography.js/) for a reference on how this affects the page.
-
-- [ ] build an HTML-CSS-JS demo showcasing the different choices in terms of layout and sizing scales
-
-## Font
+## Fonts
 
 | Section  | Typeface                    | Variants       |
 | -------- | --------------------------- | -------------- |

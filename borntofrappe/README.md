@@ -4,30 +4,44 @@ borntofrappe is meant to be my personal website. Using Svelte, the static site g
 
 More than a blog. Mostly a blog.
 
-## Design Guide
+## TODOS
 
-Here I strive to describe the systems governing the design of the website. Font choices, colors, icons.
+- [ ] design illustrations for the different sections
 
-## Navigation
+- [ ] create layout for the page listing every article
 
-SVG-based navigation introducing the website and the different platforms on which I spend a considerable amount of time.
+- [ ] design icons
 
-## Loading Animation
+  - [ ] rounded arrow
 
-Animation meant to introduce the navigation and landing page.
+  - [ ] open in new page
 
-## Landing Page
+  - [ ] default icon for navigation
 
-Exploration of the layout for the landing page.
+- [ ] read up on fonts and web fonts
 
-## Markdown Parser
+  - [ ] https://css-tricks.com/snippets/css/using-font-face/
+  - [ ] https://css-tricks.com/understanding-web-fonts-getting/
+  - [ ] https://www.zachleat.com/web/comprehensive-webfonts/
 
-Node script reading markdown documents and producing the matching markup.
+## Index
 
-## Theme Toggle
+### Design Guide
+
+Systems governing the design of the website. Font choices, colors, icons.
+
+### Layouts
+
+Designs for of the most important pages and sections of the website.
+
+### Markdown Parser
+
+Script generating markup from markdown documents.
+
+### Navigation
+
+Navigation introducing the website. The custom nature of the design warranted a separate folder.
+
+### Theme Toggle
 
 Proof of concept for a toggle allowing to switch between light and dark theme.
-
-## Layouts
-
-Experiments with HTML-CSS-JS to describe the appearance of the most important sections in the website.
