@@ -1,9 +1,5 @@
 # Playground
 
-I'm in the process of building two websites:
+In the process of building websites, and hopefully write articles about my coding efforts, I use this repository as a literal playground.
 
-- borntofrappe
-
-- gabriele saves
-
-Both require quite a bit of effort, and I feel I could greatly benefit from a repository like this one, where I develop features independently and with a smaller footprint. For instance and for the landing page ultimately included in **borntofrappe**, having a project dedicated to the loading animation allows me to focus on the necessary CSS property value pairs.
+It allows me to focus on smaller, often independent works, which are then incorporated in larger endeavors.
