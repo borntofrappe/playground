@@ -81,7 +81,15 @@
     <section id="{name}">
       <h1>{name}</h1>
       <p>{copy}</p>
-      <a href="{link.href}">{link.copy}</a>
+      <a href="{link.href}">
+        {link.copy}
+        <svg viewBox="-50 -50 100 100" width="30" height="30">
+          <g stroke-width="15" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+              <path d="M 13 0 h -55" pathLength="1" stroke-dasharray="0.64 0.35" stroke-dashoffset="0.63" />
+              <path d="M 42.5 0 l -22.5 -22.5 m 0 45 l 22.5 -22.5" />
+          </g>
+        </svg>
+      </a>
     </section>
   {/each}
 </div>
@@ -111,21 +119,36 @@
     font-size: 1.5rem;
   }
   section a {
-    font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 1rem;
     color: inherit;
     text-decoration: none;
     border-bottom: 0.2rem solid var(--accent-5);
     transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     transition: color var(--link-transition-duration) var(--ease-in-out-sine);
-
+    display: flex;
+    align-items: flex-end;
   }
-
-  section a:hover {
+  section a:hover,
+  section a:focus {
     color: var(--accent-5);
   }
   section a:focus {
     outline-color: var(--accent-5);
   }
+  section a svg {
+    width: auto;
+    height: 1em;
+    margin-left: 0.5rem;
+  }
+  section a svg path {
+    transition: stroke-dashoffset 0.3s ease-in-out;
+  }
+  section a:hover svg path,
+  section a:focus svg path {
+    stroke-dashoffset: 0;
+  }
+
 
   div {
     position: relative;

@@ -10,13 +10,17 @@ More than a blog. Mostly a blog.
 
 - [ ] create layout for the page listing every article
 
-- [ ] design icons
+- [ ] write article introducing the website
 
-  - [ ] rounded arrow
+- [x] design icons
 
-  - [ ] open in new page
+  - [x] dashed arrow
 
-  - [ ] default icon for navigation
+  - [x] heart icon
+
+- [x] design footer
+
+## TODOS Later
 
 - [ ] read up on fonts and web fonts
 
@@ -24,7 +28,10 @@ More than a blog. Mostly a blog.
   - [ ] https://css-tricks.com/understanding-web-fonts-getting/
   - [ ] https://www.zachleat.com/web/comprehensive-webfonts/
 
-- [x] design footer
+- [ ] read up on meta tags, open graph and adding images for social sharing
+
+  - [ ] https://www.swyx.io/writing/jamstack-og-images/
+  - [ ] https://www.learnwithjason.dev/blog/auto-generate-social-image/
 
 ## Index
 
