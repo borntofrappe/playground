@@ -1,6 +1,6 @@
 # Demos
 
-In here I create and save the demos for which I intend to write a blog post.
+Demos for which I intend to write a blog post.
 
 ## borntofrappe
 

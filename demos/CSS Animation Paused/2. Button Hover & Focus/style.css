@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(0, 0%, 15%);
+  background: hsl(0, 0%, 97%);
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+button {
+  color: inherit;
+  font-family: inherit;
+  font-size: 2rem;
+  padding: 0.4rem 1rem;
+  background: none;
+  border: 0.2rem solid currentColor;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+button:hover,
+button:focus {
+  color: hsl(342, 80%, 50%);
+}
+
+button svg {
+  margin-left: 0.75rem;
+  width: 1em;
+  height: auto;
+  display: block;
+}
+
+/* animation properties */
+button:hover svg,
+button:focus svg {
+  animation: heart-beat 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes heart-beat {
+  25%,
+  75% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
