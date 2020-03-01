@@ -38,7 +38,7 @@
     });
 </script>
 
-<nav>
+<nav aria-label="Page navigation">
   <!-- wrapping SVG -->
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{size / 2} -{size / 2} {size} {size}" width="{size}" height="{size}">
     <defs>
@@ -119,7 +119,7 @@
 
               <!-- re-scale the icon inside the wrapping path element -->
               <g transform="scale(0.35) translate(-{iconSize / 2} -{iconSize / 2})">
-                <Icons icon="{item}" />
+                <Icons icon="{item}" size="{iconSize}" />
               </g>
 
               <!-- overlapping circle to expand the click area -->

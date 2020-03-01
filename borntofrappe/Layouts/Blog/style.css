@@ -48,28 +48,40 @@ body {
   flex-direction: column;
 }
 
-header {
+body::-webkit-scrollbar {
+  width: 0.75rem;
+}
+body::-webkit-scrollbar-track {
+  background: currentColor;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background: var(--accent-4);
+}
+
+nav {
   max-width: 40em;
   width: 90vw;
-  margin: 1rem auto;
+  margin: 0 auto;
+  padding: 1rem 0;
 }
 /* breadcrumb links */
-header a {
+nav a {
+  font-family: "Catamaran", sans-serif;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
   display: inline-flex;
   align-items: center;
-  font-size: 1rem;
-  font-family: "Catamaran", sans-serif;
-  color: inherit;
-  text-decoration: none;
   transition: color 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-header svg {
+nav svg {
   width: 1.5em;
   height: auto;
   margin-left: 0.4rem;
 }
-header a:hover,
-header a:focus {
+nav a:hover,
+nav a:focus {
   color: var(--accent-5);
 }
 

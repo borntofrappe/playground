@@ -53,7 +53,6 @@
 </script>
 
 <Breadcrumbs {breadcrumbs} />
-
 <Navigation {items} />
 
 {#each links as {name, copy, link}}
@@ -86,7 +85,7 @@
     margin: 1rem auto;
   }
   section > * + * {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
   }
   section h1 {
     text-transform: capitalize;
@@ -95,6 +94,15 @@
   }
   section p {
     font-size: 1.5rem;
+    line-height: 1.5;
+  }
+  @media (max-width: 500px) {
+    section h1 {
+      font-size: 2.5rem;
+    }
+    section p {
+      font-size: 1.25rem;
+    }
   }
   section a {
     font-weight: bold;

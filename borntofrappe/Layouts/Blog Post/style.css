@@ -47,6 +47,18 @@ body {
   background: var(--grey-0);
   font-family: "Source Sans Pro", sans-serif;
 }
+
+body::-webkit-scrollbar {
+  width: 0.75rem;
+}
+body::-webkit-scrollbar-track {
+  background: currentColor;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background: var(--accent-4);
+}
+
 ::selection {
   background: var(--accent-4);
 }

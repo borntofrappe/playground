@@ -6,19 +6,9 @@ More than a blog. Mostly a blog.
 
 ## TODOS
 
-- [ ] design illustrations for the different sections
+- [ ] design illustrations for the sections of the landing page
 
-- [ ] create layout for the page listing every article
-
-- [ ] write article introducing the website
-
-- [x] design icons
-
-  - [x] dashed arrow
-
-  - [x] heart icon
-
-- [x] design footer
+- [ ] re-consider CSS grid for the blog page
 
 ## TODOS Later
 
