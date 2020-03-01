@@ -2,7 +2,6 @@
   import Icons from "./Icons.svelte";
   // for the blog the item is actually to a relative path
   export let items;
-  export let id = "navigation";
 
   const size = 470;
   const iconSize = 110;
@@ -39,7 +38,7 @@
     });
 </script>
 
-<nav {id}>
+<nav>
   <!-- wrapping SVG -->
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{size / 2} -{size / 2} {size} {size}" width="{size}" height="{size}">
     <defs>

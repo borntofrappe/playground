@@ -1,6 +1,10 @@
 <script>
+  import Breadcrumbs from "./Breadcrumbs.svelte";
   import Navigation from "./Navigation.svelte";
   import Footer from "./Footer.svelte";
+
+  let breadcrumbs = [];
+
   const links = [
     {
       name: "blog",
@@ -48,36 +52,11 @@
 
 </script>
 
-<Navigation id="navigation" {items} />
+<Breadcrumbs {breadcrumbs} />
 
-<div>
-  <a href="#navigation">
-    <svg viewBox="-65 -65 130 130" width="100" height="100">
-      <defs>
-        <path id="path-navigation" d="M 0 30 a 30 30 0 0 1 0 -60 30 30 0 0 1 0 60" />
-        <mask id="mask-navigation">
-          <rect x="-60" y="-60" width="120" height="120" fill="hsl(0, 0%, 100%)" />
-          <use href="#path-navigation" fill="hsl(0, 0%, 0%)" />
-        </mask>
-      </defs>
-      <g mask="url(#mask-navigation)">
-        <g class="text">
-          <text fill="currentColor" transform="scale(1.3)">
-            <textPath href="#path-navigation" startOffset="50%" text-anchor="middle" font-family="monospace" font-size="18">
-              back up
-            </textPath>
-          </text>
-        </g>
-      </g>
-      <g fill="none" stroke="currentColor" stroke-width="6">
-        <use href="#path-navigation" />
-        <path d="M 0 -12.5 l 10 10 m -20 0 l 10 -10 v 25" stroke-linecap="round" stroke-linejoin="round" />
-      </g>
-    </svg>
-  </a>
+<Navigation {items} />
 
-
-  {#each links as {name, copy, link}}
+{#each links as {name, copy, link}}
     <section id="{name}">
       <h1>{name}</h1>
       <p>{copy}</p>
@@ -92,7 +71,6 @@
       </a>
     </section>
   {/each}
-</div>
 
 <Footer />
 
@@ -103,7 +81,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 35em;
+    max-width: 40em;
     width: 90vw;
     margin: 1rem auto;
   }
@@ -147,54 +125,6 @@
   section a:hover svg path,
   section a:focus svg path {
     stroke-dashoffset: 0;
-  }
-
-
-  div {
-    position: relative;
-  }
-
-  div > a {
-    text-decoration: none;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    left: initial;
-    width: 7rem;
-    display: inline-block;
-    color: inherit;
-    outline: none;
-    transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95), transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: color var(--link-transition-duration) var(--ease-in-out-sine), transform var(--link-transition-duration) var(--ease-in-out-back);
-    transform: scale(0.9);
-  }
-  @supports (position: sticky) {
-    div > a {
-      position: sticky;
-      top: 1rem;
-      left: 100%;
-    }
-  }
-
-  div > a svg {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  div > a svg .text {
-    transform: scale(0);
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  div > a:hover,
-  div > a:focus {
-    transform: scale(1);
-    color: hsl(340, 80%, 55%);
-    color: var(--accent-4);
-  }
-  div > a:hover svg .text,
-  div > a:focus svg .text {
-    transform: scale(1);
   }
 
 </style>
