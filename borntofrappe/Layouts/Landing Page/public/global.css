@@ -39,7 +39,7 @@ html {
   --grey-7: hsl(0, 0%, 25%);
   --grey-8: hsl(0, 0%, 15%);
 
-  --link-transition-duration: 0.3s;
+  --transition-duration: 0.25s;
   --heart-animation-duration: 2s;
   --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);

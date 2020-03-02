@@ -6,19 +6,19 @@ More than a blog. Mostly a blog.
 
 ## TODOS
 
+- [ ] write better copy
+
+  - [ ] landing page sections
+
+  - [ ] blog index header
+
 - [ ] design illustrations for the sections of the landing page
 
 - [ ] re-consider CSS grid for the blog page
 
-- [x] add header in the blog page
+- [ ] background pattern for the landing page
 
-  - [ ] figure out how to have the header stretch to the viewport and align the text
-
-- [ ] add pattern in the landing page
-
-- [ ] **urgent**: update markup to have semantic HTML. One h1 element, followed by lower h2 elements for the articles, for instance.
-
-- [x] standardize and structure the breadcrumb component
+- [ ] background pattern for the headers
 
 ## TODOS Later
 

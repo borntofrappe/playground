@@ -139,6 +139,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    --transition-duration: 0.35s;
   }
   svg {
     max-width: 40em;
@@ -156,7 +157,7 @@
     color: inherit;
     transform: scale(0.85);
     transition: color 0.35s linear, transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: color var(--link-transition-duration) linear, transform var(--link-transition-duration) var(--ease-in-out-back);
+    transition: color var(--transition-duration) linear, transform var(--transition-duration) var(--ease-in-out-back);
     outline: none;
     text-decoration: none;
   }
@@ -170,7 +171,7 @@
   a .text {
     transform: scale(0.5);
     transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: transform var(--link-transition-duration) var(--ease-out-back);
+    transition: transform var(--transition-duration) var(--ease-out-back);
   }
   a:hover .text,
   a:focus .text {

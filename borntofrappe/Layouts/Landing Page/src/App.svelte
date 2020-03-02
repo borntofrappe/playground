@@ -105,15 +105,16 @@
     }
   }
   section a {
-    font-weight: bold;
+    font-family: "Catamaran", sans-serif;
+    font-weight: 500;
     font-size: 1rem;
     color: inherit;
     text-decoration: none;
     border-bottom: 0.2rem solid var(--accent-5);
-    transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    transition: color var(--link-transition-duration) var(--ease-in-out-sine);
+    transition: color 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: color var(--transition-duration) var(--ease-in-out-sine);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
   section a:hover,
   section a:focus {
@@ -128,7 +129,8 @@
     margin-left: 0.5rem;
   }
   section a svg path {
-    transition: stroke-dashoffset 0.3s ease-in-out;
+    transition: stroke-dashoffset 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: stroke-dashoffset var(--transition-duration) var(--ease-in-out-sine);
   }
   section a:hover svg path,
   section a:focus svg path {

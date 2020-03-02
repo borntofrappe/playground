@@ -1,8 +1,7 @@
 <script>
   export let icon;
-  export let size;
+  export let size = 32;
 </script>
-<!-- I'm positive there's a better way to serve the appropriate icons, but here I use a series of if statements -->
 {#if icon === "blog"}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="{size}" height="{size}">
   <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
