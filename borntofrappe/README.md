@@ -18,7 +18,7 @@ More than a blog. Mostly a blog.
 
 - [ ] **urgent**: update markup to have semantic HTML. One h1 element, followed by lower h2 elements for the articles, for instance.
 
-- [ ] standardize and structure the breadcrumb component
+- [x] standardize and structure the breadcrumb component
 
 ## TODOS Later
 
