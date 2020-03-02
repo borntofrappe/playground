@@ -47,7 +47,11 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+h1,
+h2 {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 800;
+}
 body::-webkit-scrollbar {
   width: 0.75rem;
 }
@@ -85,6 +89,31 @@ nav a:focus {
   color: var(--accent-5);
 }
 
+header {
+  margin-bottom: 1rem;
+  background: var(--primary-8);
+  color: var(--grey-0);
+  padding: 1rem 2rem;
+  min-height: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+header h1 {
+  width: 90vw;
+  /* ?! */
+  max-width: 20em;
+  display: block;
+  margin: 1rem auto;
+}
+header p {
+  max-width: 40em;
+  width: 90vw;
+  margin: 1rem auto;
+  line-height: 1.75;
+}
+
 main {
   /* paired with the min-height to push the footer at the bottom */
   flex-grow: 1;
@@ -101,21 +130,21 @@ article > * + * {
   margin-top: 0.75rem;
 }
 
-article h1 {
+article h2 {
   font-size: 1.8rem;
 }
-article h1 a {
+article h2 a {
   color: inherit;
   text-decoration: none;
   transition: color 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   display: flex;
   align-items: center;
 }
-article h1 a:hover,
-article h1 a:focus {
+article h2 a:hover,
+article h2 a:focus {
   color: var(--primary-5);
 }
-article h1 a svg {
+article h2 a svg {
   width: 1.5em;
   height: auto;
 }
@@ -130,7 +159,7 @@ article p {
 }
 
 /* for the first article update the colors with the accent scale */
-article:first-of-type h1 {
+article:first-of-type h2 {
   font-size: 2rem;
 }
 article:first-of-type a:hover,
@@ -144,13 +173,13 @@ article:first-of-type time {
 
 /* resize the headings and time element on smaller screens */
 @media (max-width: 30em) {
-  article h1 {
+  article h2 {
     font-size: 1.5rem;
   }
   article time {
     font-size: 0.9rem;
   }
-  article:first-of-type h1 {
+  article:first-of-type h2 {
     font-size: 1.8rem;
   }
   article > * + * {

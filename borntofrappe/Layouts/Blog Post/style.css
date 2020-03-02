@@ -63,6 +63,32 @@ body::-webkit-scrollbar-thumb {
   background: var(--accent-4);
 }
 
+nav {
+  max-width: 40em;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+/* breadcrumb links */
+nav a {
+  font-family: "Catamaran", sans-serif;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+nav svg {
+  width: 1.5em;
+  height: auto;
+  margin-left: 0.4rem;
+}
+nav a:hover,
+nav a:focus {
+  color: var(--accent-5);
+}
+
 header {
   background: var(--primary-8);
   color: var(--grey-0);
@@ -105,7 +131,7 @@ header section svg {
 /* single column layout */
 main {
   width: 90vw;
-  max-width: 32em;
+  max-width: 35em;
   line-height: 2;
   margin: 2rem auto;
 }
