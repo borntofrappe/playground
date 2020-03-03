@@ -48,6 +48,8 @@ header
 
 I've include the icons in an `<svg>` element, so to access them with `<use>` elements. In the final project, these are included through a dedicated component.
 
+The only challenge here is to take the string of comma separated tags and produce an array.
+
 ## Links
 
 - [CSS Tricks on the Date object](https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/#creating-dates-with-arguments)
