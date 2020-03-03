@@ -1,6 +1,6 @@
 ---
 title: From markdown to HTML
-date: 2020-01-24
+date: 2020-2-24
 brief: A rambling explanation behind a script that could have used a few more packages.
 tags: html, js
 ---

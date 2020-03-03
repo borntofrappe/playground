@@ -39,7 +39,7 @@ Designs for of the most important pages and sections of the website.
 
 ### Scripts
 
-JavaScript files which identify particular features in the build process. A script to generate markup from markdown documents, a script taking the front matter and creating a header.
+JavaScript files which identify particular features in the build process.
 
 ### Navigation
 

@@ -1,6 +1,6 @@
 ---
 title: Syntax Highlighting
-date: 2020-02-01
+date: 2020-3-1
 brief: Adding syntax highlighting with shiki and async syntax.
 tags: css, js
 ---

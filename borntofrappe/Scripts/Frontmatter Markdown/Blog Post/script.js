@@ -1,24 +1,27 @@
+// the page would receive one object, but here I use multiple to show the generated markup for different setups
 const articles = [
   {
     title: 'From markdown to HTML',
-    date: '2020-01-24',
+    date: '2020-2-24',
     brief: 'A rambling explanation behind a script that could have used a few more packages.',
-    tags: 'html, js'
+    tags: 'html, js',
+    slug: 'from-markdown-to-html'
   },
   {
     title: 'Syntax Highlighting',
-    date: '2020-02-01',
+    date: '2020-3-1',
     brief: 'Adding syntax highlighting with shiki and async syntax.',
-    tags: 'css, js'
+    tags: 'css, js',
+    slug: 'syntax-highlighting'
   },
   {
     title: 'Up and Running',
-    date: '2020-01-20',
-    brief: 'The first article of this very website, and hopefully not the last.'
+    date: '2020-2-20',
+    brief: 'The first article of this very website, and hopefully not the last.',
+    slug: 'up-and-running'
   }
 ];
 
-// you'd create the markup for a single article, but I use a forEach as a proof of concept
 articles.forEach(article => {
   const { title, tags } = article;
   // ! if tags are made available generate an array out of the individual tags
