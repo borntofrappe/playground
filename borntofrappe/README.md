@@ -14,12 +14,6 @@ More than a blog. Mostly a blog.
 
 - [ ] design illustrations for the sections of the landing page
 
-- [ ] re-consider CSS grid for the blog page
-
-- [ ] background pattern for the landing page
-
-- [ ] background pattern for the headers
-
 ## TODOS Later
 
 - [ ] read up on fonts and web fonts
@@ -43,9 +37,9 @@ Systems governing the design of the website. Font choices, colors, icons.
 
 Designs for of the most important pages and sections of the website.
 
-### Markdown Parser
+### Scripts
 
-Script generating markup from markdown documents.
+JavaScript files which identify particular features in the build process. A script to generate markup from markdown documents, a script taking the front matter and creating a header.
 
 ### Navigation
 

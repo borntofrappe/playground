@@ -8,7 +8,7 @@
   const links = [
     {
       name: "blog",
-      copy: "I enjoy writing code. I try my best to explain how.",
+      copy: "Where I take a moment to save my journey as an aspiring web developer, designer, long distance runner.",
       link: {
         href: '#',
         copy: 'Go to blog',
@@ -16,10 +16,10 @@
     },
     {
       name: "freecodecamp",
-      copy: "Where it all started, with HTML and CSS.",
+      copy: "An amazing community, where I started to learn with HTML and CSS.",
       link: {
         href: 'https://www.freecodecamp.org/borntofrappe',
-        copy: 'Verify certifications',
+        copy: 'Admire certifications',
       }
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       name: "twitter",
-      copy: "People seem to appreciate my efforts. I strive to keep up with the demand.",
+      copy: "People seem to appreciate my efforts. I try my best to respect expectations.",
       link: {
         href: 'https://twitter.com/borntofrappe',
         copy: 'Check profile',

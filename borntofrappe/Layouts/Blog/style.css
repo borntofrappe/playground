@@ -55,6 +55,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 92%25)' width='20' height='20' viewBox='-5 -5 10 10'%3E%3Ccircle id='dot' r='1' /%3E%3Cuse href='%23dot' x='5' y='5' /%3E%3Cuse href='%23dot' x='-5' y='5' /%3E%3Cuse href='%23dot' x='5' y='-5' /%3E%3Cuse href='%23dot' x='-5' y='-5' /%3E%3C/svg%3E"),
+    var(--grey-0);
+  background-size: 1rem;
+  background-position: -0.5rem -0.5rem; */
 }
 
 body::-webkit-scrollbar {
@@ -73,6 +77,8 @@ nav {
   width: 90vw;
   margin: 0 auto;
   padding: 1rem 0;
+  /* offset to have the header relative to the beginning of the page */
+  margin-bottom: -2rem;
 }
 nav a {
   font-family: "Catamaran", sans-serif;
@@ -99,29 +105,30 @@ nav a:focus {
 }
 
 header {
-  margin-bottom: 1rem;
-  background: var(--primary-8);
+  margin: 2rem 0 1rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 0%25)' opacity='0.3' width='20' height='20' viewBox='-5 -5 10 10'%3E%3Ccircle id='dot' r='1' /%3E%3Cuse href='%23dot' x='5' y='5' /%3E%3Cuse href='%23dot' x='-5' y='5' /%3E%3Cuse href='%23dot' x='5' y='-5' /%3E%3Cuse href='%23dot' x='-5' y='-5' /%3E%3C/svg%3E"),
+    var(--primary-8);
+  background-size: 1rem;
+  background-position: -0.5rem -0.5rem;
   color: var(--grey-0);
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   min-height: 10em;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
 }
-header h1 {
+header > * {
+  max-width: 40em;
   width: 90vw;
-  /* ?! */
-  max-width: 20em;
-  display: block;
   margin: 1rem auto;
+}
+header h1 {
+  max-width: 20em;
   font-family: "Catamaran", sans-serif;
   font-weight: 800;
 }
 header p {
-  max-width: 40em;
-  width: 90vw;
-  margin: 1rem auto;
   line-height: 1.75;
 }
 

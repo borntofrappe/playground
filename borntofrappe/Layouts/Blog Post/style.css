@@ -50,6 +50,10 @@
 body {
   color: var(--grey-8);
   background: var(--grey-0);
+  /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 92%25)' width='20' height='20' viewBox='-5 -5 10 10'%3E%3Ccircle id='dot' r='1' /%3E%3Cuse href='%23dot' x='5' y='5' /%3E%3Cuse href='%23dot' x='-5' y='5' /%3E%3Cuse href='%23dot' x='5' y='-5' /%3E%3Cuse href='%23dot' x='-5' y='-5' /%3E%3C/svg%3E"),
+    var(--grey-0);
+  background-size: 1rem;
+  background-position: -0.5rem -0.5rem; */
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -73,6 +77,8 @@ nav {
   width: 90vw;
   margin: 0 auto;
   padding: 1rem 0;
+  /* offset to have the header relative to the beginning of the page */
+  margin-bottom: -2rem;
 }
 nav a {
   font-family: "Catamaran", sans-serif;
@@ -99,12 +105,14 @@ nav a:focus {
 }
 
 header {
-  background: var(--primary-8);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 0%25)' opacity='0.3' width='20' height='20' viewBox='-5 -5 10 10'%3E%3Ccircle id='dot' r='1' /%3E%3Cuse href='%23dot' x='5' y='5' /%3E%3Cuse href='%23dot' x='-5' y='5' /%3E%3Cuse href='%23dot' x='5' y='-5' /%3E%3Cuse href='%23dot' x='-5' y='-5' /%3E%3C/svg%3E"),
+    var(--primary-8);
+  background-size: 1rem;
+  background-position: -0.5rem -0.5rem;
   color: var(--grey-0);
   text-align: center;
   padding: 6rem 1.5rem;
-  margin-bottom: 6rem;
-
+  margin: 2rem 0 6rem;
   position: relative;
 }
 header h1 {
