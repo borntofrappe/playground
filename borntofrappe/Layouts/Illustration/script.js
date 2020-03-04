@@ -39,9 +39,9 @@ const palette = [
 ];
 
 // pick a color
-const colors = palette[1];
+const colors = palette[0];
 // pick a selection of icons
-const satellites = icons.slice();
+const satellites = icons.slice(5);
 // decide to tilt the planet right or not
 const tiltRight = false;
 

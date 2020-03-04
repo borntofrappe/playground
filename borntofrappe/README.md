@@ -6,17 +6,17 @@ More than a blog. Mostly a blog.
 
 ## TODOS
 
-- [ ] draw running shoe icon
+- [ ] svg running shoe
 
-- [ ] create favicon and logos
+- [ ] png running shoe (favicon)
 
-- [ ] write better copy
+- [ ] png logos (see sapper's manifest)
 
-  - [ ] landing page sections
+- [ ] better copy for the landing page and the blog layout
 
-  - [ ] blog index header
+- [ ] consider a repeating background for the landing page (stars, particles, shapes)
 
-- [ ] design illustrations for the landing page
+- [ ] replicate the illustration with svelte and the intersection observer api (to animate the orbit)
 
 ## TODOS Later
 
