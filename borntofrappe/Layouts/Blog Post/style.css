@@ -48,12 +48,8 @@
 }
 
 body {
-  color: var(--grey-8);
+  color: var(--primary-8);
   background: var(--grey-0);
-  /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 92%25)' width='20' height='20' viewBox='-5 -5 10 10'%3E%3Ccircle id='dot' r='1' /%3E%3Cuse href='%23dot' x='5' y='5' /%3E%3Cuse href='%23dot' x='-5' y='5' /%3E%3Cuse href='%23dot' x='5' y='-5' /%3E%3Cuse href='%23dot' x='-5' y='-5' /%3E%3C/svg%3E"),
-    var(--grey-0);
-  background-size: 1rem;
-  background-position: -0.5rem -0.5rem; */
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -70,6 +66,7 @@ body::-webkit-scrollbar-thumb {
 
 ::selection {
   background: var(--accent-4);
+  color: var(--grey-0);
 }
 
 nav {
@@ -226,7 +223,7 @@ main ul {
 main a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 0.1rem solid var(--accent-5);
+  border-bottom: 0.2rem solid var(--accent-5);
   transition: color 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: color var(--transition-duration) var(--ease-in-out-sine);
 }

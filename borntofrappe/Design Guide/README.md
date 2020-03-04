@@ -4,11 +4,11 @@ Systems for the design of borntofrappe.
 
 ## Color
 
-Scales starting from a base color and describing 9 variants in saturation and lightness
+Scales starting from a base color and describing 9 variants in saturation and lightness.
 
 ## Icons
 
-SVG icons designed for the website.
+SVG icons designed for the website. The syntax is improved with inkscape and svgomg, but the original design created in VSCode is preserved in a separate folder.
 
 ## Fonts
 

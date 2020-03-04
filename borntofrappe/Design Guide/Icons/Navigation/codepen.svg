@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
-  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" fill="none">
-    <path d="M 0 -40 l -46 25 46 25 46 -25 z" />
-    <path d="M 0 -40 v 30" />
-    <path transform="translate(0 50)" d="M 0 -40 v 30" />
-    <path transform="translate(46 25)" d="M 0 -40 v 30" />
-    <path transform="translate(-46 25)" d="M 0 -40 v 30" />
-    <path transform="translate(0 30)" d="M 0 -40 l -46 25 46 25 46 -25 z" />
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" fill="none"><path d="M0-40l-46 25L0 10l46-25zM0-40v30M0 10v30M46-15v30M-46-15v30"/><path d="M0-10l-46 25L0 40l46-25z"/></g></svg>

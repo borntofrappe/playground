@@ -6,13 +6,17 @@ More than a blog. Mostly a blog.
 
 ## TODOS
 
+- [ ] draw running shoe icon
+
+- [ ] create favicon and logos
+
 - [ ] write better copy
 
   - [ ] landing page sections
 
   - [ ] blog index header
 
-- [ ] design illustrations for the sections of the landing page
+- [ ] design illustrations for the landing page
 
 ## TODOS Later
 
