@@ -39,7 +39,7 @@ const palette = [
 ];
 
 // pick a color
-const colors = [...palette[0]].reverse();
+const colors = palette[0];
 // pick a selection of icons
 const satellites = icons.slice();
 // decide to tilt the planet right or not
@@ -47,55 +47,49 @@ const tiltRight = false;
 
 const markup = `
 <svg style="color: ${
-  colors[4]
+  colors[5]
 }" xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="200" height="200">
-      <clipPath id="clip-planet">
-        <circle r="28"/>
-      </clipPath>
+    <radialGradient id="gradient-planet" cx="-0.25" cy="-0.25" fx="0" fy="0" r="1.6" fr="0.18" gradientTransform="translate(0.5 0.5) rotate(${
+      tiltRight ? 65 : 25
+    }) translate(-0.5 -0.5)">
+    ${colors
+      .map(
+        (color, index, { length }) =>
+          `<stop stop-color="${color}" offset="${(1 / length) * index}"/>
+        ${
+          index < length - 1
+            ? `<stop stop-color="${color}" offset="${(1 / length) *
+                (index + 1)}"/>`
+            : ''
+        }
+        `
+      )
+      .join('')}
+    </radialGradient>
       <mask id="mask-satellites">
         <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" />
         <g fill="hsl(0, 0%, 0%)">
-          <g class="rotate">
-            ${satellites
-              .map(
-                (satellite, index, { length }) => `<g transform="rotate(${(360 /
-                  length) *
-                  index}) translate(0 -42.5) rotate(${(360 / length) *
-                  index *
-                  -1})">
-                <circle r="7" />
+        <g class="rotate">
+          ${satellites
+            .map(
+              (satellite, index, { length }) => `<g transform="rotate(${(360 /
+                length) *
+                index}) translate(0 -42.5) rotate(${(360 / length) *
+                index *
+                -1})">
+              <circle r="7" />
           </g>`
-          )
-          .join('')}
-          </g>
+            )
+            .join('')}
+        </g>
         </g>
       </mask>
-
-      <!-- planet -->
-      <g transform="rotate(${tiltRight ? 20 : -20})">
-        <g clip-path="url(#clip-planet)">
-          <g transform="translate(0 -70)">
-            ${colors
-              .map(
-                (color, index, { length }) =>
-                  `<ellipse stroke="none" transform="scale(${1 -
-                    (0.6 / length) * index})" cx="-0" cy="70" rx="${35 +
-                    (15 / length) * index}" ry="30" fill="${color}"/>`
-              )
-              .join('')}
-          </g>
-        </g>
-
-        <circle r="28" fill="none" stroke="${colors[colors.length - 1]}" stroke-width="0.1"/>
-      </g>
-
-      <!-- planet -->
+      <circle r="27" fill="url(#gradient-planet)" />
       <g mask="url(#mask-satellites)">
-        <circle class="rotate" r="42.5" stroke-dasharray="1 2" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="0.5" />
+          <circle class="rotate" r="42.5" stroke-dasharray="1 2" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="0.5" />
       </g>
-
-      <!-- satellites -->
       <g class="rotate">
+
             ${satellites
               .map(
                 (satellite, index, { length }) => `<g transform="rotate(${(360 /
@@ -103,21 +97,28 @@ const markup = `
                   index}) translate(0 -42) rotate(${(360 / length) *
                   index *
                   -1})">
-                <g transform="scale(-1 1)">
-                  <g class="rotate">
-                    <g transform="scale(-1 1)">
 
-                          <circle r="7.5" fill="none" stroke-width="1" stroke="currentColor" />
-                          <g transform="translate(-4 -4)">
-                            ${satellite}
-                          </g>
-                    </g>
-                  </g>
+                  <g transform="scale(-1 1)">
+          <g class="rotate">
+          <g transform="scale(-1 1)">
+
+                <circle r="7.5" fill="none" stroke-width="1" stroke="currentColor" />
+                <g transform="translate(-4 -4)">
+                ${satellite}
                 </g>
+
+
+          </g>
+          </g>
+          </g>
             </g>`
               )
               .join('')}
+
       </g>
+
+
+
 </svg>
 `;
 
