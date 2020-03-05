@@ -86,6 +86,7 @@ const markup = `
           </g>
         </g>
 
+        <!-- hide pixel rendering -->
         <circle r="28" fill="none" stroke="${colors[colors.length - 1]}" stroke-width="0.1"/>
       </g>
 
