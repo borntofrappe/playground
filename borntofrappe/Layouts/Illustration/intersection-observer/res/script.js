@@ -1,4 +1,3 @@
-// https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 if(window.IntersectionObserver) {
   const options = {
     threshold: 0.5,
@@ -6,13 +5,8 @@ if(window.IntersectionObserver) {
 
   function callback(entries, observer) {
     entries.forEach(entry => {
-      if(entry.intersectionRatio > 0.5) {
-        entry.target.classList.add('observed');
-      } else {
-        entry.target.classList.remove('observed');
-
-      }
-    })
+      entry.target.className = entry.isIntersecting ? 'observed' : '';
+    });
   };
 
   const observer = new IntersectionObserver(callback, options);

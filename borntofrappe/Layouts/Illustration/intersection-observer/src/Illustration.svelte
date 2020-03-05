@@ -19,9 +19,8 @@
     }
   ];
 
-  // planet to describe the satellites
+  // svg appearance
   export let planet;
-  // index to modify the appearance of the illustration
   export let index;
 
   const { satellites } = planets.find(({ name }) => name === planet);
@@ -30,26 +29,19 @@
   const tilt = index % 2 === 0 ? 20 : -20;
   const clockwise = index % 2 === 0 ? true : false;
 
+  // intersection observer api
   let illustration;
   let observed = false;
-
-  function callback(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.intersectionRatio > 0.5) {
-        observed = true;
-      } else {
-        observed = false;
-      }
-    });
-  }
-
   $: {
     if (window.IntersectionObserver && illustration) {
-      const options = {
-        threshold: 0.5
-      };
-
-      const observer = new IntersectionObserver(callback, options);
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            observed = entry.isIntersecting;
+          });
+        },
+        { threshold: 0 }
+      );
       observer.observe(illustration);
     }
   }
@@ -70,7 +62,7 @@
     animation-direction: reverse;
   }
   .rotate {
-    animation: rotate 200s linear infinite;
+    animation: rotate 100s linear infinite;
     animation-play-state: paused;
   }
 

@@ -16,7 +16,7 @@ More than a blog. Mostly a blog.
 
 - [ ] consider a repeating background for the landing page (stars, particles, shapes)
 
-- [ ] replicate the illustration with svelte and the intersection observer api (to animate the orbit)
+- [x] replicate the illustration with svelte and the intersection observer api (to animate the orbit)
 
 ## TODOS Later
 
