@@ -29,6 +29,30 @@
   const colors = index % 2 === 0 ? palette.primary : palette.accent;
   const tilt = index % 2 === 0 ? 20 : -20;
   const clockwise = index % 2 === 0 ? true : false;
+
+  let illustration;
+  let observed = false;
+
+  function callback(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > 0.5) {
+        observed = true;
+      } else {
+        observed = false;
+      }
+    });
+  }
+
+  $: {
+    if (window.IntersectionObserver && illustration) {
+      const options = {
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+      observer.observe(illustration);
+    }
+  }
 </script>
 
 <style>
@@ -39,11 +63,15 @@
     max-width: 30em;
   }
 
+  svg.observed .rotate {
+    animation-play-state: running;
+  }
   svg.clockwise .rotate {
     animation-direction: reverse;
   }
   .rotate {
-    animation: rotate 100s linear infinite;
+    animation: rotate 200s linear infinite;
+    animation-play-state: paused;
   }
 
   @keyframes rotate {
@@ -54,7 +82,7 @@
 </style>
 
 <section>
-  <svg class:clockwise style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
+  <svg bind:this="{illustration}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
     <defs>
       <clipPath id="clip-planet-{planet}">
         <circle r="27" />
