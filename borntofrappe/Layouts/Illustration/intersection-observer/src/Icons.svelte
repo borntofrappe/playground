@@ -3,7 +3,100 @@
   export let size = 32;
 </script>
 
-{#if icon === 'html'}
+{#if icon ==="search"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="36" cx="-10" cy="-10" />
+    <path stroke-width="10" d="M 45 45 l -22 -22" />
+    <path stroke-width="4" d="M 23 23 l -5 -5" />
+  </g>
+</svg>
+{:else if icon === "idea"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M -16 14 a 32 32 0 1 1 32 0 v 3 a 8 8 0 0 1 -8 8 h -16 a 8 8 0 0 1 -8 -8 z" />
+    <g stroke-width="7">
+      <path d="M -10 28 h 20" />
+      <path d="M -8 37.25 h 16" />
+      <path d="M -4 46.5 h 8" />
+    </g>
+  </g>
+</svg>
+{:else if icon === "pencil"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="rotate(45)">
+      <path d="M -7 -55 h 14 a 8 8 0 0 1 8 8 v 10 h -30 v -10 a 8 8 0 0 1 8 -8" />
+      <path d="M -15 -24 v 74 l 15 15 15 -15 v -74 z" />
+    </g>
+  </g>
+</svg>
+{:else if icon ==="copy"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 6 -46 h -36 a 10 10 0 0 0 -10 10 v 40" />
+    <path d="M 30 -30 h -44 a 10 10 0 0 0 -10 10 v 56 a 10 10 0 0 0 10 10 h 44 a 10 10 0 0 0 10 -10 v -56 a 10 10 0 0 0 -10 -10" />
+  </g>
+</svg>
+
+{:else if icon ==="share"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="currentColor">
+    <circle r="15" stroke="none" cx="22.5" cy="-35" />
+    <circle r="15" stroke="none" cx="-27.5" cy="0" />
+    <circle r="15" stroke="none" cx="22.5" cy="35" />
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="10" d="M 22.5 -35 l -45 35 45 35" />
+  </g>
+</svg>
+
+{:else if icon ==="hat"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path stroke-width="8" d="M 0 -26 l -46 16 46 16 46 -16 z" />
+    <g stroke-width="7">
+      <path d="M -26 -1 v 20 a 52 52 0 0 0 52 0 v -20" />
+      <path fill="currentColor" d="M 40 -4 v 25 c -4 5 -5 12 0 14 c 5 -2 5 -9 0 -14 " />
+    </g>
+  </g>
+</svg>
+{:else if icon === "certificate"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path stroke-width="8" d="M -46 -32 a 8 8 0 0 1 8 -8 h 76 a 8 8 0 0 1 8 8 v 54 a 8 8 0 0 1 -8 8 h -16 m -44 0 h -16 a 8 8 0 0 1 -8 -8 v -54" />
+    <g stroke-width="7">
+      <path d="M -25 -18 h 50" />
+      <circle cx="0" cy="13" r="15" />
+      <path d="M -10 26 v 16.5 l 10 -5 10 5 v -16.5" />
+    </g>
+  </g>
+  <g fill="currentColor" stroke="none">
+    <circle r="8" cx="-40" cy="-34" />
+    <circle transform="scale(-1 1)" r="8" cx="-40" cy="-34" />
+    <circle r="8" cx="-40" cy="24" />
+    <circle transform="scale(-1 1)" r="8" cx="-40" cy="24" />
+  </g>
+</svg>
+{:else if icon === "book"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <g stroke-width="8">
+      <path d="M 0 -20 a 16 16 0 0 1 16 -16 h 22 a 8 8 0 0 1 8 8 v 50 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 0 -8 8 8 8 0 0 0 -8 -8 h -30 a 8 8 0 0 1 -8 -8 v -50 a 8 8 0 0 1 8 -8 h 22 a 16 16 0 0 1 16 16" />
+      <path d="M 0 -20 v 50" />
+    </g>
+    <g stroke-width="7">
+      <path d="M -30 -18 h 15" />
+      <path transform="scale(-1 1)" d="M -30 -18 h 15" />
+      <path d="M -30 -3 h 15" />
+      <path transform="scale(-1 1)" d="M -30 -3 h 15" />
+      <path d="M -30 12 h 15" />
+      <path transform="scale(-1 1)" d="M -30 12 h 15" />
+    </g>
+  </g>
+</svg>
+
+{:else if icon === 'html'}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <path fill="currentColor" d="M-40-50l5 85L0 50l35-15 5-85h-80zm14 17.5h52l-.65 11.051H-14.3l.65 11.049H24.7l-1.95 33.15L0 32.5l-22.75-9.75-.65-11.051h11.051l.325 5.525L0 22.426l12.025-5.202L13 .65h-37.05L-26-32.5z" />
 </svg>
@@ -27,13 +120,6 @@
     <path d="M0 0l-25.456-25.456a5 5 0 01-7.07-7.07 5 5 0 017.07 7.07l50.912 50.912a5 5 0 017.07 7.07 5 5 0 01-7.07-7.07" />
   </g>
 </svg>
-{:else if icon === 'svelte'}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g stroke="currentColor" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" fill="none" transform="rotate(-30)">
-    <path d="M30-10H0h8a21 21 0 010 42h-37a21 21 0 010-42" />
-    <path d="M-30 10H0h-8a21 21 0 010-42h37a21 21 0 010 42" />
-  </g>
-</svg>
 {:else if icon === 'react'}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <g stroke="currentColor" fill="none" stroke-width="8">
@@ -43,37 +129,6 @@
   </g>
   <circle r="8" fill="currentColor" />
 </svg>
-{:else if icon === 'node'}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
-    <path d="M-25 33l-18-9v-48L1-46l44 22v48L1 46l-7-3.5" />
-    <path d="M-14-19v42.5a10 10 0 01-10 10M24-9A10 10 0 004-9 10 10 0 0014 1a10 10 0 0110 10 10 10 0 01-20 0" />
-  </g>
-</svg>
-{:else if icon === 'matter'}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g fill="currentColor">
-    <path d="M0-20h50v50H0z" />
-    <circle cx="-15" cy="-25" r="15" />
-    <path d="M-50 40l30-50 30 50" />
-  </g>
-</svg>
-{:else if icon === 'json'}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g stroke="currentColor" stroke-width="10" fill="none"><path d="M-17.5-45a20 20 0 00-20 20v12.5A12.5 12.5 0 01-50 0a12.5 12.5 0 0112.5 12.5V25a20 20 0 0020 20M17.5-45a20 20 0 0120 20v12.5A12.5 12.5 0 0050 0a12.5 12.5 0 00-12.5 12.5V25a20 20 0 01-20 20" /></g>
-  <g fill="currentColor">
-    <circle r="4" />
-    <circle cx="-16" r="4" />
-    <circle cx="16" r="4" />
-  </g>
-</svg>
-{:else if icon === 'git'}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <path
-    fill="currentColor"
-    d="M-.074-49.999a5 5 0 00-3.461 1.465L-15.09-36.98l12.487 12.486A7 7 0 010-25a7 7 0 017 7 7 7 0 01-.507 2.602l8.904 8.904A7 7 0 0118.001-7a7 7 0 017 7 7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 01.507-2.602L2.75-11.358v22.924A7 7 0 017 18a7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 014.25-6.428v-23.137A7 7 0 01-7-17.999a7 7 0 01.508-2.602L-18.98-33.089-48.536-3.534a5 5 0 000 7.07l45.001 45a5 5 0 007.07 0l45.002-45a5 5 0 000-7.07l-45.001-45a5 5 0 00-3.61-1.465z"
-  />
-</svg>
 {:else if icon === 'd3'}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="0 0 100 100">
   <path
@@ -81,5 +136,89 @@
     fill="currentColor"
   />
   <path d="M0 15h10a35 35 0 010 70H0" fill="none" stroke="currentColor" stroke-width="20" />
+</svg>
+
+{:else if icon ==="like"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M 0 -15 c 5 -30 45 -30 45 0 q 0 25 -45 55 q -45 -30 -45 -55 c 0 -30 40 -30 45 0" />
+  </g>
+</svg>
+{:else if icon === "comment"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M -9.5 25 a 35.5 35.5 0 0 1 0 -71 h 15 a 40 40 0 0 1 40 40 q 0 25 -54.5 52 v -20z" />
+  </g>
+</svg>
+{:else if icon === "retweet"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M -10 -30 h 34 a 10 10 0 0 1 10 10 v 45 l 12 -12 m -12 12 l -12 -12" />
+    <path transform="rotate(180)" d="M -10 -30 h 34 a 10 10 0 0 1 10 10 v 45 l 12 -12 m -12 12 l -12 -12" />
+  </g>
+</svg>
+{:else if icon ==="direct-message"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M -46 -27 a 8 8 0 0 1 8 -8 h 76 a 8 8 0 0 1 8 8 v 54 a 8 8 0 0 1 -8 8 h -76 a 8 8 0 0 1 -8 -8 z" />
+    <path d="M -46 -20 l 46 23 46 -23" />
+  </g>
+</svg>
+{:else if icon ==="notification-bell"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M 0 -46 a 30 30 0 0 1 30 30 v 20 a 13 13 0 0 1 0 25 h -60 a 13 13 0 0 1 0 -25 v -20 a 30 30 0 0 1 30 -30" />
+    <path d="M 15 31 a 15 15 0 0 1 -30 0" />
+  </g>
+</svg>
+{:else if icon ==="bookmark"}
+
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path d="M -24 -46 h 48 a 8 8 0 0 1 8 8 v 84 l -32 -24 -32 24 v -84 a 8 8 0 0 1 8 -8" />
+  </g>
+</svg>
+
+{:else if icon ==="repository"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M -30 -46 h 60 a 8 8 0 0 1 8 8 v 70 a 8 8 0 0 1 -8 8 h -21 m -27 0 h -12 a 8 8 0 0 1 -8 -8 v -70 a 8 8 0 0 1 8 -8 v 65 h 68" />
+    <path d="M -15 -30 h 2" />
+    <path d="M -15 -15 h 2" />
+    <path d="M -15 0 h 2" />
+    <path stroke-width="7" d="M -15 30 v 16.5 l 10 -5 10 5 v -16.5 z" />
+  </g>
+</svg>
+{:else if icon === "branch"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="15" cx="-14" cy="-31" />
+    <circle r="15" cx="-14" cy="31" />
+    <circle stroke-width="7" r="12" cx="30" cy="-23" />
+    <path d="M -14 16 V -16" />
+    <path d="M -14 16 a 12 12 0 0 1 12 -12 h 18 a 14 14 0 0 0 14 -14" />
+  </g>
+</svg>
+{:else if icon === "pull-request"}
+
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="15" cx="-24" cy="-31" />
+    <circle r="15" cx="-24" cy="31" />
+    <circle r="15" cx="24" cy="31" />
+    <path d="M -24 16 V -16" />
+    <path d="M 24 16 V -16 q 0 -15 -20 -20" />
+    <path transform="translate(4 -36) rotate(-20)" d="M 0 0 h 18" />
+    <path transform="translate(4 -36) rotate(70)" d="M 0 0 h 18" />
+  </g>
+</svg>
+
+{:else if icon === "code"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M -24 -22 l -22 22 22 22" />
+    <path d="M 10 -30 L -10 30" />
+    <path transform="rotate(180)" d="M -24 -22 l -22 22 22 22" />
+  </g>
 </svg>
 {/if}

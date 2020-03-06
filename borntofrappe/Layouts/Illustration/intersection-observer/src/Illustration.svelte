@@ -7,27 +7,14 @@
     accent: ["hsl(340, 65%, 20%)", "hsl(340, 70%, 30%)", "hsl(340, 75%, 45%)", "hsl(342, 80%, 50%)", "hsl(340, 90%, 55%)", "hsl(337, 92%, 65%)", "hsl(335, 95%, 70%)", "hsl(332, 95%, 80%)", "hsl(325, 100%, 90%)"]
   };
 
-  // to each planet associate a series of satellites
-  const planets = [
-    {
-      name: "freecodecamp",
-      satellites: ["html", "css", "js", "svg", "svelte"]
-    },
-    {
-      name: "codepen",
-      satellites: ["react", "node", "matter", "json", "git", "d3"]
-    }
-  ];
-
   // svg appearance
   export let planet;
   export let index;
-
-  const { satellites } = planets.find(({ name }) => name === planet);
+  export let satellites = [];
 
   const colors = index % 2 === 0 ? palette.primary : palette.accent;
   const tilt = index % 2 === 0 ? 20 : -20;
-  const clockwise = index % 2 === 0 ? true : false;
+  const clockwise = index % 2 !== 0;
 
   // intersection observer api
   let illustration;
@@ -52,7 +39,7 @@
     display: block;
     width: 100vmin;
     height: auto;
-    max-width: 30em;
+    max-width: 35em;
   }
 
   svg.observed .rotate {
