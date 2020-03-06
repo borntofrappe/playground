@@ -14,9 +14,7 @@ More than a blog. Mostly a blog.
 
 - [ ] better copy for the landing page and the blog layout
 
-- [ ] consider a repeating background for the landing page (stars, particles, shapes)
-
-- [x] replicate the illustration with svelte and the intersection observer api (to animate the orbit)
+- [ ] review icons and optimize with SVGomg
 
 ## TODOS Later
 
