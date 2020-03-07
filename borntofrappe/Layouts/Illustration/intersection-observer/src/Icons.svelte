@@ -3,12 +3,11 @@
   export let size = 32;
 </script>
 
-{#if icon ==="search"}
+{#if icon ==="research"}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-    <circle r="36" cx="-10" cy="-10" />
-    <path stroke-width="10" d="M 45 45 l -22 -22" />
-    <path stroke-width="4" d="M 23 23 l -5 -5" />
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path stroke-width="8" d="M -12 -46 h 24 a 4 4 0 0 1 0 8 h -4 v 30 l 18 25 c 8 10 20 30 0 30 h -54 c -20 0 -8 -20 0 -30 l 18 -25 v -30 h -4 a 4 4 0 0 1 0 -8" />
+    <path stroke-width="7" d="M -24 18 q 8 8 16 0 t 16 0 t 16 0" />
   </g>
 </svg>
 {:else if icon === "idea"}
@@ -26,8 +25,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
     <g transform="rotate(45)">
-      <path d="M -7 -55 h 14 a 8 8 0 0 1 8 8 v 10 h -30 v -10 a 8 8 0 0 1 8 -8" />
-      <path d="M -15 -24 v 74 l 15 15 15 -15 v -74 z" />
+      <path d="M -6 -46 h 12 a 8 8 0 0 1 8 8 v 8 h -28 v -8 a 8 8 0 0 1 8 -8" />
+      <path d="M -14 -18 v 52 l 14 12 14 -12 v -52 z" />
     </g>
   </g>
 </svg>
@@ -42,12 +41,12 @@
 {:else if icon ==="share"}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <g fill="currentColor">
-    <circle r="15" stroke="none" cx="22.5" cy="-35" />
-    <circle r="15" stroke="none" cx="-27.5" cy="0" />
-    <circle r="15" stroke="none" cx="22.5" cy="35" />
+    <circle r="15" stroke="none" cx="20" cy="-35" />
+    <circle r="15" stroke="none" cx="-30" cy="0" />
+    <circle r="15" stroke="none" cx="20" cy="35" />
   </g>
   <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke-width="10" d="M 22.5 -35 l -45 35 45 35" />
+    <path stroke-width="10" d="M 20 -35 l -45 35 45 35" />
   </g>
 </svg>
 
@@ -96,6 +95,52 @@
   </g>
 </svg>
 
+{:else if icon === 'briefcase'}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <path stroke-width="8" d="M -46 -20 a 8 8 0 0 1 8 -8 h 76 a 8 8 0 0 1 8 8 v 54 a 8 8 0 0 1 -8 8 h -76 a 8 8 0 0 1 -8 -8 z" />
+    <g stroke-width="7">
+      <path d="M -46 -8 a 80 80 0 0 0 92 0" />
+      <path d="M -20 -28 v -8 a 8 8 0 0 1 8 -8 h 24 a 8 8 0 0 1 8 8 v 8" />
+      <path d="M -8 4 h 16 v 16 h -16 z" />
+    </g>
+  </g>
+</svg>
+
+{:else if icon === 'abacus'}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="8">
+      <path d="M -42 30 h 84 a 4 4 0 0 1 0 8 h -84 a 4 4 0 0 1 0 -8" />
+      <path d="M -38 30 v -64" />
+      <path transform="scale(-1 1)" d="M -38 30 v -64" />
+    </g>
+    <g stroke-width="6">
+      <g>
+        <circle cx="-4" cy="-18" r="7" />
+        <circle cx="17" cy="-18" r="7" />
+        <path d="M -38 -18 h 25 m 18 0 h 3 m 18 0 h 10" />
+      </g>
+      <g transform="translate(0 25) scale(-1 1)">
+        <circle cx="-4" cy="-18" r="7" />
+        <circle cx="17" cy="-18" r="7" />
+        <path d="M -38 -18 h 25 m 18 0 h 3 m 18 0 h 10" />
+      </g>
+    </g>
+  </g>
+</svg>
+{:else if icon === 'backpack'}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="8" d="M -33 0 a 33 33 0 0 1 66 0 v 38 a 8 8 0 0 1 -8 8 h -50 a 8 8 0 0 1 -8 -8 z" />
+    <g stroke-width="7">
+      <path d="M -11 -35.5 a 11 11 0 0 1 22 0" />
+      <path d="M -17 -2 h 34 v 30 h -34 z m 0 18 h 30" />
+      <path d="M -33 5 h -5 q -8 0 -8 20 a 8 8 0 0 0 8 8 h 5" />
+      <path transform="scale(-1 1)" d="M -33 5 h -5 q -8 0 -8 20 a 8 8 0 0 0 8 8 h 5" />
+    </g>
+  </g>
+</svg>
 {:else if icon === 'html'}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <path fill="currentColor" d="M-40-50l5 85L0 50l35-15 5-85h-80zm14 17.5h52l-.65 11.051H-14.3l.65 11.049H24.7l-1.95 33.15L0 32.5l-22.75-9.75-.65-11.051h11.051l.325 5.525L0 22.426l12.025-5.202L13 .65h-37.05L-26-32.5z" />
@@ -221,4 +266,22 @@
     <path transform="rotate(180)" d="M -24 -22 l -22 22 22 22" />
   </g>
 </svg>
+
+{:else if icon === "rocket"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <g transform="rotate(0)">
+      <path stroke-width="8" d="M -0 -46 q 23 15 23 52 v 10 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 1 -8 -8 v -10 q 0 -37 23 -52" />
+
+      <g stroke-width="7">
+        <path d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
+        <path transform="scale(-1 1)" d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
+        <path d="M 0 24 c -10 5 -12 16 0 22.5 c 12 -6.5 10 -17.5 0 -22.5" />
+        <circle r="8" cy="-10" />
+        <path d="M -20 -10 h 10 m 20 0 h 10" />
+      </g>
+    </g>
+  </g>
+</svg>
+
 {/if}
