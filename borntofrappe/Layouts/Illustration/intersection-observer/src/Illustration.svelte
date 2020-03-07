@@ -12,7 +12,7 @@
   export let index;
   export let satellites = [];
 
-  const colors = index % 2 === 0 ? palette.primary : palette.accent;
+  const colors = index % 2 !== 0 ? palette.primary : palette.accent;
   const tilt = index % 2 === 0 ? 20 : -20;
   const clockwise = index % 2 !== 0;
 
@@ -64,7 +64,7 @@
   <svg bind:this="{illustration}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
     <defs>
       <clipPath id="clip-planet-{planet}">
-        <circle r="27" />
+        <circle r="30" />
       </clipPath>
 
       <mask id="mask-satellites-{planet}">
@@ -90,7 +90,7 @@
           {/each}
         </g>
       </g>
-      <circle r="27" fill="none" stroke="{colors[colors.length - 1]}" stroke-width="0.1" />
+      <circle r="30" fill="none" stroke="{colors[colors.length - 1]}" stroke-width="0.1" />
     </g>
 
     <!-- orbit -->

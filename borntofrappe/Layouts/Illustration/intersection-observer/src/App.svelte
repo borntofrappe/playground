@@ -6,23 +6,23 @@
   const planets = [
     {
       name: "blog",
-      satellites: ["research", "idea", "pencil", "copy", "share"]
+      satellites: ["experiment", "research", "idea", "writing", "rocket"]
     },
     {
       name: "freecodecamp",
-      satellites: ["hat", "certificate", "book", "briefcase", "backpack", "abacus"]
+      satellites: ["hat", "certificate", "briefcase", "backpack", "abacus"]
     },
     {
       name: "codepen",
-      satellites: ["html", "css", "js", "svg", "react", "d3"]
+      satellites: ["html", "css", "js", "react", "d3"]
     },
     {
       name: "twitter",
-      satellites: ["like", "comment", "retweet", "direct-message", "notification-bell", "bookmark"]
+      satellites: ["like", "comment", "retweet", "direct-message", "notification-bell"]
     },
     {
       name: "github",
-      satellites: ["repository", "branch", "pull-request", "code"]
+      satellites: ["repository", "branch", "pull-request", "bug", "code"]
     }
   ];
 

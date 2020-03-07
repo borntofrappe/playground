@@ -5,9 +5,28 @@
 
 {#if icon ==="research"}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="8">
+      <path d="M 36 -42 h -25 m -39 59 v 19 a 10 10 0 0 0 10 10 h 54 a 10 10 0 0 0 10 -10 v -68 a 10 10 0 0 0 -10 -10" />
+      <circle r="25" cx="-21" cy="-21" />
+      <path d="M 22 22 l -18 -18" />
+    </g>
+    <path stroke-width="4" d="M 5 5 l -5 -5" />
+    <g stroke-width="7">
+      <path d="M -12 -20 h 4 m 24 0 h 12" />
+      <path d="M 18 0 h 10" />
+      <path d="M -12 20 h 15" />
+    </g>
+  </g>
+</svg>
+{:else if icon === "experiment"}
+<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
-    <path stroke-width="8" d="M -12 -46 h 24 a 4 4 0 0 1 0 8 h -4 v 30 l 18 25 c 8 10 20 30 0 30 h -54 c -20 0 -8 -20 0 -30 l 18 -25 v -30 h -4 a 4 4 0 0 1 0 -8" />
-    <path stroke-width="7" d="M -24 18 q 8 8 16 0 t 16 0 t 16 0" />
+    <g stroke-width="8">
+      <path d="M -18 -46 h 36" />
+      <path d="M 10 -42 v 28 l 20 30 c 8 10 15 30 0 30 h -60 c -15 0 -8 -20 0 -30 l 20 -30 v -28" />
+    </g>
+    <path stroke-width="7" d="M -30 18 c 30 -18 30 18 60 0" />
   </g>
 </svg>
 {:else if icon === "idea"}
@@ -15,38 +34,38 @@
   <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
     <path d="M -16 14 a 32 32 0 1 1 32 0 v 3 a 8 8 0 0 1 -8 8 h -16 a 8 8 0 0 1 -8 -8 z" />
     <g stroke-width="7">
-      <path d="M -10 28 h 20" />
-      <path d="M -8 37.25 h 16" />
-      <path d="M -4 46.5 h 8" />
+      <path d="M -12 28 h 24" />
+      <path fill="currentColor" d="M -12 37.5 h 24 m -3 0 a 9 9 0 0 1 -18 0" />
     </g>
   </g>
 </svg>
-{:else if icon === "pencil"}
+{:else if icon === "rocket"}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
     <g transform="rotate(45)">
-      <path d="M -6 -46 h 12 a 8 8 0 0 1 8 8 v 8 h -28 v -8 a 8 8 0 0 1 8 -8" />
-      <path d="M -14 -18 v 52 l 14 12 14 -12 v -52 z" />
+      <path stroke-width="8" d="M -0 -46 q 23 15 23 52 v 10 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 1 -8 -8 v -10 q 0 -37 23 -52" />
+
+      <g stroke-width="7">
+        <path d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
+        <path transform="scale(-1 1)" d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
+        <path d="M 0 24 c -10 5 -12 16 0 22.5 c 12 -6.5 10 -17.5 0 -22.5" />
+        <circle r="9" cy="-11" />
+      </g>
     </g>
   </g>
 </svg>
-{:else if icon ==="copy"}
+{:else if icon === "writing"}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M 6 -46 h -36 a 10 10 0 0 0 -10 10 v 40" />
-    <path d="M 30 -30 h -44 a 10 10 0 0 0 -10 10 v 56 a 10 10 0 0 0 10 10 h 44 a 10 10 0 0 0 10 -10 v -56 a 10 10 0 0 0 -10 -10" />
-  </g>
-</svg>
-
-{:else if icon ==="share"}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g fill="currentColor">
-    <circle r="15" stroke="none" cx="20" cy="-35" />
-    <circle r="15" stroke="none" cx="-30" cy="0" />
-    <circle r="15" stroke="none" cx="20" cy="35" />
-  </g>
-  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke-width="10" d="M 20 -35 l -45 35 45 35" />
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="8">
+      <path d="M 16.5 -42 h -52.5 a 10 10 0 0 0 -10 10 v 68 a 10 10 0 0 0 10 10 h 54 a 10 10 0 0 0 10 -10 v -17.5" />
+      <path d="M 29 -35.5 l 17 17 -38 38 h -17 v -17 l 38 -38" />
+    </g>
+    <g stroke-width="7">
+      <path d="M -30 -20 h 25" />
+      <path d="M -30 0 h 10" />
+      <path d="M -30 20 h 10" />
+    </g>
   </g>
 </svg>
 
@@ -56,7 +75,7 @@
     <path stroke-width="8" d="M 0 -26 l -46 16 46 16 46 -16 z" />
     <g stroke-width="7">
       <path d="M -26 -1 v 20 a 52 52 0 0 0 52 0 v -20" />
-      <path fill="currentColor" d="M 40 -4 v 25 c -4 5 -5 12 0 14 c 5 -2 5 -9 0 -14 " />
+      <path fill="currentColor" d="M 40 -4 v 25 l 5 5 a 10 10 0 0 1 -10 0 l 5 -5" />
     </g>
   </g>
 </svg>
@@ -75,23 +94,6 @@
     <circle transform="scale(-1 1)" r="8" cx="-40" cy="-34" />
     <circle r="8" cx="-40" cy="24" />
     <circle transform="scale(-1 1)" r="8" cx="-40" cy="24" />
-  </g>
-</svg>
-{:else if icon === "book"}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
-    <g stroke-width="8">
-      <path d="M 0 -20 a 16 16 0 0 1 16 -16 h 22 a 8 8 0 0 1 8 8 v 50 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 0 -8 8 8 8 0 0 0 -8 -8 h -30 a 8 8 0 0 1 -8 -8 v -50 a 8 8 0 0 1 8 -8 h 22 a 16 16 0 0 1 16 16" />
-      <path d="M 0 -20 v 50" />
-    </g>
-    <g stroke-width="7">
-      <path d="M -30 -18 h 15" />
-      <path transform="scale(-1 1)" d="M -30 -18 h 15" />
-      <path d="M -30 -3 h 15" />
-      <path transform="scale(-1 1)" d="M -30 -3 h 15" />
-      <path d="M -30 12 h 15" />
-      <path transform="scale(-1 1)" d="M -30 12 h 15" />
-    </g>
   </g>
 </svg>
 
@@ -156,15 +158,6 @@
     d="M-50-50V50h39c-8.777 0-16-7.223-16-16v-5h10v5c0 3.373 2.627 6 6 6s6-2.627 6-6V0H5v34c0 8.777-7.223 16-16 16h21V40h15c2.82 0 5-2.18 5-5s-2.18-5-5-5c-8.225 0-15-6.775-15-15S16.775 0 25 0h13v10H25c-2.82 0-5 2.18-5 5s2.18 5 5 5c8.225 0 15 6.775 15 15s-6.775 15-15 15h25V-50H-50z"
   />
 </svg>
-{:else if icon === 'svg'}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g stroke="currentColor" stroke-width="8" fill="currentColor">
-    <path d="M0 0v36a5 5 0 010 10 5 5 0 010-10v-72a5 5 0 010-10 5 5 0 010 10" />
-    <path d="M0 0l-25.456 25.456a5 5 0 01-7.07 7.07 5 5 0 017.07-7.07l50.912-50.912a5 5 0 017.07-7.07 5 5 0 01-7.07 7.07" />
-    <path d="M0 0h-36a5 5 0 01-10 0 5 5 0 0110 0h72a5 5 0 0110 0 5 5 0 01-10 0" />
-    <path d="M0 0l-25.456-25.456a5 5 0 01-7.07-7.07 5 5 0 017.07 7.07l50.912 50.912a5 5 0 017.07 7.07 5 5 0 01-7.07-7.07" />
-  </g>
-</svg>
 {:else if icon === 'react'}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <g stroke="currentColor" fill="none" stroke-width="8">
@@ -216,14 +209,6 @@
     <path d="M 15 31 a 15 15 0 0 1 -30 0" />
   </g>
 </svg>
-{:else if icon ==="bookmark"}
-
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
-    <path d="M -24 -46 h 48 a 8 8 0 0 1 8 8 v 84 l -32 -24 -32 24 v -84 a 8 8 0 0 1 8 -8" />
-  </g>
-</svg>
-
 {:else if icon ==="repository"}
 <svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
   <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
@@ -267,18 +252,24 @@
   </g>
 </svg>
 
-{:else if icon === "rocket"}
-<svg xmlns="http://www.w3.org/2000/svg" width="{size}" height="{size}" viewBox="-50 -50 100 100">
-  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
-    <g transform="rotate(0)">
-      <path stroke-width="8" d="M -0 -46 q 23 15 23 52 v 10 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 1 -8 -8 v -10 q 0 -37 23 -52" />
+{:else}
 
-      <g stroke-width="7">
-        <path d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
-        <path transform="scale(-1 1)" d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
-        <path d="M 0 24 c -10 5 -12 16 0 22.5 c 12 -6.5 10 -17.5 0 -22.5" />
-        <circle r="8" cy="-10" />
-        <path d="M -20 -10 h 10 m 20 0 h 10" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="{size}" height="{size}">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="scale(0.8)">
+      <g stroke-width="8" fill="currentColor">
+        <path d="M -0 -18 h 9 a 15 15 0 0 1 15 15 v 15 a 24 24 0 0 1 -48 0 v -15 a 15 15 0 0 1 15 -15 h 9" />
+        <path d="M -0 -31 h 12 q 5 0 5 -5 0 -10 -17 -10 -17 0 -17 10 0 5 5 5 h 12" />
+      </g>
+      <g stroke-width="10" fill="none">
+        <path d="M -25 14 h -17" />
+        <path d="M -22 0 a 17 17 0 0 1 -17 -17" />
+        <path d="M -15 27 a 17 17 0 0 0 -17 17" />
+        <g transform="scale(-1 1)">
+          <path d="M -25 14 h -17" />
+          <path d="M -22 0 a 17 17 0 0 1 -17 -17" />
+          <path d="M -15 27 a 17 17 0 0 0 -17 17" />
+        </g>
       </g>
     </g>
   </g>

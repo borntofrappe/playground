@@ -6,17 +6,13 @@ More than a blog. Mostly a blog.
 
 ## TODOS
 
-- [ ] restructure icons folders
+- [ ] see icons README
 
-- [ ] optimize the icons with svgomg && node
-
-- [ ] design icon for the website, a running shoe
-
-- [ ] design logos for the website (see sapper's manifest)
-
-- [ ] png running shoe (favicon)
+- [ ] design icon logos for the website (see sapper's manifest)
 
 - [ ] write better copy for the sections of landing page and the header introducing the blog
+
+- [ ] redesign sections with repeating pattern and accent color
 
 ## TODOS Later
 
