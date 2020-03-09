@@ -1,5 +1,5 @@
 <script>
-  import Icons from "./Icons.svelte";
+  import Icon from "./Icon.svelte";
 
   // hard coded color palette
   const palette = {
@@ -9,14 +9,16 @@
 
   // svg appearance
   export let planet;
-  export let index;
   export let satellites = [];
 
+  // based on the index, switch between the two color palette, two tilt, two rotations
+  export let index;
   const colors = index % 2 !== 0 ? palette.primary : palette.accent;
   const tilt = index % 2 === 0 ? 20 : -20;
   const clockwise = index % 2 !== 0;
 
   // intersection observer api
+  // toggled a boolean according to whether or not the illustration intersects with the window
   let illustration;
   let observed = false;
   $: {
@@ -39,7 +41,7 @@
     display: block;
     width: 100vmin;
     height: auto;
-    max-width: 35em;
+    max-width: 40em;
   }
 
   svg.observed .rotate {
@@ -62,6 +64,7 @@
 
 <section>
   <svg bind:this="{illustration}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
+    <!-- be sure to provide a unique id for the clipPath and mask element -->
     <defs>
       <clipPath id="clip-planet-{planet}">
         <circle r="30" />
@@ -107,7 +110,7 @@
             <g transform="scale(-1 1)">
               <circle r="7.5" fill="none" stroke-width="1" stroke="currentColor" />
               <g transform="translate(-4 -4)">
-                <Icons icon="{satellite}" size="8" />
+                <Icon icon="{satellite}" size="8" />
               </g>
             </g>
           </g>

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
-  <g stroke-width="8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+  <g transform="scale(0.9)" stroke-width="8.8" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
     <path d="M -10 -30 h 34 a 10 10 0 0 1 10 10 v 45 l 12 -12 m -12 12 l -12 -12" />
     <path transform="rotate(180)" d="M -10 -30 h 34 a 10 10 0 0 1 10 10 v 45 l 12 -12 m -12 12 l -12 -12" />
   </g>

@@ -1,6 +1,6 @@
 # Intersection Observer
 
-A couple of notes on the project, especially given my lack of practice with the API. In the **res** folder you find a first implementation using vanilla JS. I found this one to be the a great starting point.
+A couple of notes on the project, especially due my lack of practice with the API. In the **res** folder you find a first implementation using vanilla JS. I found this one to be the a great starting point.
 
 ## res
 

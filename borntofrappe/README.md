@@ -8,6 +8,10 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [ ] revisit components
 
+  - [x] intersection observer
+
+  - [ ] navigation
+
 - [ ] build pages
 
 - [ ] design icon and logos for the website (png, favicon...)
@@ -15,6 +19,8 @@ Here, I try to ease the development/design of the website by focusing on indepen
 - [ ] write better copy
 
 - [ ] design a pattern with SVG syntax to fill the whitespace
+
+- [ ] write a script to optimize svg icons and create an object which assigns each icon to the a property
 
 ## Index
 

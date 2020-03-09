@@ -1,9 +1,13 @@
 # Illustration
 
-A small note on the contents of this folder:
+Refer to the **intersection-observer** when replicating the component.
 
-- **radialGradient**: first attempt at creating the illustration. It is left aside because of browser inconsistencies around the `radialGradient` element and its attributes.
+- **radialGradient** relates to a first attempt at creating the illustration. It is left aside because of browser inconsistencies with the `radialGradient` element and its attributes.
 
-- **clipPath**: cross browser friendlier solution, using a series of overlapping ellipses and a `clipPath` to show only the shapes in the boundaries of the planet. There
+- **clipPath** replicates the single illustration with a cross-browser friendlier solution. It uses a series of overlapping ellipses and a `clipPath` to show only the shapes in the boundaries of the planet.
 
-- **intersection-observer**: project re-creating the component with svelte and animating the illustration with the intersection observer API. This to have the orbit rotate only as the illustration is scrolled into view. The height is purposefully increased to allow for vertical scroll. The icons are set to match the different sections of the landing page.
+- **intersection-observer** takes the illustration, creates a Svelte component and animates the shapes using the intersection observer API.
+
+## Remember To
+
+- increase the duration of the animation. Currently, it is sped up just to show the property in action.

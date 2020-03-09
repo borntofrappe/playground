@@ -5,30 +5,32 @@
   // to each planet associate a series of satellites
   const planets = [
     {
-      name: "blog",
+      planet: "blog",
       satellites: ["experiment", "research", "idea", "writing", "rocket"]
     },
     {
-      name: "freecodecamp",
+      planet: "freecodecamp",
       satellites: ["hat", "certificate", "briefcase", "backpack", "abacus"]
     },
     {
-      name: "codepen",
+      planet: "codepen",
       satellites: ["html", "css", "js", "react", "d3"]
     },
     {
-      name: "twitter",
+      planet: "twitter",
       satellites: ["like", "comment", "retweet", "direct-message", "notification-bell"]
     },
     {
-      name: "github",
+      planet: "github",
       satellites: ["repository", "branch", "pull-request", "bug", "code"]
     }
   ];
 
 </script>
 
-{#each planets as {name, satellites}, i}
+<!-- filler component just to add whitespace around the illustrations -->
+{#each planets as {planet, satellites}, i}
   <Filler />
-  <Illustration planet="{name}" {satellites} index="{i}"  />
+  <!-- index changes the appearance of the illustration (color, tilt, rotation) -->
+  <Illustration {planet} {satellites} index="{i}"  />
 {/each}
