@@ -37,19 +37,40 @@
   --grey-7: hsl(0, 0%, 25%);
   --grey-8: hsl(0, 0%, 15%);
 
-  --link-transition-duration: 0.25s;
-  --heart-animation-duration: 2s;
   --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  --body-color: var(--primary-8);
+  --body-background: var(--grey-0);
+
+  --accent-color: var(--accent-5);
+
+  --selection-color: var(--grey-0);
+  --selection-background: var(--accent-4);
+
+  --transition-duration: 0.25s;
+  --transition-timing-function: var(--ease-in-out-sine);
+
+  --animation-duration: 2s;
+  --animation-timing-function: var(--ease-in-out-sine);
 }
+
 ::selection {
-  background: var(--accent-4);
-  color: var(--grey-0);
+  color: hsl(0, 0%, 97%);
+  color: var(--selection-color);
+  background: hsl(340, 90%, 55%);
+  background: var(--selection-background);
 }
+
 body {
-  color: var(--grey-8);
-  background: var(--grey-0);
   font-family: "Source Sans Pro", sans-serif;
-  /* properties added to push the footer to the bottom */
+  color: hsl(230, 30%, 10%);
+  color: var(--body-color);
+  background: hsl(0, 0%, 97%);
+  background: var(--body-background);
+
+  /*
+  just for this project
+  properties added to push the footer to the bottom */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -57,33 +78,35 @@ body {
 }
 
 footer {
-  color: var(--grey-0);
-  background: var(--primary-8);
-  text-align: center;
+  /* consider updating the accent color to a brighter hue */
+  --accent-color: var(--accent-4);
+
+  background: hsl(230, 30%, 10%);
+  background: var(--body-color);
   padding: 3rem 1rem 2rem;
-  /* ! margin to distance the footer from the content
-  useless here */
-  margin-top: 5rem;
-  /* absolute position the svg in the top center of the footer */
+  text-align: center;
+
   position: relative;
 }
 footer a {
   font-family: "Catamaran", sans-serif;
   font-weight: 500;
-  letter-spacing: 0.02rem;
-  color: inherit;
+  letter-spacing: 0.05rem;
+  color: hsl(0, 0%, 97%);
+  color: var(--body-background);
   text-decoration: none;
   border-bottom: 0.1rem solid var(--accent-4);
   transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: color var(--link-transition-duration) var(--ease-in-out-sine);
+  transition: color var(--transition-duration) var(--transition-timing-function);
+
+  outline-color: hsl(342, 80%, 50%);
+  outline-color: var(--accent-color);
 }
 /* on hover/focus update the color of the anchor link */
 footer a:hover,
 footer a:focus {
-  color: var(--accent-4);
-}
-footer a:focus {
-  outline-color: var(--accent-4);
+  color: hsl(342, 80%, 50%);
+  color: var(--accent-color);
 }
 
 /*
@@ -96,22 +119,24 @@ footer svg {
   left: 50%;
   width: 4rem;
   height: 4rem;
+  display: block;
   transform: translate(-50%, -50%);
   padding: 0.5rem;
-  color: var(--primary-8);
-  background: var(--grey-0);
+
+  background: hsl(0, 0%, 97%);
+  background: var(--body-background);
+
   border: 0.4rem solid currentColor;
   border-radius: 50%;
-  display: block;
   transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: color var(--link-transition-duration) var(--ease-in-out-sine);
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
 /* set up an animation on the group element housing the icon
 ! paused by default
 */
 footer svg g {
   animation: heart-beat 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
-  animation: heart-beat var(--heart-animation-duration) var(--ease-in-out-sine) infinite;
+  animation: heart-beat var(--animation-duration) var(--animation-timing-function) infinite;
   animation-play-state: paused;
 }
 
@@ -132,7 +157,8 @@ footer svg g {
 */
 footer a:hover + svg,
 footer a:focus + svg {
-  color: var(--accent-4);
+  color: hsl(342, 80%, 50%);
+  color: var(--accent-color);
 }
 footer a:hover + svg g,
 footer a:focus + svg g {
@@ -150,5 +176,6 @@ footer a:focus + svg g {
 
 /* unsure about this, but I feel like updating the color of the icon when hovering on the icon itself */
 footer svg:hover {
-  color: var(--accent-4);
+  color: hsl(342, 80%, 50%);
+  color: var(--accent-color);
 }

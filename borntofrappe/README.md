@@ -6,9 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] restructure layouts to pages and components
+- [ ] revisit components
 
-- [ ] see icons README
+- [ ] build pages
 
 - [ ] design icon and logos for the website (png, favicon...)
 
