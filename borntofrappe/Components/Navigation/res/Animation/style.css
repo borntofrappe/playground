@@ -16,7 +16,7 @@ body {
   background: hsl(0, 0%, 95%);
 
   /* for the duration, the [3-6] range seems fitting */
-  --main-animation-duration: s;
+  --main-animation-duration: 4s;
   --main-animation-delay: 0.25s;
 
   --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -50,7 +50,7 @@ path {
 
 @keyframes scale-back {
   90% {
-    transform: scale(0.7) rotate(20deg);
+    transform: scale(0.7) rotate(30deg);
   }
 }
 @keyframes add-offset {

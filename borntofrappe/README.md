@@ -6,11 +6,7 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [ ] revisit components
-
-  - [x] intersection observer
-
-  - [ ] navigation
+- [x] revisit components
 
 - [ ] build pages
 
@@ -20,7 +16,7 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [ ] design a pattern with SVG syntax to fill the whitespace
 
-- [ ] write a script to optimize svg icons and create an object which assigns each icon to the a property
+- [x] write a script to optimize svg icons and create an object which assigns each icon to the a property
 
 ## Index
 

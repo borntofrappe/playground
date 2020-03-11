@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>Illustration - States</title>
+    <title>Anchor Link States</title>
   </head>
 
   <body>
@@ -16,26 +16,19 @@
           <path d="M 0 -32 a 32 32 0 0 1 0 64 32 32 0 0 1 0 -64" stroke="hsl(0, 0%, 0%)" stroke-width="6" fill="hsl(0, 0%, 0%)" />
         </mask>
         <g>
-          <path id="icon-circle-top" d="M 0 -32 a 32 32 0 0 1 0 64 32 32 0 0 1 0 -64" stroke="currentColor" stroke-width="6" fill="none" />
-          <path id="icon-circle-bottom" d="M 0 -32 a 32 32 0 0 0 0 64 32 32 0 0 0 0 -64" stroke="currentColor" stroke-width="6" fill="none" />
+          <path id="icon-circle-top" d="M 0 32 a 32 32 0 0 1 0 -64 32 32 0 0 1 0 64" stroke="currentColor" stroke-width="6" fill="none" />
+          <path id="icon-circle-bottom" d="M 0 32 a 32 32 0 0 0 0 -64 32 32 0 0 0 0 64" stroke="currentColor" stroke-width="6" fill="none" />
 
           <!-- rotate this group in the [0, 360] range -->
           <g mask="url(#mask--text)" transform="rotate(0)">
             <!-- scale this group -->
             <g id="text" transform="scale(1)">
-              <!-- use the a different path according to the rotation
-              0-90 & 270 -360: top
-              90-180: bottom
-              -->
-              <!-- modify dy according to the path being used to position the text
-              top: -7
-              bottom: 14
+              <!-- use the a different path and dy attribute according to the rotation
+              0-90 & 270 -360: top && -7
+              90-180: bottom && 14
               -->
               <text text-anchor="middle" font-size="14" dy="-7">
-                <textPath href="#icon-circle-top" startOffset="0%">blog</textPath>
-              </text>
-              <text text-anchor="middle" font-size="14" dy="-7">
-                <textPath href="#icon-circle-top" startOffset="100%">blog</textPath>
+                <textPath href="#icon-circle-top" startOffset="50%">blog</textPath>
               </text>
             </g>
           </g>
