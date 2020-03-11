@@ -1,6 +1,6 @@
 <script>
-  import Icons from "./Icons.svelte";
-  // for the blog the link is actually to a relative path
+  import Icon from "./Icon.svelte";
+
   const links = [
     {
       name: "blog",
@@ -29,6 +29,7 @@
 
   const { length } = links;
 
+  // particles
   const rings = length + 1;
   const ring = length + 1;
   const rounds = Array(rings)
@@ -124,29 +125,33 @@
       {#each links as {name, href}, i}
       <g transform="rotate({360 / links.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / links.length * i * -1})">
         <a href="{href}" aria-label="{name}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{Math.floor(size / 3)}" height="{Math.floor(size / 3)}" x="-{Math.floor(size / 6)}" y="-{Math.floor(size / 6)}">
-            <g>
-              <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
-              <!-- rotate the text around the center -->
-              <g transform="rotate({360 / links.length * i})" mask="url(#mask-text)">
-                <g class="text">
-                  <text fill="currentColor" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12">
-                    <textPath href="#{360 / links.length * i > 90 && 360 / links.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
-                      {name}
-                    </textPath>
-                  </text>
+          <g transform="translate(-{size / 6} -{size / 6})">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{size / 3}" height="{size / 3}">
+              <g>
+                <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
+                <!-- rotate the text around the center -->
+                <g transform="rotate({360 / links.length * i})" mask="url(#mask-text)">
+                  <g class="text">
+                    <text fill="currentColor" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12" font-family="monospace">
+                      <textPath href="#{360 / links.length * i > 90 && 360 / links.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
+                        {name}
+                      </textPath>
+                    </text>
+                  </g>
                 </g>
-              </g>
 
-              <!-- re-scale the icon inside the wrapping path element -->
-              <g transform="scale(0.35) translate(-{iconSize / 2} -{iconSize / 2})">
-                <Icons icon="{name}" />
-              </g>
+                <!-- size the icon to cover a portion of the available viewBox
+              translate negative half to center
+              -->
+                <g transform="translate(-{iconSize / 6} -{iconSize / 6})">
+                  <Icon icon="{name}" size="{iconSize / 3}" />
+                </g>
 
-              <!-- overlapping circle to expand the click area -->
-              <circle r="50" opacity="0" />
-            </g>
-          </svg>
+                <!-- overlapping circle to expand the click area -->
+                <circle r="50" opacity="0" />
+              </g>
+            </svg>
+          </g>
         </a>
       </g>
       {/each}

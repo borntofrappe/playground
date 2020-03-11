@@ -9,4 +9,4 @@ svg {
 }
 ```
 
-In terms of design, the scale animation is introduced for browsers not supporting the `pathLength` attribute. Using JavaScript it is possible to retrieve the actual length of the paths, but it's easier to provide a different animation. In browsers supporting the features, this makes for a secondary, supporting animation.
+In terms of design, the scale animation is introduced for browsers not supporting the `pathLength` attribute. Using JavaScript, it is possible to retrieve the actual length of the paths, but it's easier to provide a different animation. In browsers supporting the features, this makes for a supporting animation.
