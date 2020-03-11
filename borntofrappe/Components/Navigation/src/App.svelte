@@ -74,8 +74,7 @@
 
       <!-- mask to show the text only as it exceeds the path element encircling the icons -->
       <mask id="mask-text">
-        <!-- <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" /> -->
-        <use transform="scale(2)" href="#path" fill="hsl(0, 0%, 100%)" />
+        <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" />
         <use href="#path" fill="hsl(0, 0%, 0%)" />
       </mask>
 
@@ -96,7 +95,7 @@
     <g mask="url(#mask-icons)">
       <g class="loaded">
         {#each rounds as {delay, translate, round, opacity}}
-        <g class="loading" style="animation-delay: {delay}s;">
+        <g>
           {#each round as {scale, rotate}}
           <g transform="rotate({rotate}) translate(0 {translate}) rotate(-{rotate})">
             <circle r="1" transform="scale({scale})" />
@@ -112,7 +111,7 @@
     -->
     <g class="loading">
       <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-        <circle transform="scale(-1 1) rotate(-90)" r="46" stroke-width="8" pathLength="1" />
+        <circle r="46" stroke-width="8" />
         <path d="M -20 -0 l 15 15 25 -25" stroke-width="10" pathLength="1" />
       </g>
     </g>
@@ -168,9 +167,12 @@
     /* see **Loading Animation** for the animation
     ease-in-out-back is added for the group showing the icons
     */
-    --duration: 5s;
-    --jump: 0.35s;
-    --pop: 0.5s;
+    --transition-duration: 0.35s;
+    --main-animation-duration: 3s;
+    --main-animation-delay: 0.25s;
+    --support-animation-duration: 0.3s;
+    --support-animation-delay: var(--main-animation-duration);
+
     --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -184,27 +186,22 @@
     margin: auto;
   }
   svg .loading {
-    animation: scale-back 5s 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: scale-back var(--duration) var(--jump) var(--ease-out-back);
+    animation: scale-back 5s 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: scale-back var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back);
   }
 
-  svg .loading circle,
   svg .loading path {
     stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-  }
-  svg .loading circle {
-    animation: remove-offset 5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
-    animation: remove-offset var(--duration) var(--ease-in-cubic) forwards;
+    stroke-dashoffset: 0;
   }
   svg .loading path {
-    animation: remove-offset 0.35s 5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-    animation: remove-offset var(--jump) var(--duration) var(--ease-out-cubic) forwards;
+    animation: add-offset 0.35s 5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    animation: add-offset var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-cubic) forwards;
   }
 
   svg .loaded {
     animation: scale-up 0.5s 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-    animation: scale-up var(--pop) var(--duration) var(--ease-out-back) both;
+    animation: scale-up var(--support-animation-duration) var(--support-animation-delay) var(--ease-out-back) both;
   }
 
   /* for the hover/focus transition, update the color and scale of the icon */
@@ -212,7 +209,7 @@
     color: inherit;
     transform: scale(0.85);
     transition: color 0.35s linear, transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: color var(--jump) linear, transform var(--jump) var(--ease-in-out-back);
+    transition: color var(--transition-duration) linear, transform var(--transition-duration) var(--ease-in-out-back);
     outline: none;
     text-decoration: none;
   }
@@ -225,7 +222,7 @@
   a .text {
     transform: scale(0.5);
     transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: transform var(--jump) var(--ease-out-back);
+    transition: transform var(--transition-duration) var(--ease-out-back);
   }
   a:hover .text,
   a:focus .text {
@@ -246,15 +243,17 @@
   }
 
   @keyframes scale-back {
-    90%,
-    92% {
-      transform: scale(0.8);
+    90% {
+      transform: scale(0.7) rotate(15deg);
     }
   }
 
-  @keyframes remove-offset {
-    to {
+  @keyframes add-offset {
+    30% {
       stroke-dashoffset: 0;
+    }
+    95% {
+      stroke-dashoffset: 1;
     }
   }
 </style>
