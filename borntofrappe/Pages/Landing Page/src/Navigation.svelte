@@ -1,39 +1,32 @@
 <script>
-  import Icons from "./Icons.svelte";
+  import Icon from "./Icon.svelte";
   // for the blog the item is actually to a relative path
   export let items;
 
-  const size = 470;
-  const iconSize = 110;
+  const size = 480;
+  const iconSize = 100;
 
   const { length } = items;
 
-  const rings = length + 1;
-  const ring = length + 1;
-  const rounds = Array(rings)
+  const round = length + 1;
+  const rounds = length + 1;
+  const particles = Array(rounds)
     .fill("")
-    .map((v, indexRings) => {
-      const delay = indexRings * 0.1;
-      const translate = (size / 2.5 / rings) * (indexRings + 1);
-      const particles = ring * (indexRings + 1);
+    .map((v, indexRounds) => {
+      const delay = indexRounds * 0.1;
+      const translate = (size / 2.1 / rounds) * (indexRounds + 1);
+      const scale = (indexRounds + 1) ** 0.2;
 
-      const round = Array(particles)
+      const numberRounds = round * (indexRounds + 1);
+      const rotation = Array(numberRounds)
         .fill("")
-        .map((v, indexRing) => {
-          const scale = (indexRings + 1) ** 0.4;
-          const angle = 360 / particles;
-          const rotate = indexRings % 2 === 0 ? angle / 2 + angle * indexRing : angle * indexRing;
-
-          return {
-            scale,
-            rotate
-          };
-        });
+        .map((v, indexRound) => (round % 2 == 0 ? 360 / round / 2 + (360 / numberRounds) * indexRound : (360 / numberRounds) * indexRound));
 
       return {
         delay,
         translate,
-        round
+        scale,
+        rotation
       };
     });
 </script>
@@ -73,9 +66,9 @@
     <!-- group describing the particles as a backdrop -->
     <g mask="url(#mask-icons)">
       <g class="loaded">
-        {#each rounds as {delay, translate, round, opacity}}
+        {#each particles as {delay, translate, scale, rotation}}
         <g class="loading">
-          {#each round as {scale, rotate}}
+          {#each rotation as rotate}
           <g transform="rotate({rotate}) translate(0 {translate}) rotate(-{rotate})">
             <circle r="1" transform="scale({scale})" />
           </g>
@@ -100,29 +93,31 @@
       {#each items as item, i}
       <g transform="rotate({360 / items.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / items.length * i * -1})">
         <a href="#{item}" aria-label="{item}">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{Math.floor(size / 3)}" height="{Math.floor(size / 3)}" x="-{Math.floor(size / 6)}" y="-{Math.floor(size / 6)}">
-            <g>
-              <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
-              <!-- rotate the text around the center -->
-              <g transform="rotate({360 / items.length * i})" mask="url(#mask-text)">
-                <g class="text">
-                  <text fill="currentColor" font-family="monospace" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12">
-                    <textPath href="#{360 / items.length * i > 90 && 360 / items.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
-                      {item}
-                    </textPath>
-                  </text>
+          <g transform="translate(-{size / 6} -{size / 6})">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{size / 3}" height="{size / 3}">
+              <g transform="scale(0.9)">
+                <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
+                <!-- rotate the text around the center -->
+                <g transform="rotate({360 / items.length * i})" mask="url(#mask-text)">
+                  <g class="text">
+                    <text fill="currentColor" font-family="monospace" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12">
+                      <textPath href="#{360 / items.length * i > 90 && 360 / items.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
+                        {item}
+                      </textPath>
+                    </text>
+                  </g>
                 </g>
-              </g>
 
-              <!-- re-scale the icon inside the wrapping path element -->
-              <g transform="scale(0.35) translate(-{iconSize / 2} -{iconSize / 2})">
-                <Icons icon="{item}" size="{iconSize}" />
-              </g>
+                <!-- re-scale the icon inside the wrapping path element -->
+                <g transform="translate(-{iconSize / 6} -{iconSize / 6})">
+                  <Icon icon="{item}" size="{iconSize / 3}" />
+                </g>
 
-              <!-- overlapping circle to expand the click area -->
-              <circle r="50" opacity="0" />
-            </g>
-          </svg>
+                <!-- overlapping circle to expand the click area -->
+                <circle r="50" opacity="0" />
+              </g>
+            </svg>
+          </g>
         </a>
       </g>
       {/each}

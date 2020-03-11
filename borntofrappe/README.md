@@ -6,17 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] revisit components
+- [x] update pages
 
-- [ ] build pages
+- [ ] update font choices
 
 - [ ] design icon and logos for the website (png, favicon...)
 
 - [ ] write better copy
 
 - [ ] design a pattern with SVG syntax to fill the whitespace
-
-- [x] write a script to optimize svg icons and create an object which assigns each icon to the a property
 
 ## Index
 

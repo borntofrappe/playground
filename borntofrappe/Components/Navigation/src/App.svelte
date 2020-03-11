@@ -24,8 +24,8 @@
     }
   ];
 
-  const size = 470;
-  const iconSize = 110;
+  const size = 500;
+  const iconSize = 100;
 
   const { length } = links;
 
@@ -126,7 +126,7 @@
         <a href="{href}" aria-label="{name}">
           <g transform="translate(-{size / 6} -{size / 6})">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{size / 3}" height="{size / 3}">
-              <g>
+              <g transform="scale(0.9)">
                 <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
                 <!-- rotate the text around the center -->
                 <g transform="rotate({360 / links.length * i})" mask="url(#mask-text)">

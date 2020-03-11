@@ -8,9 +8,9 @@
   const links = [
     {
       name: "blog",
-      copy: "Where I take a moment to save my journey as an aspiring web developer, designer, long distance runner.",
+      copy: "I like to code. I'm making an effort to write about it.",
       link: {
-        href: '#',
+        href: '/blog',
         copy: 'Go to blog',
       }
     },
@@ -57,7 +57,7 @@
 
 {#each links as {name, copy, link}}
     <section id="{name}">
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <p>{copy}</p>
       <a href="{link.href}">
         {link.copy}
@@ -87,25 +87,26 @@
   section > * + * {
     margin-top: 0.75rem;
   }
-  section h1 {
+  section h2 {
     text-transform: capitalize;
-    font-size: 3.5rem;
-    font-family: "Catamaran", sans-serif;
+    font-size: 3.2rem;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 700;
   }
   section p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.5;
   }
   @media (max-width: 500px) {
-    section h1 {
-      font-size: 2.5rem;
+    section h2 {
+      font-size: 2.75rem;
     }
     section p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
   }
   section a {
-    font-family: "Catamaran", sans-serif;
+    font-family: "Maven Pro", sans-serif;
     font-weight: 500;
     font-size: 1rem;
     color: inherit;

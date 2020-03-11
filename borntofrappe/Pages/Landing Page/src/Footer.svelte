@@ -9,9 +9,8 @@
   }
 
   footer a {
-    font-family: "Catamaran", sans-serif;
+    font-family: "Maven Pro", sans-serif;
     font-weight: 500;
-    letter-spacing: 0.02rem;
     color: inherit;
     text-decoration: none;
     border-bottom: 0.1rem solid var(--accent-4);
