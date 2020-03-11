@@ -10,7 +10,8 @@ body {
 }
 
 svg {
-  width: 500px;
+  width: 100vmin;
+  max-width: 35rem;
   height: auto;
   display: block;
 }
@@ -21,6 +22,6 @@ svg {
 
 @keyframes scale {
   to {
-    transform: scale(0.5);
+    transform: scale(0.7);
   }
 }

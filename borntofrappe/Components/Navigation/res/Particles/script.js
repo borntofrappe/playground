@@ -1,21 +1,26 @@
-const size = 200;
-const ring = 10;
-const rings = 10;
+// the size of the particles is inversely proportional to the size of the `<svg>` element
+const size = 500;
 
-const rounds = Array(rings)
+// number of particles in the first round
+// each successive round considers n*round particles
+const round = 5;
+// number of rounds
+const rounds = 10;
+
+const particles = Array(rounds)
   .fill('')
   .map((v, indexRounds) => {
     const delay = indexRounds * 0.2;
-    const translate = (size / 2.5 / rings) * (indexRounds + 1);
+    const translate = (size / 2.1 / rounds) * (indexRounds + 1);
     const scale = (indexRounds + 1) ** 0.3;
 
-    const round = ring * (indexRounds + 1);
-    const rotate = Array(round)
+    const numberRounds = round * (indexRounds + 1);
+    const rotate = Array(numberRounds)
       .fill('')
       .map((v, indexRound) =>
-        indexRounds % 2 === 0
-          ? 360 / round / 2 + (360 / round) * indexRound
-          : (360 / round) * indexRound
+        round % 2 === 0
+          ? 360 / round / 2 + (360 / numberRounds) * indexRound
+          : (360 / numberRounds) * indexRound
       );
 
     return {
@@ -29,7 +34,7 @@ const rounds = Array(rings)
 const markup = `
   <svg viewBox="-${size / 2} -${size /
   2} ${size} ${size}" width="${size}" height="${size}">
-  ${rounds
+  ${particles
     .map(
       ({ delay, translate, scale, rotate }) => `
     <g class="scale" style="animation-delay: ${delay}s">

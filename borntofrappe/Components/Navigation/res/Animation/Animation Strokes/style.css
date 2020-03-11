@@ -6,22 +6,20 @@
 body {
   /* center in the viewport */
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
 
   /* the color is picked up through the currentColor value */
   color: hsl(0, 0%, 20%);
   background: hsl(0, 0%, 95%);
 
-  /* for the duration, the [4-6] range seems fitting, 6 being a tad too much */
-  --main-animation-duration: 4s;
+  /* for the duration, the [3-6] range seems fitting */
+  --main-animation-duration: 5s;
   --main-animation-delay: 0.25s;
   --support-animation-duration: 0.3s;
   --support-animation-delay: var(--main-animation-duration);
 
-  --ease-out-bacK: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -30,9 +28,14 @@ body {
 this to have the icon move slightly away, before coming back alongside the animation of the path
 */
 svg {
+  display: block;
+  width: 100vmin;
+  max-width: 10rem;
+  height: auto;
   animation: scale-back 5s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation: scale-back var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-bacK);
+  animation: scale-back var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-back);
 }
+
 /* hide the stroke of the circle & path element */
 circle,
 path {
@@ -48,7 +51,7 @@ circle {
   animation: remove-offset forwards var(--main-animation-duration) var(--ease-in-cubic);
 }
 path {
-  animation: remove-offset forwards 0.25s 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: remove-offset forwards 0.3s 5s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: remove-offset forwards var(--support-animation-duration) var(--support-animation-delay) var(--ease-out-cubic);
 }
 

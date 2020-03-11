@@ -15,8 +15,8 @@ body {
   color: hsl(0, 0%, 20%);
   background: hsl(0, 0%, 95%);
 
-  /* for the duration, the [4-6] range seems fitting, 6 being a tad too much */
-  --main-animation-duration: 4s;
+  /* for the duration, the [3-6] range seems fitting */
+  --main-animation-duration: s;
   --main-animation-delay: 0.25s;
 
   --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -29,7 +29,11 @@ body {
 this to have the icon move slightly away, before coming back alongside the animation of the path
 */
 svg {
-  animation: scale-back 5s 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
+  width: 100vmin;
+  max-width: 10rem;
+  height: auto;
+  animation: scale-back 5s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   animation: scale-back var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back);
 }
 path {
@@ -40,17 +44,17 @@ the timing function is to have the circle start slowly and end abruptly, almost 
 this last one starts fast and ends slow
 */
 path {
-  animation: add-offset forwards 0.25s 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: add-offset forwards 5s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: add-offset forwards var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-cubic);
 }
 
 @keyframes scale-back {
   90% {
-    transform: scale(0.7) rotate(15deg);
+    transform: scale(0.7) rotate(20deg);
   }
 }
 @keyframes add-offset {
-  30% {
+  35% {
     stroke-dashoffset: 0;
   }
   95% {
