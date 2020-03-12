@@ -50,7 +50,7 @@
 body {
   color: var(--primary-8);
   background: var(--grey-0);
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Hind Madurai", sans-serif;
   /* flex to push the footer at the bottom when not enough content is available */
   min-height: 100vh;
   display: flex;

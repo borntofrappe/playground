@@ -6,9 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update pages
+- [x] design sections component
 
-- [ ] update font choices
+- [x] update font choices (Hind Madurai for body)
+
+- [ ] document icons component. Important enough to warrant a separate folder
+
+- [ ] add illustration and sections to the landing page
 
 - [ ] design icon and logos for the website (png, favicon...)
 

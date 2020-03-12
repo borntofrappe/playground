@@ -12,18 +12,18 @@ SVG icons designed for the website. The syntax is improved with inkscape and svg
 
 ## Fonts
 
-| Section  | Typeface                    | Variants       |
-| -------- | --------------------------- | -------------- |
-| Headings | Maven Pro, sans-serif       | 500, 600, 700  |
-| Body     | Source Sans Pro, sans-serif | 400, 400i, 700 |
-| Code     | Fira Code, monospace        | 400            |
+| Section               | Typeface                 | Variants       |
+| --------------------- | ------------------------ | -------------- |
+| Headings, Nav, Footer | Maven Pro, sans-serif    | 500, 600, 700  |
+| Body                  | Hind Madurai, sans-serif | 400, 400i, 700 |
+| Code                  | Fira Code, monospace     | 400            |
 
 For testing, use one of the following embeds. For the website, consider a more robust/efficient solution.
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=Maven+Pro:500,600,700|Fira+Code|Source+Sans+Pro:400,400i,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro:500,600,700|Fira+Code|Hind+Madurai:400,400i,700&display=swap" rel="stylesheet" />
 ```
 
 ```css
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro:500,600,700|Fira+Code|Source+Sans+Pro:400,400i,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro:500,600,700|Fira+Code|Hind+Madurai:400,400i,700&display=swap");
 ```
