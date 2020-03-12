@@ -10,7 +10,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [x] update font choices (Hind Madurai for body)
 
-- [ ] document icons component. Important enough to warrant a separate folder
+- [x] document icons component. Important enough to warrant a separate folder
+
+- [ ] include new `icon.js` file in the components and pages
 
 - [ ] add illustration and sections to the landing page
 
