@@ -1,5 +1,5 @@
 <script>
-  import Icon from "./Icon.svelte";
+  import getIcon from "./icons.js";
 
   // hard coded color palette
   const palette = {
@@ -110,7 +110,7 @@
             <g transform="scale(-1 1)">
               <circle r="7.5" fill="none" stroke-width="1" stroke="currentColor" />
               <g transform="translate(-4 -4)">
-                <Icon icon="{satellite}" size="8" />
+                {@html getIcon(satellite, 8)}
               </g>
             </g>
           </g>

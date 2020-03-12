@@ -18,11 +18,11 @@
     },
     {
       planet: "twitter",
-      satellites: ["like", "comment", "retweet", "direct-message", "notification-bell"]
+      satellites: ["like", "comment", "retweet", "directMessage", "notificationBell"]
     },
     {
       planet: "github",
-      satellites: ["repository", "branch", "pull-request", "bug", "code"]
+      satellites: ["repository", "branch", "pullRequest", "bug", "code"]
     }
   ];
 

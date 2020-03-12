@@ -1,5 +1,5 @@
 <script>
-  import Icon from "./Icon.svelte";
+  import getIcon from "./icons.js";
 
   const links = [
     {
@@ -143,7 +143,7 @@
               translate negative half to center
               -->
                 <g transform="translate(-{iconSize / 6} -{iconSize / 6})">
-                  <Icon icon="{name}" size="{iconSize / 3}" />
+                  {@html getIcon(name, iconSize / 3)}
                 </g>
 
                 <!-- overlapping circle to expand the click area -->

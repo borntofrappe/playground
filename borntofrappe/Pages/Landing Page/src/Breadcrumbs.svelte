@@ -1,5 +1,5 @@
 <script>
-  import Icon from './Icon.svelte';
+  import getIcon from './icons.js';
   export let breadcrumbs = [];
   $: root = breadcrumbs.length === 0;
 </script>
@@ -9,7 +9,7 @@
   {#each breadcrumbs as href, i}
   <a href="/{breadcrumbs.slice(0, i + 1).join("/")}">
     <span>/ {href}</span>
-    <Icon icon="{href}" size="1.5em"/>
+    {@html getIcon(href)}
   </a>
   {/each}
 </nav>

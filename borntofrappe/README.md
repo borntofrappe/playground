@@ -6,19 +6,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] design sections component
+- [x] include new `icon.js` file in the components and pages
 
-- [x] update font choices (Hind Madurai for body)
+- [x] add illustration and sections to the landing page
 
-- [x] document icons component. Important enough to warrant a separate folder
+- [ ] update Design Guide/Icons (remember currentColor and default sizes)
 
-- [ ] include new `icon.js` file in the components and pages
-
-- [ ] add illustration and sections to the landing page
+- [ ] revisit navigation component and animation
 
 - [ ] design icon and logos for the website (png, favicon...)
 
-- [ ] write better copy
+- [ ] write copy for the landing page
 
 - [ ] design a pattern with SVG syntax to fill the whitespace
 

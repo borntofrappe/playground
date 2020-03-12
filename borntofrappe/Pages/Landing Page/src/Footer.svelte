@@ -4,7 +4,7 @@
     background: var(--primary-8);
     text-align: center;
     padding: 3rem 1rem 2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     position: relative;
   }
 

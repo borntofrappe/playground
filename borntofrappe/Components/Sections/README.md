@@ -2,6 +2,8 @@
 
 Design for the `<section>` elements for the "planets" showcased on the landing page.
 
+**Please note**: spacing properties differ from the ones in Pages/Landing Page, as I updated the layout to consider the more complex illustration.
+
 ## Layouts
 
 - use `float` properties to position the illustration to the side of the the `<p>` and `<a>` elements; this means the `<svg>` illustration needs to be positioned _before_ these elements in the markup
