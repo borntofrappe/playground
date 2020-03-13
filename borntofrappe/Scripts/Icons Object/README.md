@@ -24,6 +24,8 @@ node script
 
 - write the object to a local file
 
+- **update**: check if the object already contains an icon with the same name
+
 ## Why
 
 > does what

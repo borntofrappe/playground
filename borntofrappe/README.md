@@ -6,11 +6,7 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] include new `icon.js` file in the components and pages
-
-- [x] add illustration and sections to the landing page
-
-- [ ] update Design Guide/Icons (remember currentColor and default sizes)
+- [x] update Design Guide/Icons (remember currentColor and default sizes)
 
 - [ ] revisit navigation component and animation
 

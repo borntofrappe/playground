@@ -11,10 +11,13 @@ function readFiles(folder = '.') {
   svg.forEach(file => {
     const key = file.slice(0, -extname.length).split("-").map((v, i) => i === 0 ? v : `${v[0].toUpperCase()}${v.slice(1)}`).join("");
     const value = fs.readFileSync(`${folder}/${file}`, { encoding: 'utf-8'});
-    // remove unnecessary spaces to inline the syntax
-    icons[key] = value
-    .replace(/[\r\n]/g, "")
-    .replace(/\>\s+\</g, "><");
+    if(!icons[key]) {
+      icons[key] = value
+      .replace(/[\r\n]/g, "")
+      .replace(/\>\s+\</g, "><");
+    } else {
+      console.log(`Duplicate: ${folder}/${file}`);
+    }
   });
 
   const folders = files.filter(file => !path.extname(file));
