@@ -8,13 +8,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [x] update Design Guide/Icons (remember currentColor and default sizes)
 
-- [ ] revisit navigation component and animation
+- [x] revisit navigation component and animation
 
-- [ ] design icon and logos for the website (png, favicon...)
+- [x] design icon for the website (png)
 
 - [ ] write copy for the landing page
 
-- [ ] design a pattern with SVG syntax to fill the whitespace
+- [ ] consider decorations for the landing page
 
 ## Index
 

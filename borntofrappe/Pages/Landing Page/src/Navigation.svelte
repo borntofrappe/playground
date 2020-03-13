@@ -79,7 +79,7 @@
     </g>
 
     <g class="loading">
-      <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
         <circle transform="scale(-1 1) rotate(-90)" r="46" stroke-width="8" pathLength="1" />
         <path d="M -20 -0 l 15 15 25 -25" stroke-width="10" pathLength="1" />
       </g>

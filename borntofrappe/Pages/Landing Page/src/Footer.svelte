@@ -1,7 +1,10 @@
 <style>
   footer {
     color: var(--grey-0);
-    background: var(--primary-8);
+    background-color: var(--primary-8);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='hsl(0, 0%25, 0%25)' opacity='0.3' width='20' height='20' viewBox='-10 -10 20 20'%3E%3Ccircle id='dot' r='1' /%3E%3Cuse href='%23dot' transform='translate(10 10)' /%3E%3Cuse href='%23dot' transform='translate(-10 10)' /%3E%3Cuse href='%23dot' transform='translate(10 -10)' /%3E%3Cuse href='%23dot' transform='translate(-10 -10)' /%3E%3C/svg%3E");
+    background-size: 1rem;
+    background-position: -0.5rem -0.5rem;
     text-align: center;
     padding: 3rem 1rem 2rem;
     margin-top: 3rem;

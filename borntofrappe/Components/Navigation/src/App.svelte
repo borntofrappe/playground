@@ -30,32 +30,25 @@
   const { length } = links;
 
   // particles
-  const rings = length + 1;
-  const ring = length + 1;
-  const rounds = Array(rings)
+  const round = length + 1;
+  const rounds = length + 1;
+  const particles = Array(rounds)
     .fill("")
-    .map((v, indexRings) => {
-      const delay = indexRings * 0.1;
-      const translate = (size / 2.5 / rings) * (indexRings + 1);
-      const particles = ring * (indexRings + 1);
+    .map((v, indexRounds) => {
+      const delay = indexRounds * 0.2;
+      const translate = (size / 2.5 / rounds) * (indexRounds + 1);
+      const scale = (indexRounds + 1) ** 0.3;
 
-      const round = Array(particles)
+      const numberRounds = round * (indexRounds + 1);
+      const rotation = Array(numberRounds)
         .fill("")
-        .map((v, indexRing) => {
-          const scale = (indexRings + 1) ** 0.4;
-          const angle = 360 / particles;
-          const rotate = indexRings % 2 === 0 ? angle / 2 + angle * indexRing : angle * indexRing;
-
-          return {
-            scale,
-            rotate
-          };
-        });
+        .map((v, indexRound) => (round % 2 === 0 ? 360 / round / 2 + (360 / numberRounds) * indexRound : (360 / numberRounds) * indexRound));
 
       return {
         delay,
         translate,
-        round
+        scale,
+        rotation
       };
     });
 </script>
@@ -69,7 +62,7 @@
       the difference between the two boils down to the clockwise, counter-clockwise direction
       -->
       <path id="path" d="M 0 -32 a 32 32 0 0 1 0 64 32 32 0 0 1 0 -64" />
-      <path id="path-c" d="M 0 40 a 40 40 0 0 1 0 -80 40 40 0 0 1 0 80" />
+      <path id="path-c" d="M 0 39 a 39 39 0 0 1 0 -78 39 39 0 0 1 0 78" />
       <path id="path-cc" d="M 0 47 a 47 47 0 0 0 0 -94 47 47 0 0 0 0 94" />
 
       <!-- mask to show the text only as it exceeds the path element encircling the icons -->
@@ -94,9 +87,9 @@
     <!-- group describing the particles as a backdrop -->
     <g mask="url(#mask-icons)">
       <g class="loaded">
-        {#each rounds as {delay, translate, round, opacity}}
+        {#each particles as {delay, translate, scale, rotation}}
         <g>
-          {#each round as {scale, rotate}}
+          {#each rotation as rotate}
           <g transform="rotate({rotate}) translate(0 {translate}) rotate(-{rotate})">
             <circle r="1" transform="scale({scale})" />
           </g>
@@ -110,7 +103,7 @@
     see **Loading Animation**
     -->
     <g class="loading">
-      <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
         <circle r="46" stroke-width="8" />
         <path d="M -20 -0 l 15 15 25 -25" stroke-width="10" pathLength="1" />
       </g>
@@ -167,14 +160,14 @@
     /* see **Loading Animation** for the animation
     ease-in-out-back is added for the group showing the icons
     */
-    --transition-duration: 0.35s;
-    --main-animation-duration: 3s;
-    --main-animation-delay: 0.25s;
-    --support-animation-duration: 0.3s;
+    --transition-duration: 0.3s;
+    --main-animation-duration: 4.5s;
+    --main-animation-delay: 0.35s;
+    --support-animation-duration: 0.5s;
     --support-animation-delay: var(--main-animation-duration);
 
     --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-in-out-back: cubic-bezier(0.68, -0.5, 0.265, 1.55);
     --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
@@ -185,8 +178,11 @@
     display: block;
     margin: auto;
   }
+  svg text {
+    font-family: "Fira Code", monospace;
+  }
   svg .loading {
-    animation: scale-back 5s 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: scale-back 4.5s 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
     animation: scale-back var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back);
   }
 
@@ -195,12 +191,12 @@
     stroke-dashoffset: 0;
   }
   svg .loading path {
-    animation: add-offset 0.35s 5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    animation: add-offset 4.5s 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
     animation: add-offset var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-cubic) forwards;
   }
 
   svg .loaded {
-    animation: scale-up 0.5s 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    animation: scale-up 0.5s 4.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     animation: scale-up var(--support-animation-duration) var(--support-animation-delay) var(--ease-out-back) both;
   }
 
@@ -208,7 +204,7 @@
   a {
     color: inherit;
     transform: scale(0.85);
-    transition: color 0.35s linear, transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: color 0.35s linear, transform 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
     transition: color var(--transition-duration) linear, transform var(--transition-duration) var(--ease-in-out-back);
     outline: none;
     text-decoration: none;
@@ -221,7 +217,7 @@
   /* scale the group wrapping the text element to also show the label on hover/focus */
   a .text {
     transform: scale(0.5);
-    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
     transition: transform var(--transition-duration) var(--ease-out-back);
   }
   a:hover .text,
@@ -230,12 +226,13 @@
   }
 
   @keyframes scale-up {
-    from {
+    0%,
+    20% {
       transform: scale(0);
       opacity: 0;
       visibility: hidden;
     }
-    to {
+    100% {
       transform: scale(1);
       opacity: 1;
       visibility: visible;

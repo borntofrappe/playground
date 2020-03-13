@@ -12,11 +12,19 @@ function readFiles(folder = '.') {
     const key = file.slice(0, -extname.length).split("-").map((v, i) => i === 0 ? v : `${v[0].toUpperCase()}${v.slice(1)}`).join("");
     const value = fs.readFileSync(`${folder}/${file}`, { encoding: 'utf-8'});
     if(!icons[key]) {
-      icons[key] = value
-      .replace(/[\r\n]/g, "")
-      .replace(/\>\s+\</g, "><");
+      const syntax = value
+        .replace(/[\r\n]/g, "")
+        .replace(/\>\s+\</g, "><");
+
+      const path = `${folder}/${file}`;
+
+      icons[key] = {
+        syntax,
+        path,
+      };
+
     } else {
-      console.log(`Duplicate: ${folder}/${file}`);
+      console.log(`Duplicate icon: \x1b[33m${icons[key].path}\x1b[0m and \x1b[33m${folder}/${file}\x1b[0m`);
     }
   });
 
@@ -30,4 +38,4 @@ function readFiles(folder = '.') {
 readFiles();
 
 const entries = Object.entries(icons);
-fs.writeFileSync('icons.js', `const icons = {${entries.map(([key, value]) => `\n\t${key}: \`${value}\`,`).join("")}\n}`,  'utf-8');
+fs.writeFileSync('icons.js', `const icons = {${entries.map(([key, value]) => `\n\t${key}: \`${value.syntax}\`,`).join("")}\n}`,  'utf-8');
