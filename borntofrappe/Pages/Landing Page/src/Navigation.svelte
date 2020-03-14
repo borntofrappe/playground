@@ -133,7 +133,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-links: center;
+    align-items: center;
     --transition-duration: 0.35s;
   }
   svg {
