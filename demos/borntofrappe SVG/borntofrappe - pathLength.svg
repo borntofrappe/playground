@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+  <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle r="46" />
+    <path d="M -10 -15 q 0 -8 -8 -10" pathLength="1" stroke-dasharray="1 1.32" stroke-dashoffset="-0.32" />
+    <path d="M -10 -15 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" pathLength="1" stroke-dasharray="0.88 1.12" stroke-dashoffset="-0.07" />
+  </g>
+</svg>

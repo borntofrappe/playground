@@ -1,63 +1,81 @@
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+:root {
+  --animation-duration: 5s;
+  --timing-function-logo: cubic-bezier(0.68, -0.5, 0.265, 1.55); /* back in out */
+  --timing-function-b: cubic-bezier(0.445, 0.05, 0.55, 0.95); /* sine in out */
+  --timing-function-accent: cubic-bezier(0.215, 0.61, 0.355, 1); /* cubic ease-out */
+}
 body {
-  /* center in the viewport */
-  min-height: 100vh;
+  background: hsl(0, 0%, 97%);
+  color: hsl(230, 30%, 10%);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* the color is picked up through the currentColor value */
-  color: hsl(0, 0%, 20%);
-  background: hsl(0, 0%, 95%);
-
-  /* for the duration, the [3-6] range seems fitting */
-  --main-animation-duration: 4s;
-  --main-animation-delay: 0.25s;
-
-  --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  min-height: 100vh;
 }
 
-/* animate the scale of the SVG
-this to have the icon move slightly away, before coming back alongside the animation of the path
-*/
 svg {
-  display: block;
-  width: 100vmin;
-  max-width: 10rem;
+  width: 200px;
   height: auto;
-  animation: scale-back 5s 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  animation: scale-back var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back);
-}
-path {
-  stroke-dasharray: 1;
-}
-/* the circle and path element differ in most of the animation properties
-the timing function is to have the circle start slowly and end abruptly, almost as if launching the animation of the path
-this last one starts fast and ends slow
-*/
-path {
-  animation: add-offset forwards 5s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation: add-offset forwards var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-cubic);
+  display: block;
+  animation: transform-icon var(--animation-duration) var(--timing-function-logo) both;
 }
 
-@keyframes scale-back {
+#logo {
+  animation: transform-logo var(--animation-duration) var(--timing-function-logo) both;
+}
+
+#b {
+  animation: stroke-b var(--animation-duration) var(--timing-function-b) both;
+}
+
+#accent {
+  animation: stroke-accent var(--animation-duration) var(--timing-function-accent) both;
+}
+
+@keyframes transform-icon {
   90% {
-    transform: scale(0.7) rotate(30deg);
+    transform: scale(0.8) rotate(20deg);
   }
 }
-@keyframes add-offset {
-  35% {
+
+@keyframes transform-logo {
+  90% {
+    transform: scale(0.6) rotate(5deg);
+  }
+}
+
+@keyframes stroke-b {
+  0%,
+  20% {
     stroke-dashoffset: 0;
   }
-  95% {
-    stroke-dashoffset: 1;
+  92% {
+    /* stroke-dashoffset: 0.88; */
+    stroke-dashoffset: 114.2;
+  }
+  95%,
+  100% {
+    /* stroke-dashoffset: -0.07; */
+    stroke-dashoffset: -9.142;
+  }
+}
+
+@keyframes stroke-accent {
+  0%,
+  94.5% {
+    /* stroke-dashoffset: 1; */
+    stroke-dashoffset: 14.01;
+  }
+  98%,
+  100% {
+    /* stroke-dashoffset: -0.32; */
+    stroke-dashoffset: -4.5;
   }
 }

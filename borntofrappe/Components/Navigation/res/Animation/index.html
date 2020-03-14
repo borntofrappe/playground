@@ -5,16 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>Animation</title>
+    <title>borntofrappe.svg</title>
   </head>
   <body>
-    <!-- a circle surrounding a check mark -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="250" height="250">
-      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-        <circle r="46" stroke-width="8" />
-        <!-- pathLength to hide/show the stroke with values in the [0-1] range -->
-        <path d="M -20 -0 l 15 15 25 -25" stroke-width="10" pathLength="1" />
+    <!--
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="200" height="200">
+      <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <circle r="46" />
+        <path id="accent" d="M -10 -15 q 0 -8 -8 -10" pathLength="1" stroke-dasharray="1 1.32" stroke-dashoffset="-0.32" />
+        <path id="b" d="M -10 -15 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" pathLength="1" stroke-dasharray="0.88 1.12" stroke-dashoffset="-0.07" />
       </g>
     </svg>
+     -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="200" height="200">
+      <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <circle r="46" />
+        <g id="logo">
+          <path id="accent" d="M -10 -15 q 0 -8 -8 -10" stroke-dasharray="14.01 18.5" stroke-dashoffset="-4.5" />
+          <path id="b" d="M -10 -15 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" stroke-dasharray="114.2 146.28" stroke-dashoffset="-9.145" />
+        </g>
+      </g>
+    </svg>
+
+    <script src="script.js"></script>
   </body>
 </html>
