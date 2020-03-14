@@ -79,9 +79,12 @@
     </g>
 
     <g class="loading">
-      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-        <circle transform="scale(-1 1) rotate(-90)" r="46" stroke-width="8" pathLength="1" />
-        <path d="M -20 -0 l 15 15 25 -25" stroke-width="10" pathLength="1" />
+      <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <circle r="46" />
+        <g id="logo">
+          <path id="accent" d="M -10 -15 q 0 -8 -8 -10" stroke-dasharray="14.01 18.5" stroke-dashoffset="-4.5" />
+          <path id="b" d="M -10 -15 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" stroke-dasharray="114.2 146.28" stroke-dashoffset="-9.145" />
+        </g>
       </g>
     </g>
 

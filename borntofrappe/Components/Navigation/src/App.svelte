@@ -99,13 +99,16 @@
       </g>
     </g>
 
-    <!-- circle and check mark
-    see **Loading Animation**
+    <!-- custom logo
+    see **Animation**
     -->
     <g class="loading">
-      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-        <circle r="46" stroke-width="8" />
-        <path d="M -20 -0 l 15 15 25 -25" stroke-width="10" pathLength="1" />
+      <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+        <circle r="46" />
+        <g id="logo">
+          <path id="accent" d="M -10 -15 q 0 -8 -8 -10" stroke-dasharray="14.01 18.5" stroke-dashoffset="-4.5" />
+          <path id="b" d="M -10 -15 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" stroke-dasharray="114.2 146.28" stroke-dashoffset="-9.145" />
+        </g>
       </g>
     </g>
 
@@ -166,6 +169,7 @@
     --support-animation-duration: 0.5s;
     --support-animation-delay: var(--main-animation-duration);
 
+    --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --ease-in-out-back: cubic-bezier(0.68, -0.5, 0.265, 1.55);
     --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -182,22 +186,28 @@
     font-family: "Fira Code", monospace;
   }
   svg .loading {
-    animation: scale-back 4.5s 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
-    animation: scale-back var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back);
+    animation: transform-icon 4.5s 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
+    animation: transform-icon var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back) both;
   }
 
-  svg .loading path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 0;
+  svg .loading #logo {
+    animation: transform-logo 4.5s 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
+    animation: transform-logo var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back) both;
   }
-  svg .loading path {
-    animation: add-offset 4.5s 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-    animation: add-offset var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-cubic) forwards;
+
+  svg .loading #b {
+    animation: stroke-b 4.5s 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation: stroke-b var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-sine) both;
+  }
+
+  svg .loading #accent {
+    animation: stroke-accent 4.5s 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation: stroke-accent var(--main-animation-duration) var(--main-animation-delay) var(--ease-out-cubic) both;
   }
 
   svg .loaded {
-    animation: scale-up 0.5s 4.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-    animation: scale-up var(--support-animation-duration) var(--support-animation-delay) var(--ease-out-back) both;
+    animation: transform-icons 0.5s 4.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    animation: transform-icons var(--support-animation-duration) var(--support-animation-delay) var(--ease-out-back) both;
   }
 
   /* for the hover/focus transition, update the color and scale of the icon */
@@ -225,7 +235,7 @@
     transform: scale(1);
   }
 
-  @keyframes scale-up {
+  @keyframes transform-icons {
     0%,
     20% {
       transform: scale(0);
@@ -239,18 +249,40 @@
     }
   }
 
-  @keyframes scale-back {
+  @keyframes transform-icon {
     90% {
-      transform: scale(0.7) rotate(15deg);
+      transform: scale(0.8) rotate(20deg);
     }
   }
 
-  @keyframes add-offset {
-    30% {
+  @keyframes transform-logo {
+    90% {
+      transform: scale(0.6) rotate(5deg);
+    }
+  }
+
+  @keyframes stroke-b {
+    0%,
+    20% {
       stroke-dashoffset: 0;
     }
-    95% {
-      stroke-dashoffset: 1;
+    92% {
+      stroke-dashoffset: 114.2;
+    }
+    95%,
+    100% {
+      stroke-dashoffset: -9.142;
+    }
+  }
+
+  @keyframes stroke-accent {
+    0%,
+    94.5% {
+      stroke-dashoffset: 14.01;
+    }
+    98%,
+    100% {
+      stroke-dashoffset: -4.5;
     }
   }
 </style>

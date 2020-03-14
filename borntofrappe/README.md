@@ -10,11 +10,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [x] revisit navigation component and animation
 
-- [x] design icon for the website (png)
+- [x] design icon (svg)
+
+- [ ] design icon and logos (png)
 
 - [ ] write copy for the landing page
 
-- [ ] consider decorations for the landing page
+- [ ] consider decorations for the landing page (see svg icon for a frame of reference)
+
+- [ ] reconsider footer rectangular background (orbit, planet)
 
 ## Index
 
