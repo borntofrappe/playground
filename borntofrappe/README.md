@@ -6,13 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update Design Guide/Icons (remember currentColor and default sizes)
+- [x] design icon and logos (png)
 
-- [x] revisit navigation component and animation
-
-- [x] design icon (svg)
-
-- [ ] design icon and logos (png)
+- [ ] convert scripts to utils
 
 - [ ] write copy for the landing page
 

@@ -34,6 +34,8 @@ context.setLineDash([114.2, 146.28]);
 context.lineDashOffset = -9.145;
 context.stroke(b);
 
+
+
 const data = canvas.toDataURL('image/png');
 // console.log(data);
 
