@@ -41,7 +41,7 @@ const palette = [
 // pick a color
 const colors = palette[0];
 // pick a selection of icons
-const satellites = icons.slice();
+const satellites = icons.slice(4);
 // decide to tilt the planet right or not
 const tiltRight = false;
 
@@ -84,7 +84,7 @@ const markup = `
         </g>
         </g>
       </mask>
-      <circle r="27" fill="url(#gradient-planet)" />
+      <circle r="28" fill="url(#gradient-planet)" />
       <g mask="url(#mask-satellites)">
           <circle class="rotate" r="42.5" stroke-dasharray="1 2" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="0.5" />
       </g>

@@ -9,7 +9,7 @@ const icons = {
 };
 ```
 
-See **Scripts/Icons Object** to see how this object is generated.
+Refer to the **Utils** folder to see how this object is generated.
 
 `icons.js` describes the `icons` object, **and** it exports a function which takes two input:
 

@@ -160,20 +160,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* see **Loading Animation** for the animation
-    ease-in-out-back is added for the group showing the icons
-    */
-    --transition-duration: 0.3s;
+    /* see **Loading Animation** for the animation */
     --main-animation-duration: 4.5s;
     --main-animation-delay: 0.35s;
     --support-animation-duration: 0.5s;
     --support-animation-delay: var(--main-animation-duration);
-
-    --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    --ease-in-out-back: cubic-bezier(0.68, -0.5, 0.265, 1.55);
-    --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   svg {
     max-width: 600px;
@@ -221,7 +212,8 @@
   }
   a:hover,
   a:focus {
-    color: hsl(340, 80%, 55%);
+    color: hsl(342, 80%, 50%);
+    color: var(--accent-color);
     transform: scale(1);
   }
   /* scale the group wrapping the text element to also show the label on hover/focus */

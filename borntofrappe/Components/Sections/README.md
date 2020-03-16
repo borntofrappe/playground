@@ -2,7 +2,7 @@
 
 Design for the `<section>` elements for the "planets" showcased on the landing page.
 
-**Please note**: spacing properties differ from the ones in Pages/Landing Page, as I updated the layout to consider the more complex illustration.
+**Please note**: margin properties differ from the ones in Pages/Landing Page, as I updated the layout to consider the more complex illustration.
 
 ## Layouts
 

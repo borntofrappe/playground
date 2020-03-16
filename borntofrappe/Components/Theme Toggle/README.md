@@ -1,5 +1,3 @@
-**Notice**: at the time of writing there are no plans to incorporate this design in the website
+**Notice**: at the time of writing there are no plans to incorporate this project in the website.
 
-# Theme Toggle
-
-Proof of concept to switch between color palettes.
+It describes a first attempt to create a light/dark theme toggle, but it this not under development.

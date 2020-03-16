@@ -4,19 +4,10 @@ Navigation at the top of every page, highlighting the current position on the we
 
 ## Layout
 
-```code
-borntofrappe / blog / blog-post
+> borntofrappe / blog / blog-post
 
-  ^^^^^^^    ^^^^^^^
-  show       include
-  by         a
-  default    slash
-```
+- show **borntofrappe** by default
 
-## Remember To
+- for each additional route add a slash `/` followed by the route's name
 
-- provide a fallback for custom properties
-
-- if available, add an icon
-
-  - add a default size of 22x22
+- if available, provide a matching icon _after_ the route's name. Default size `22`

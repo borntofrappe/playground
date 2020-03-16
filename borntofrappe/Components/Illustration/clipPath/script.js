@@ -41,7 +41,7 @@ const palette = [
 // pick a color
 const colors = [...palette[0]].reverse();
 // pick a selection of icons
-const satellites = icons.slice();
+const satellites = icons.slice(4);
 // decide to tilt the planet right or not
 const tiltRight = false;
 
@@ -87,7 +87,7 @@ const markup = `
         </g>
 
         <!-- hide pixel rendering -->
-        <circle r="28" fill="none" stroke="${colors[colors.length - 1]}" stroke-width="0.1"/>
+        <circle r="28" fill="none" stroke="${colors[colors.length - 1]}" stroke-width="0.2"/>
       </g>
 
       <!-- planet -->

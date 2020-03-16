@@ -41,7 +41,7 @@
     display: block;
     width: 100vmin;
     height: auto;
-    max-width: 40em;
+    max-width: 30em;
   }
 
   svg.observed .rotate {
@@ -93,7 +93,7 @@
           {/each}
         </g>
       </g>
-      <circle r="30" fill="none" stroke="{colors[colors.length - 1]}" stroke-width="0.1" />
+      <circle r="30" fill="none" stroke="{colors[colors.length - 1]}" stroke-width="0.2" />
     </g>
 
     <!-- orbit -->

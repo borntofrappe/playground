@@ -6,13 +6,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] design icon and logos (png)
-
-- [x] add icons to design guide
-
-- [x] convert scripts to utils
-
 - [ ] review folder structure and projects
+
+  - [x] components
+
+  - [x] introduce global.css
+
+  - [ ] design guide
+
+  - [ ] pages
+
+  - [ ] utils
 
 - [ ] write copy for the landing page
 
@@ -22,18 +26,18 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## Index
 
+### Components
+
+Building blocks behind the website. Breadcrumbs, footer...
+
 ### Design Guide
 
-Systems governing the design of the website. Font choices, colors, icons.
+Systems governing the design of the website. Colors, icons...
 
 ### Pages
 
-Routes of the website.
-
-### Components
-
-Design for parts of the website.
+Routes of the website. Blog, blog post...
 
 ### Utils
 
-Utilities to set up the website and its features.
+Scripts and helper projects. Frontmatter markdown, icon maker...
