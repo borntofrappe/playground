@@ -16,27 +16,16 @@
 
 <style>
   nav {
-    width: 90vw;
     max-width: 40em;
+    width: 90vw;
     margin: 0 auto;
     padding: 1rem 0;
   }
-  /* flow?! */
-  nav.root {
-      position: absolute;
-      top: 0%;
-      left: 50%;
-      transform: translate(-50%, 0);
-  }
   nav a {
     font-family: "Maven Pro", sans-serif;
-    font-size: 0.9rem;
     font-weight: 700;
-    color: inherit;
+    font-size: 0.95rem;
     text-decoration: none;
-    transition: color 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    transition: color var(--transition-duration) var(--ease-in-out-sine);
-    outline-color: var(--accent-5);
     display: inline-flex;
     align-items: center;
   }
@@ -45,8 +34,11 @@
     width: 1.5em;
     height: auto;
   }
-  nav a:hover,
-  nav a:focus {
-    color: var(--accent-5);
+
+  nav.root {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 </style>

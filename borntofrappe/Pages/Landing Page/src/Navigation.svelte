@@ -141,25 +141,20 @@
     width: 100vmin;
     height: auto;
     display: block;
-    margin: auto;
   }
-  text {
+  svg text {
     font-family: "Fira Code", monospace;
   }
 
   /* for the hover/focus transition, update the color and scale of the icon */
   a {
-    color: inherit;
     transform: scale(0.85);
-    transition: color 0.35s linear, transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: color var(--transition-duration) linear, transform var(--transition-duration) var(--ease-in-out-back);
+    transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95), transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: color var(--transition-duration) var(--transition-timing-function), transform var(--transition-duration) var(--ease-in-out-back);
     outline: none;
-    text-decoration: none;
   }
   a:hover,
   a:focus {
-    color: hsl(340, 80%, 55%);
-    color: var(--accent-4);
     transform: scale(1);
   }
   /* scale the group wrapping the text element to also show the label on hover/focus */

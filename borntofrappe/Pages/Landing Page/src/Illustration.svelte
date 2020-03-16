@@ -36,32 +36,6 @@
   }
 </script>
 
-<style>
-  svg {
-    display: block;
-    max-width: 28em;
-    width: 100%;
-    height: auto;
-  }
-
-  svg.observed .rotate {
-    animation-play-state: running;
-  }
-  svg.clockwise .rotate {
-    animation-direction: reverse;
-  }
-  .rotate {
-    animation: rotate 100s linear infinite;
-    animation-play-state: paused;
-  }
-
-  @keyframes rotate {
-    to {
-      transform: rotate(-1turn);
-    }
-  }
-</style>
-
 <svg bind:this="{illustration}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
   <!-- be sure to provide a unique id for the clipPath and mask element -->
   <defs>
@@ -118,3 +92,29 @@
     {/each}
   </g>
 </svg>
+
+<style>
+  svg {
+    display: block;
+    max-width: 28em;
+    width: 100%;
+    height: auto;
+  }
+
+  svg.observed .rotate {
+    animation-play-state: running;
+  }
+  svg.clockwise .rotate {
+    animation-direction: reverse;
+  }
+  .rotate {
+    animation: rotate 100s linear infinite;
+    animation-play-state: paused;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(-1turn);
+    }
+  }
+</style>

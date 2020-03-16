@@ -87,143 +87,131 @@
 <Footer />
 
 <style>
-
-div {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-div:nth-of-type(even) {
-  --accent-5: var(--primary-4);
-}
-
-div section {
-  max-width: 42em;
-  width: 90vw;
-  margin: 4rem auto;
-}
-
-div section h2 {
-  font-family: "Maven Pro", sans-serif;
-  text-transform: capitalize;
-  font-size: 3rem;
-  text-align: center;
-}
-
-div :global(section > svg) {
-  float: left;
-  margin: 2rem 0;
-  margin-right: 2.5rem;
-  display: block;
-  max-width: 28em;
-  width: 100%;
-  height: auto;
-  color: var(--accent-5);
-}
-div:nth-of-type(even) :global(section > svg) {
-  float: right;
-  margin-right: initial;
-  margin-left: 2.5rem;
-}
-
-div section p {
-  line-height: 2;
-  margin: 2rem 0 1rem;
-  font-size: 1.1rem;
-}
-
-div section a {
-  font-family: "Maven Pro", sans-serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 0.2rem solid var(--accent-5);
-  transition: color 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: color var(--transition-duration) var(--ease-in-out-sine);
-
-  display: inline-flex;
-  flex-direction: row-reverse;
-  align-items: center;
-}
-div section a:hover,
-div section a:focus {
-  color: var(--accent-5);
-}
-div section a:focus {
-  outline-color: var(--accent-5);
-}
-div section a svg {
-  display: block;
-  width: auto;
-  height: 1em;
-  margin-right: 0.5rem;
-  transform: scaleX(-1);
-}
-
-div:nth-of-type(even) a {
-  flex-direction: row;
-}
-div:nth-of-type(even) a svg {
-  margin-right: initial;
-  margin-left: 0.5rem;
-  transform: initial;
-}
-
-div section a svg path {
-  transition: stroke-dashoffset 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: stroke-dashoffset var(--transition-duration) var(--ease-in-out-sine);
-}
-div section a:hover svg path,
-div section a:focus svg path {
-  stroke-dashoffset: 0;
-}
-
-@supports (shape-outside: circle()) {
-  div :global(section > svg) {
-    shape-outside: circle();
+  div {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   div:nth-of-type(even) {
-    text-align: right;
+    --accent-color: var(--primary-4);
   }
-}
 
-@media (max-width: 42rem) {
   div section {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    min-height: initial;
+    max-width: 42em;
+    width: 90vw;
+    margin: 4rem auto;
   }
 
   div section h2 {
-    text-align: initial;
-    font-size: 2.75rem;
+    text-transform: capitalize;
+    font-size: 3rem;
+    text-align: center;
   }
+
+  div :global(section > svg) {
+    float: left;
+    margin: 2rem 0;
+    margin-right: 2.5rem;
+    display: block;
+    max-width: 28em;
+    width: 100%;
+    height: auto;
+    color: hsl(342, 80%, 50%);
+    color: var(--accent-color);
+  }
+  div:nth-of-type(even) :global(section > svg) {
+    float: right;
+    margin-right: initial;
+    margin-left: 2.5rem;
+  }
+
   div section p {
-    text-align: initial;
-    font-size: 1rem;
+    line-height: 2;
+    margin: 2rem 0 1rem;
+    font-size: 1.1rem;
   }
+
   div section a {
-    flex-direction: row;
-    font-size: 1rem;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: inherit;
+    border-bottom: 0.2rem solid hsl(342, 80%, 50%);
+    border-bottom: 0.2rem solid var(--accent-color);
+
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
   }
+
   div section a svg {
+    display: block;
+    width: auto;
+    height: 1em;
+    margin-right: 0.5rem;
+    transform: scaleX(-1);
+  }
+
+  div:nth-of-type(even) a {
+    flex-direction: row;
+  }
+
+  div:nth-of-type(even) a svg {
     margin-right: initial;
     margin-left: 0.5rem;
     transform: initial;
   }
-  div :global(section > svg) {
-    order: 1;
-    align-self: center;
-    margin: initial;
-    max-width: 25em;
+
+  div section a svg path {
+    transition: stroke-dashoffset 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: stroke-dashoffset var(--transition-duration) var(--ease-in-out-sine);
   }
-}
+  div section a:hover svg path,
+  div section a:focus svg path {
+    stroke-dashoffset: 0;
+  }
 
+  @supports (shape-outside: circle()) {
+    div :global(section > svg) {
+      shape-outside: circle();
+    }
+    div:nth-of-type(even) {
+      text-align: right;
+    }
+  }
 
+  @media (max-width: 42rem) {
+    div section {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      min-height: initial;
+    }
 
-
+    div section h2 {
+      text-align: initial;
+      font-size: 2.75rem;
+    }
+    div section p {
+      text-align: initial;
+      font-size: 1rem;
+    }
+    div section a {
+      flex-direction: row;
+      font-size: 1rem;
+    }
+    div section a svg {
+      margin-right: initial;
+      margin-left: 0.5rem;
+      transform: initial;
+    }
+    div :global(section > svg) {
+      order: 1;
+      align-self: center;
+      margin: initial;
+      max-width: 25em;
+    }
+  }
 
 </style>

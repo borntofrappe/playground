@@ -12,9 +12,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
   - [x] introduce global.css
 
-  - [ ] design guide
+  - [x] design guide
 
-  - [ ] pages
+  - [x] pages
 
   - [ ] utils
 
