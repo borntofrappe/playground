@@ -8,7 +8,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [x] design icon and logos (png)
 
-- [ ] convert scripts to utils
+- [x] add icons to design guide
+
+- [x] convert scripts to utils
+
+- [ ] review folder structure and projects
 
 - [ ] write copy for the landing page
 
@@ -30,6 +34,6 @@ Routes of the website.
 
 Design for parts of the website.
 
-### Scripts
+### Utils
 
-JavaScript files which identify particular features in the build process.
+Utilities to set up the website and its features.
