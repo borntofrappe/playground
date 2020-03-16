@@ -1,0 +1,79 @@
+main {
+  max-width: 40em;
+  width: 90vw;
+  margin: 1rem auto;
+}
+/* vertical space between the articles */
+main > * + * {
+  margin-top: 2rem;
+}
+/* vertical space between the articles' content */
+article > * + * {
+  margin-top: 0.75rem;
+}
+
+article h2 {
+  font-size: 1.8rem;
+}
+
+article h2 a {
+  display: inline-flex;
+  align-items: center;
+}
+
+article h2 a svg {
+  width: 1.5em;
+  height: auto;
+}
+article time {
+  background: var(--accent-background);
+  border-left: 0.2rem solid var(--accent-color);
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+}
+article p {
+  line-height: 2;
+}
+
+/* keep the default accent only on the first article */
+article:not(:first-of-type) {
+  --accent-color: var(--primary-5);
+  --accent-background: var(--primary-0);
+}
+
+article:first-of-type h2 {
+  font-size: 2rem;
+}
+
+/* resize the headings and time element on smaller screens */
+@media (max-width: 30em) {
+  article h2 {
+    font-size: 1.5rem;
+  }
+  article time {
+    font-size: 0.9rem;
+  }
+  article:first-of-type h2 {
+    font-size: 1.8rem;
+  }
+  article > * + * {
+    margin-top: 0.75rem;
+  }
+}
+
+/* 15em column guarantees at most 2 columns */
+@supports (display: grid) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-gap: 2rem 1.75rem;
+  }
+  /* reset the vertical space, set with the grid-gap property */
+  main > * + * {
+    margin-top: initial;
+  }
+  /* stretch the first article across the viewport */
+  article:first-of-type {
+    grid-column: 1/-1;
+  }
+}

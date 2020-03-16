@@ -41,8 +41,6 @@ header p {
 }
 
 main {
-  /* paired with the min-height to push the footer at the bottom */
-  flex-grow: 1;
   max-width: 40em;
   width: 90vw;
   margin: 2rem auto 4rem;

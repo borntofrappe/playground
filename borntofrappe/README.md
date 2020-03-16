@@ -6,7 +6,7 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [ ] review folder structure and projects
+- [x] review folder structure and projects
 
   - [x] components
 
@@ -16,7 +16,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
   - [x] pages
 
-  - [ ] utils
+  - [x] utils
+
+- [ ] solve the sync-async mismatch between shiki and sapper
 
 - [ ] write copy for the landing page
 
