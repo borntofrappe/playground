@@ -6,15 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] footer's background: planet orbit
+- [ ] illustration-space: SVG between sections of the landing page
 
-- [ ] header's background: a series of stars?, milky way?
+- [ ] blog planet: replace rocket icon with something more topical
 
-- [ ] landing page background: rounded strokes? particles?
+- [ ] landing page: write copy for the different sections
 
-- [ ] solve the sync-async mismatch between shiki and sapper
+- [ ] blog: write copy for the section introducing the blog. Or remove it altogether
 
-- [ ] write copy for the landing page
+- [ ] markdown parser: solve the sync-async mismatch between shiki and sapper
 
 ## Index
 

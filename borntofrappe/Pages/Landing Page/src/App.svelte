@@ -62,8 +62,27 @@
 <Navigation {links} />
 
 {#each planets as {name, copy, link, satellites}, i}
+<svg class="space" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50">
+  <pattern id="pattern-{name}" viewBox="0 0 50 50" width="0.04" height="0.25">
+    <g fill="hsl(0, 0%, 100%)" stroke="none">
+      <circle r="0.6" cx="10" cy="20" />
+      <circle r="0.3" cx="40" cy="10" />
+      <circle r="0.5" cx="45" cy="30" />
+      <circle r="0.4" cx="5" cy="5" />
+      <circle r="0.2" cx="25" cy="40" />
+      <path d="M 20 10 a 1 1 0 0 0 1 -1 1 1 0 0 0 1 1 1 1 0 0 0 -1 1 1 1 0 0 0 -1 -1" />
+      <path d="M 30 30 a 1.2 1.2 0 0 0 1.2 -1.2 1.2 1.2 0 0 0 1.2 1.2 1.2 1.2 0 0 0 -1.2 1.2 1.2 1.2 0 0 0 -1.2 -1.2" />
+      <path d="M 5 40 a 0.8 0.8 0 0 0 0.8 -0.8 0.8 0.8 0 0 0 0.8 0.8 0.8 0.8 0 0 0 -0.8 0.8 0.8 0.8 0 0 0 -0.8 -0.8" />
+    </g>
+  </pattern>
+    <path fill="currentColor" d="M 0 0 c 80 0 80 15 160 15 c 50 0 50 -10 100 -10 v 20 h -60 v 25 c -80 0 -80 -15 -160 -15 c -50 0 -50 10 -100 10 v -20 h 60" />
+    <path fill="url(#pattern-{name})" opacity="0.4" d="M 0 0 c 80 0 80 15 160 15 c 50 0 50 -10 100 -10 v 20 h -60 v 25 c -80 0 -80 -15 -160 -15 c -50 0 -50 10 -100 10 v -20 h 60" />
+</svg>
   <div id="{name}">
+
     <section>
+
+
       <h2>{name}</h2>
 
       <Illustration planet="{name}" {satellites} index="{i}" />
@@ -87,6 +106,9 @@
 <Footer />
 
 <style>
+  :global(body) {
+    overflow-x: hidden;
+  }
   div {
     min-height: 100vh;
     display: flex;
@@ -143,6 +165,16 @@
     display: inline-flex;
     flex-direction: row-reverse;
     align-items: center;
+  }
+
+
+  svg.space {
+    display: block;
+    width: 100vw;
+    height: auto;
+  }
+  svg.space:nth-of-type(even) {
+    transform: rotate(0.5turn);
   }
 
   div section a svg {

@@ -1,4 +1,4 @@
-# Illustration
+# Illustration - Planet
 
 Refer to the **intersection-observer** when replicating the component.
 
@@ -7,7 +7,3 @@ Refer to the **intersection-observer** when replicating the component.
 - **clipPath** replicates the single illustration with a cross-browser friendlier solution. It uses a series of overlapping ellipses and a `clipPath` to show only the shapes in the boundaries of the planet.
 
 - **intersection-observer** takes the illustration, creates a Svelte component and animates the shapes using the intersection observer API.
-
-## Remember To
-
-- increase the duration of the animation. Currently, it is sped up just to show the property in action.

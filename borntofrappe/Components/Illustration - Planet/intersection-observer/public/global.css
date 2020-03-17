@@ -115,3 +115,12 @@ h2 {
 code {
   font-family: "Fira Code", monospace;
 }
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+}
