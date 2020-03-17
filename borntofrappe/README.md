@@ -6,25 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] review folder structure and projects
+- [x] footer's background: planet orbit
 
-  - [x] components
+- [ ] header's background: a series of stars?, milky way?
 
-  - [x] introduce global.css
-
-  - [x] design guide
-
-  - [x] pages
-
-  - [x] utils
+- [ ] landing page background: rounded strokes? particles?
 
 - [ ] solve the sync-async mismatch between shiki and sapper
 
 - [ ] write copy for the landing page
-
-- [ ] consider decorations for the landing page (see svg icon for a frame of reference)
-
-- [ ] reconsider footer rectangular background (orbit, planet)
 
 ## Index
 
