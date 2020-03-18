@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 *,
 *:before,
@@ -15,7 +15,7 @@ body {
   align-items: center;
   color: hsl(0, 0%, 15%);
   background: hsl(0, 0%, 97%);
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 button {

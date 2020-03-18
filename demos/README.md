@@ -4,8 +4,11 @@ Demos for which I intend to write a blog post.
 
 ## borntofrappe
 
-| title                | brief                                             |
-| -------------------- | ------------------------------------------------- |
-| CSS Animation Paused | animation and the `animation-play-state` property |
-| SVG Icon Set         | a node script to create an icon set               |
-| borntofrappe SVG     | Logo design and animation                         |
+| ✏️                   | 🔑                                  |
+| -------------------- | ----------------------------------- |
+| CSS Animation Paused | The `animation-play-state` property |
+| icons.js             | Creating an icon set                |
+| borntofrappe.png     | Fabricating a png icon              |
+| Playground           | Playful, branchless development     |
+
+<!-- ✏️🔑-->
