@@ -6,15 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [ ] illustration-space: SVG between sections of the landing page
+- [x] scratch illustration component
 
-- [ ] blog planet: replace rocket icon with something more topical
+- [x] pages/blog: write copy for the header
 
-- [ ] landing page: write copy for the different sections
+- [x] design guide/icons: update bug.svg
 
-- [ ] blog: write copy for the section introducing the blog. Or remove it altogether
+- [ ] pages/landing page: write copy for the different sections
 
-- [ ] markdown parser: solve the sync-async mismatch between shiki and sapper
+- [ ] utils/markdown parser: solve the sync-async mismatch between shiki and sapper
 
 ## Index
 
