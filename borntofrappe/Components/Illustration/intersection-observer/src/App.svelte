@@ -6,11 +6,11 @@
   const planets = [
     {
       planet: "blog",
-      satellites: ["experiment", "research", "idea", "writing", "rocket"]
+      satellites: ["idea", "write", "erase", "review", "publish"]
     },
     {
       planet: "freecodecamp",
-      satellites: ["hat", "certificate", "briefcase", "backpack", "abacus"]
+      satellites: ["abacus", "backpack", "hat", "certificate", "briefcase"]
     },
     {
       planet: "codepen",
@@ -22,7 +22,7 @@
     },
     {
       planet: "github",
-      satellites: ["repository", "branch", "pullRequest", "bug", "code"]
+      satellites: ["code", "repository", "branch", "pullRequest", ""]
     }
   ];
 

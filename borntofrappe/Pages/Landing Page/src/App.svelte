@@ -9,12 +9,12 @@
   const planets = [
     {
       name: "blog",
-      copy: "As an endless . Writing about my learning is the next logical step, elevating what I learned.",
+      copy: "Where I take a moment to save my journey as an aspiring developer, fledging designer, endless learner and long distance runner.",
       link: {
         href: '/blog',
         copy: 'Go to blog',
       },
-      satellites: ["experiment", "research", "idea", "writing", "rocket"]
+      satellites: ["idea", "write", "erase", "review", "publish"]
     },
     {
       name: "freecodecamp",
@@ -23,7 +23,7 @@
         href: 'https://www.freecodecamp.org/borntofrappe',
         copy: 'Admire certifications',
       },
-      satellites: ["hat", "certificate", "briefcase", "backpack", "abacus"]
+      satellites: ["abacus", "backpack", "hat", "certificate", "briefcase"]
     },
     {
       name: "codepen",
@@ -50,7 +50,7 @@
         href: 'https://github.com/borntofrappe',
         copy: 'Explore history',
       },
-      satellites: ["repository", "branch", "pullRequest", "bug", "code"]
+      satellites: ["code", "repository", "branch", "pullRequest", ""]
     }
   ];
 
@@ -68,7 +68,8 @@
 
       <Illustration planet="{name}" {satellites} index="{i}" />
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium corrupti magni possimus saepe quod at non nulla reprehenderit enim fugit vitae facere aperiam, magnam, maxime distinctio minima eligendi ab nisi!</p>
+      <!-- <p>{copy}</p> -->
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque corporis aspernatur recusandae alias totam dolor magni. Totam dolor minus corporis! Officiis porro beatae aut! Sit asperiores rem voluptates cumque!</p>
       <a href="{link.href}">
         {link.copy}
         <svg viewBox="-50 -50 100 100" width="30" height="30">

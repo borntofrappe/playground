@@ -15,7 +15,7 @@
   export let index;
   const colors = index % 2 !== 0 ? palette.primary : palette.accent;
   const tilt = index % 2 === 0 ? 20 : -20;
-  const clockwise = index % 2 !== 0;
+  const clockwise = index % 2 === 0;
 
   // intersection observer api
   // toggled a boolean according to whether or not the illustration intersects with the window

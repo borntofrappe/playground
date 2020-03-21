@@ -1,13 +1,13 @@
 <script>
-  import getIcon from './icons.js';
+  import getIcon from "./icons.js";
   export let breadcrumbs = [];
   $: root = breadcrumbs.length === 0;
 </script>
 
 <nav class:root aria-label="Breadcrumb navigation">
-  <a href="/">borntofrappe</a>
+  <a href="/">borntofrappe {@html getIcon("rocket")} </a>
   {#each breadcrumbs as href, i}
-  <a href="/{breadcrumbs.slice(0, i + 1).join("/")}">
+  <a href="/{breadcrumbs.slice(0, i + 1).join('/')}">
     <span>/ {href}</span>
     {@html getIcon(href)}
   </a>

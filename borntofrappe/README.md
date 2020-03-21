@@ -6,13 +6,19 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update footer background
+- [x] fix illustration rotation
 
-- [x] add miscellaneous icons
+- [x] update icons
 
-- [ ] pages/landing page: write copy for the different sections
+  - [x] illustration order
 
-- [ ] utils/markdown parser: solve the sync-async mismatch between shiki and sapper
+  - [x] blog redesign
+
+  - [x] rocket root navigation
+
+- [ ] write copy for the different sections of the landing page
+
+- [ ] solve the sync-async mismatch between shiki and sapper
 
 ## Index
 
