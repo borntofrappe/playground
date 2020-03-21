@@ -68,7 +68,7 @@
 
       <Illustration planet="{name}" {satellites} index="{i}" />
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis explicabo adipisci eaque placeat, voluptates non corporis quod quam hic deserunt?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium corrupti magni possimus saepe quod at non nulla reprehenderit enim fugit vitae facere aperiam, magnam, maxime distinctio minima eligendi ab nisi!</p>
       <a href="{link.href}">
         {link.copy}
         <svg viewBox="-50 -50 100 100" width="30" height="30">

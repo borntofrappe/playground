@@ -6,11 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] scratch illustration component
+- [x] update footer background
 
-- [x] pages/blog: write copy for the header
-
-- [x] design guide/icons: update bug.svg
+- [x] add miscellaneous icons
 
 - [ ] pages/landing page: write copy for the different sections
 
