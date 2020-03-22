@@ -6,15 +6,19 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add rocket to breadcrumb component
-
 - [x] experiment with landing page rocket
 
   - [x] anchor links companion
 
-  - [ ] offset path
+  - [x] offset path
 
-- [ ] review icon name convention
+  - [ ] offset path and intersection observer
+
+- [x] restructure components/landing page folder
+
+- [ ] reevaluate offset path. Consider replacing the animation with a fixed background
+
+- [ ] review icon naming convention
 
 - [ ] write copy for the different sections of the landing page
 

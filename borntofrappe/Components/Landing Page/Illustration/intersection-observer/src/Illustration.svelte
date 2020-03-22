@@ -98,7 +98,7 @@
 
     <!-- orbit -->
     <g mask="url(#mask-satellites-{planet})">
-      <circle class="rotate" r="42.5" stroke-dasharray="1 2" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="0.5" />
+      <circle class="rotate" r="42" stroke-dasharray="1 2" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="0.5" />
     </g>
 
     <!-- satellites -->
