@@ -6,15 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] fix illustration rotation
+- [x] add rocket to breadcrumb component
 
-- [x] update icons
+- [x] experiment with landing page rocket
 
-  - [x] illustration order
+  - [x] anchor links companion
 
-  - [x] blog redesign
+  - [ ] offset path
 
-  - [x] rocket root navigation
+- [ ] review icon name convention
 
 - [ ] write copy for the different sections of the landing page
 
