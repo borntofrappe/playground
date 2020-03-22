@@ -12,11 +12,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
   - [x] offset path
 
-  - [ ] offset path and intersection observer
+  - [x] offset path and intersection observer
 
 - [x] restructure components/landing page folder
 
-- [ ] reevaluate offset path. Consider replacing the animation with a fixed background
+- [ ] reevaluate `Rocket.svelte`. Consider not implementing the component and use instead a simple background in between the sections
 
 - [ ] review icon naming convention
 
