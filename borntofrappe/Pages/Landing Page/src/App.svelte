@@ -3,6 +3,7 @@
   import Navigation from "./Navigation.svelte";
   import Footer from "./Footer.svelte";
   import Illustration from "./Illustration.svelte";
+  import Link from "./Link.svelte";
 
   let breadcrumbs = [];
 
@@ -68,26 +69,9 @@
 
       <Illustration planet="{name}" {satellites} index="{i}" />
 
-      <!-- <p>{copy}</p> -->
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque corporis aspernatur recusandae alias totam dolor magni. Totam dolor minus corporis! Officiis porro beatae aut! Sit asperiores rem voluptates cumque!</p>
-      <a href="{link.href}">
-        {link.copy}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="42" height="42">
-          <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
-            <g transform="rotate({i % 2 === 0 ? -90 : 90})">
-              <path stroke-width="0" d="M -0 -46 q 23 15 23 52 v 10 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 1 -8 -8 v -10 q 0 -37 23 -52" />
-              <g stroke-width="7">
-                <path d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
-                <path transform="scale(-1 1)" d="M 23 6 h 2 a 12 12 0 0 1 12 12 v 6 h -21" />
-                <path d="M 0 24 c -10 5 -12 16 0 22.5 c 12 -6.5 10 -17.5 0 -22.5" />
-                <circle r="9" cy="-11" />
-              </g>
-              <path fill="none" stroke-width="8" d="M -0 -46 q 23 15 23 52 v 10 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 1 -8 -8 v -10 q 0 -37 23 -52" />
-            </g>
-          </g>
-        </svg>
-      </a>
 
+      <Link href="{link.href}" copy="{link.copy}" linkLeft="{i % 2 === 0}"/>
     </section>
   </div>
 {/each}
@@ -111,7 +95,7 @@
   div section {
     max-width: 42em;
     width: 90vw;
-    margin: 4rem auto;
+    margin: 2rem auto;
   }
 
   div section h2 {
@@ -143,73 +127,8 @@
     font-size: 1.1rem;
   }
 
-  div section a {
-    --transition-duration: 0.5s;
-    font-family: "Maven Pro", sans-serif;
-    font-weight: 600;
+  div section :global(a) {
     font-size: 1.25rem;
-    color: inherit;
-    /* replace with pseudo element */
-    outline: none;
-    position: relative;
-    /* margin-bottom: 2rem; */
-  }
-
-  div section a:after {
-    outline: 0.1rem solid currentColor;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    content: "";
-    opacity: 0;
-  }
-  div section a:focus:after {
-    opacity: 1;
-  }
-
-  div section a svg {
-    pointer-events: none;
-    margin: 0.5em 0.5rem;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 100%;
-    height: 1.5em;
-    transform: translate(-100%, -50%);
-    transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    transition: transform var(--transition-duration) var(--transition-timing-function);
-  }
-
-  div section a:hover svg,
-  div section a:focus svg {
-    transform: translate(0%, -50%);
-  }
-  div section a svg > g {
-    fill: hsl(0, 0%, 97%);
-    fill: var(--body-background);
-  }
-
-  div section a:before {
-    margin: 0.5em 0;
-    position: absolute;
-    top: 100%;
-    left: 0%;
-    height: 0.2rem;
-    width: 100%;
-    content: "";
-    background: currentColor;
-    transform-origin: 0% 50%;
-    transform: translate(0%, -50%) scale(0);
-    transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    transition: transform var(--transition-duration) var(--transition-timing-function);
-
-  }
-
-  div section a:hover:before,
-  div section a:focus:before {
-      transform: translate(0%, -50%) scale(1);
   }
 
   @supports (shape-outside: circle()) {
@@ -218,22 +137,6 @@
     }
     div:nth-of-type(even) {
       text-align: right;
-    }
-  }
-  @media (min-width: 42rem) {
-    div:nth-of-type(odd) section a svg {
-      transform: translate(100%, -50%);
-      right: 50%;
-      left: initial;
-    }
-
-    div:nth-of-type(odd) section a:before {
-        transform-origin: 100% 50%;
-    }
-
-    div:nth-of-type(odd) section a:hover svg,
-    div:nth-of-type(odd) section a:focus svg {
-      transform: translate(0%, -50%);
     }
   }
 
@@ -247,22 +150,18 @@
 
     div section h2 {
       text-align: initial;
-      font-size: 2.75rem;
+      font-size: 2.5rem;
     }
     div section p {
       text-align: initial;
       font-size: 1rem;
+      margin: 1rem 0;
     }
-    div section a {
-      flex-direction: row;
+    div section :global(a) {
       font-size: 1rem;
     }
-    div section a svg {
-      margin-right: initial;
-      margin-left: 0.5rem;
-      transform: initial;
-    }
-    div :global(section > svg) {
+    div :global(section > svg),
+    div:nth-of-type(even) :global(section > svg) {
       order: 1;
       align-self: center;
       margin: initial;

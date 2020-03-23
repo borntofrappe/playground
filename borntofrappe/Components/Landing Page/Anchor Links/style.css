@@ -38,7 +38,7 @@ a:before {
   position: absolute;
   top: 100%;
   left: 0%;
-  height: 0.2rem;
+  height: 0.1em;
   width: 100%;
   content: "";
   background: currentColor;
@@ -72,22 +72,21 @@ a:focus svg {
 }
 
 @media (min-width: 40rem) {
-  a.west:before {
+  a.left:before {
     transform-origin: 100% 50%;
   }
 
-  /* consider updating the SVG syntax instead os using CSS properties */
-  a.west svg > g {
+  a.left svg > g {
     transform: scaleX(-1);
   }
-  a.west svg {
+  a.left svg {
     transform: translate(100%, -50%);
     right: 50%;
     left: initial;
   }
   /* it seems necessary to repeat the syntax */
-  a.west:hover svg,
-  a.west:focus svg {
+  a.left:hover svg,
+  a.left:focus svg {
     transform: translate(0%, -50%);
   }
 }

@@ -97,8 +97,6 @@ a:nth-of-type(even) svg > g {
 
 Considering the implementation on the landing page website, I decided to update the design as follows:
 
-- a class dictates whether the rocket moves westwards (left to right by default)
+- a class dictates whether the rocket moves left or not (by default it does not)
 
-- a media query allows the rocket to move westwards only with a large enough width
-
-Consider aligning the anchor link to the right, even on thinner viewports.
+- a media query allows the rocket to move left only with a large enough width.

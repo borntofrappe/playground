@@ -138,7 +138,7 @@
   }
   svg {
     max-width: 40em;
-    width: 100vmin;
+    width: 100vw;
     height: auto;
     display: block;
   }

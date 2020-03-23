@@ -6,13 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] remove superfluous illustration
+- [x] add landing page/anchor links to landing page
 
-- [x] scrap the offset path project
+- [ ] restructure illustration component to use declarative properties (not index, but tilt, rotation...)
 
-- [x] review landing page/anchor links
-
-- [ ] add landing page/anchor links to landing page
+- [ ] rename illustration to planet, with name, satellites and other arguments
 
 - [ ] create a background for the different sections
 
