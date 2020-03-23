@@ -5,16 +5,19 @@ body {
   align-items: center;
   padding: 1rem;
 }
+
 a {
-  font-family: "Maven Pro", sans-serif;
-  --transition-duration: 0.5s;
-  position: relative;
-  font-weight: 700;
-  font-size: 1.5rem;
   margin-bottom: 4rem;
+  --transition-duration: 0.5s;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
   /* replace with :after pseudo element */
   outline: none;
+  position: relative;
 }
+
+/* outline */
 a:after {
   outline: 0.1rem solid currentColor;
   position: absolute;
@@ -29,21 +32,7 @@ a:focus:after {
   opacity: 1;
 }
 
-a svg {
-  margin: 0.5em 0.5rem;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 100%;
-  height: 1.5em;
-  transform: translate(-100%, -50%);
-  transition: transform var(--transition-duration) var(--transition-timing-function);
-}
-
-a svg > g {
-  fill: var(--body-background);
-}
-
+/* border bottom */
 a:before {
   margin: 0.5em 0;
   position: absolute;
@@ -57,33 +46,48 @@ a:before {
   transform: translate(0%, -50%) scale(0);
   transition: transform var(--transition-duration) var(--transition-timing-function);
 }
-
-a:hover svg,
-a:focus svg {
-  transform: translate(0%, -50%);
-}
-
 a:hover:before,
 a:focus:before {
   transform: translate(0%, -50%) scale(1);
 }
 
-a:nth-of-type(even):before {
-  transform-origin: 100% 50%;
+/* rocket */
+a svg {
+  pointer-events: none;
+  margin: 0.5em 0.5rem;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  height: 1.5em;
+  transform: translate(-50%, -50%);
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+a svg > g {
+  fill: var(--body-background);
+}
+a:hover svg,
+a:focus svg {
+  transform: translate(50%, -50%);
 }
 
-a:nth-of-type(even) svg > g {
-  transform: scaleX(-1);
-}
+@media (min-width: 40rem) {
+  a.west:before {
+    transform-origin: 100% 50%;
+  }
 
-a:nth-of-type(even) svg {
-  transform: translate(100%, -50%);
-  right: 50%;
-  left: initial;
-}
-
-/* it seems necessary to repeat the syntax */
-a:nth-of-type(even):hover svg,
-a:nth-of-type(even):focus svg {
-  transform: translate(0%, -50%);
+  /* consider updating the SVG syntax instead os using CSS properties */
+  a.west svg > g {
+    transform: scaleX(-1);
+  }
+  a.west svg {
+    transform: translate(100%, -50%);
+    right: 50%;
+    left: initial;
+  }
+  /* it seems necessary to repeat the syntax */
+  a.west:hover svg,
+  a.west:focus svg {
+    transform: translate(0%, -50%);
+  }
 }

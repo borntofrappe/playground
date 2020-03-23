@@ -1,3 +1,5 @@
+**Notice**: at the time of writing there are no plans to incorporate this project in the website.
+
 # Offset Path
 
 The idea is to use CSS properties to move the `rocket.svg` icon from side to side.
@@ -23,7 +25,3 @@ On second thought, the change in opacity is superfluous, in the moment in which 
   </g>
 </svg>
 ```
-
-## Update
-
-Considering the presence of the rocket in the sections, under the anchor link elements, I might deprecate this project and consider it simply good practice with Svelte, SVG and the intersection observer API.

@@ -6,17 +6,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] experiment with landing page rocket
+- [x] remove superfluous illustration
 
-  - [x] anchor links companion
+- [x] scrap the offset path project
 
-  - [x] offset path
+- [x] review landing page/anchor links
 
-  - [x] offset path and intersection observer
+- [ ] add landing page/anchor links to landing page
 
-- [x] restructure components/landing page folder
+- [ ] create a background for the different sections
 
-- [ ] reevaluate `Rocket.svelte`. Consider not implementing the component and use instead a simple background in between the sections
+- [ ] create a 404 page with an extra planet and the rocket
 
 - [ ] review icon naming convention
 
