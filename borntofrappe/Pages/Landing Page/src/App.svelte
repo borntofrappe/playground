@@ -2,10 +2,15 @@
   import Breadcrumbs from "./Breadcrumbs.svelte";
   import Navigation from "./Navigation.svelte";
   import Footer from "./Footer.svelte";
-  import Illustration from "./Illustration.svelte";
+  import Planet from "./Planet.svelte";
   import Link from "./Link.svelte";
 
   let breadcrumbs = [];
+
+  const palette = {
+    primary: ["hsl(230, 30%, 10%)", "hsl(225, 40%, 20%)", "hsl(225, 50%, 30%)", "hsl(225, 55%, 45%)", "hsl(222, 60%, 50%)", "hsl(220, 75%, 60%)", "hsl(210, 80%, 70%)", "hsl(205, 90%, 80%)", "hsl(205, 100%, 90%)"],
+    accent: ["hsl(340, 65%, 20%)", "hsl(340, 70%, 30%)", "hsl(340, 75%, 45%)", "hsl(342, 80%, 50%)", "hsl(340, 90%, 55%)", "hsl(337, 92%, 65%)", "hsl(335, 95%, 70%)", "hsl(332, 95%, 80%)", "hsl(325, 100%, 90%)"]
+  };
 
   const planets = [
     {
@@ -53,7 +58,15 @@
       },
       satellites: ["code", "repository", "branch", "pullRequest", ""]
     }
-  ];
+  ].map(({ name, copy, link, satellites }, index) => ({
+    name,
+    copy,
+    link,
+    satellites,
+    colors: index % 2 === 0 ? palette.accent : palette.primary,
+    tilt: index % 2 === 0 ? 20 : -20,
+    clockwise: index % 2 === 0,
+  }));
 
   const links = planets.map(({name}) => name);
 
@@ -62,16 +75,16 @@
 <Breadcrumbs {breadcrumbs} />
 <Navigation {links} />
 
-{#each planets as {name, copy, link, satellites}, i}
+{#each planets as {name, copy, link, satellites, colors, tilt, clockwise}}
   <div id="{name}">
     <section>
       <h2>{name}</h2>
 
-      <Illustration planet="{name}" {satellites} index="{i}" />
+      <Planet {name} {satellites} {colors} {tilt} {clockwise}  />
 
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque corporis aspernatur recusandae alias totam dolor magni. Totam dolor minus corporis! Officiis porro beatae aut! Sit asperiores rem voluptates cumque!</p>
 
-      <Link href="{link.href}" copy="{link.copy}" linkLeft="{i % 2 === 0}"/>
+      <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
     </section>
   </div>
 {/each}

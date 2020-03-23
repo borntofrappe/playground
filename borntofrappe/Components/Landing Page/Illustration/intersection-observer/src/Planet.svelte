@@ -1,28 +1,19 @@
 <script>
   import getIcon from "./icons.js";
 
-  // hard coded color palette
-  const palette = {
-    primary: ["hsl(230, 30%, 10%)", "hsl(225, 40%, 20%)", "hsl(225, 50%, 30%)", "hsl(225, 55%, 45%)", "hsl(222, 60%, 50%)", "hsl(220, 75%, 60%)", "hsl(210, 80%, 70%)", "hsl(205, 90%, 80%)", "hsl(205, 100%, 90%)"],
-    accent: ["hsl(340, 65%, 20%)", "hsl(340, 70%, 30%)", "hsl(340, 75%, 45%)", "hsl(342, 80%, 50%)", "hsl(340, 90%, 55%)", "hsl(337, 92%, 65%)", "hsl(335, 95%, 70%)", "hsl(332, 95%, 80%)", "hsl(325, 100%, 90%)"]
-  };
-
   // svg appearance
-  export let planet;
+  export let name;
   export let satellites = [];
-
-  // based on the index, switch between the two color palette, two tilt, two rotations
-  export let index;
-  const colors = index % 2 !== 0 ? palette.primary : palette.accent;
-  const tilt = index % 2 === 0 ? 20 : -20;
-  const clockwise = index % 2 === 0;
+  export let colors = ["hsl(0, 65%, 20%)", "hsl(0, 70%, 30%)", "hsl(0, 75%, 45%)", "hsl(2, 80%, 50%)", "hsl(0, 90%, 55%)", "hsl(-3, 92%, 65%)", "hsl(-5, 95%, 70%)", "hsl(-8, 95%, 80%)", "hsl(-15, 100%, 90%)"];
+  export let tilt = 0;
+  export let clockwise = Math.random() > 0.5;
 
   // intersection observer api
-  // toggled a boolean according to whether or not the illustration intersects with the window
-  let illustration;
+  // toggled a boolean according to whether or not the planet intersects with the window
+  let planet;
   let observed = false;
   $: {
-    if (window.IntersectionObserver && illustration) {
+    if (window.IntersectionObserver && planet) {
       const observer = new IntersectionObserver(
         entries => {
           entries.forEach(entry => {
@@ -31,7 +22,7 @@
         },
         { threshold: 0 }
       );
-      observer.observe(illustration);
+      observer.observe(planet);
     }
   }
 </script>
@@ -39,7 +30,7 @@
 <style>
   svg {
     display: block;
-    width: 100vmin;
+    width: 100vw;
     height: auto;
     max-width: 30em;
   }
@@ -63,14 +54,14 @@
 </style>
 
 <section>
-  <svg bind:this="{illustration}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
+  <svg bind:this="{planet}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
     <!-- be sure to provide a unique id for the clipPath and mask element -->
     <defs>
-      <clipPath id="clip-planet-{planet}">
+      <clipPath id="clip-planet-{name}">
         <circle r="30" />
       </clipPath>
 
-      <mask id="mask-satellites-{planet}">
+      <mask id="mask-satellites-{name}">
         <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" />
         <g fill="hsl(0, 0%, 0%)">
           <g class="rotate">
@@ -86,7 +77,7 @@
 
     <!-- planet -->
     <g transform="rotate({tilt})">
-      <g clip-path="url(#clip-planet-{planet})">
+      <g clip-path="url(#clip-planet-{name})">
         <g transform="translate(0 -70)">
           {#each colors as color, index}
           <ellipse stroke="none" fill="{color}" cx="0" cy="70" rx="{35 + (15 / colors.length * index)}" ry="30" transform="scale({1 - (0.6 / colors.length * index)})" />
@@ -97,7 +88,7 @@
     </g>
 
     <!-- orbit -->
-    <g mask="url(#mask-satellites-{planet})">
+    <g mask="url(#mask-satellites-{name})">
       <circle class="rotate" r="42" stroke-dasharray="1 2" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="0.5" />
     </g>
 

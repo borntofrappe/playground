@@ -8,9 +8,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [x] add landing page/anchor links to landing page
 
-- [ ] restructure illustration component to use declarative properties (not index, but tilt, rotation...)
+- [x] restructure illustration component to use declarative properties (not index, but tilt, rotation...)
 
-- [ ] rename illustration to planet, with name, satellites and other arguments
+- [x] rename illustration to planet, with name, satellites and other arguments
+
+- [x] update illustration/planet in the landing page
+
+- [ ] consider updating breadcrumb to map, navigation to galaxy. Silly, but more appropriate labels.
 
 - [ ] create a background for the different sections
 

@@ -148,3 +148,9 @@ I'll rewrite the syntax to be more concise, but to reiterate the API's logic.
 And it seems to work. Using a threshold of `0` as well, although it is more difficult to see the animation stop (look at the DOM tree to see the class being removed).
 
 I've decreased the duration of the animation to also make it more obvious. Scroll back, and it will start from the previous point.
+
+## Update
+
+Considering the implementation in the landing page, I updated the component so that its name and attributes are more meaningful. `Illustration.svelte` has now become `Planet.svelte`, and the styling applied through the index has now being moved to dedicated variables like `colors`, `tilt` and `clockwise`.
+
+This also makes it easier to provide default values where the arguments not included in the component, which perhaps opens up the possibility to use the component for a 404 page.
