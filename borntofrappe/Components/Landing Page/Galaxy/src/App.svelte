@@ -197,6 +197,7 @@
   }
 
   svg .loaded {
+    will-change: transform;
     animation: transform-icons 0.5s 4.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     animation: transform-icons var(--support-animation-duration) var(--support-animation-delay) var(--ease-out-back) both;
   }

@@ -6,19 +6,21 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add landing page/anchor links to landing page
+- [x] experiment with `subgrid` in the blog page. Works on firefox only
 
-- [x] restructure illustration component to use declarative properties (not index, but tilt, rotation...)
+- [x] consider updating the name of the components. footer -> home, navigation -> galaxy, breadcrumb -> map
 
-- [x] rename illustration to planet, with name, satellites and other arguments
+  - [x] update only navigation, given the bespoke nature of the component
 
-- [x] update illustration/planet in the landing page
+  - [x] keep footer and breadcrumb, given the more standard use case
 
-- [ ] consider updating breadcrumb to map, navigation to galaxy. Silly, but more appropriate labels.
+- [ ] add animation to landing page; consider prefers-reduced motion
 
 - [ ] create a background for the different sections
 
 - [ ] create a 404 page with an extra planet and the rocket
+
+- [ ] fix annoying :hover and :focus state on the footer; does not update
 
 - [ ] review icon naming convention
 

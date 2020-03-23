@@ -1,6 +1,6 @@
 <script>
   import Breadcrumbs from "./Breadcrumbs.svelte";
-  import Navigation from "./Navigation.svelte";
+  import Galaxy from "./Galaxy.svelte";
   import Footer from "./Footer.svelte";
   import Planet from "./Planet.svelte";
   import Link from "./Link.svelte";
@@ -68,12 +68,11 @@
     clockwise: index % 2 === 0,
   }));
 
-  const links = planets.map(({name}) => name);
-
+  const names = planets.map(({name}) => name);
 </script>
 
 <Breadcrumbs {breadcrumbs} />
-<Navigation {links} />
+<Galaxy {names} />
 
 {#each planets as {name, copy, link, satellites, colors, tilt, clockwise}}
   <div id="{name}">

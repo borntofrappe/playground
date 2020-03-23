@@ -1,12 +1,11 @@
 <script>
   import getIcon from "./icons.js";
-  // for the blog the link is actually to a relative path
-  export let links;
+  export let names;
 
   const size = 480;
   const iconSize = 100;
 
-  const { length } = links;
+  const { length } = names;
 
   const round = length + 1;
   const rounds = length + 1;
@@ -55,8 +54,8 @@
         <rect x="-{size / 2}" y="-{size / 2}" width="{size}" height="{size}" fill="hsl(0, 0%, 100%)" />
         <circle r="46" fill="hsl(0, 0%, 0%)" />
 
-        {#each links as link, i}
-        <g transform="rotate({360 / links.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / links.length * i * -1})">
+        {#each names as name, i}
+        <g transform="rotate({360 / names.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / names.length * i * -1})">
           <use href="#path" transform="scale(1.4)" fill="hsl(0, 0%, 0%)" />
         </g>
         {/each}
@@ -93,19 +92,19 @@
     -->
     <g class="loaded">
       <!-- wrap each icon in an anchor link to make the shape click-able and focus-able -->
-      {#each links as link, i}
-      <g transform="rotate({360 / links.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / links.length * i * -1})">
-        <a href="#{link}" aria-label="{link}">
+      {#each names as name, i}
+      <g transform="rotate({360 / names.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / names.length * i * -1})">
+        <a href="#{name}" aria-label="{name}">
           <g transform="translate(-{size / 6} -{size / 6})">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{size / 3}" height="{size / 3}">
               <g transform="scale(0.9)">
                 <use href="#path" stroke="currentColor" stroke-width="6" fill="none" />
                 <!-- rotate the text around the center -->
-                <g transform="rotate({360 / links.length * i})" mask="url(#mask-text)">
+                <g transform="rotate({360 / names.length * i})" mask="url(#mask-text)">
                   <g class="text">
                     <text fill="currentColor" font-family="monospace" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12">
-                      <textPath href="#{360 / links.length * i > 90 && 360 / links.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
-                        {link}
+                      <textPath href="#{360 / names.length * i > 90 && 360 / names.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
+                        {name}
                       </textPath>
                     </text>
                   </g>
@@ -113,7 +112,7 @@
 
                 <!-- re-scale the icon inside the wrapping path element -->
                 <g transform="translate(-{iconSize / 6} -{iconSize / 6})">
-                  {@html getIcon(link, iconSize / 3)}
+                  {@html getIcon(name, iconSize / 3)}
                 </g>
 
                 <!-- overlapping circle to expand the click area -->

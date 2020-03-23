@@ -128,7 +128,7 @@ article:first-of-type h2 {
   main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    grid-gap: 2rem 1.75rem;
+    grid-gap: 2rem 1rem;
   }
   /* reset the vertical space, set with the grid-gap property */
   main > * + * {
@@ -137,6 +137,16 @@ article:first-of-type h2 {
   /* stretch the first article across the viewport */
   article:first-of-type {
     grid-column: 1/-1;
+  }
+}
+
+@supports (grid-template-columns: subgrid) {
+  article {
+    grid-gap: 0;
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    justify-items: start;
   }
 }
 
