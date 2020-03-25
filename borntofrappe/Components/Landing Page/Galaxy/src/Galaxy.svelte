@@ -16,7 +16,6 @@
   const particles = Array(rounds)
     .fill("")
     .map((v, indexRounds) => {
-      const delay = indexRounds * 0.2;
       const translate = (size / 2.5 / rounds) * (indexRounds + 1);
       const scale = (indexRounds + 1) ** 0.3;
 
@@ -26,7 +25,6 @@
         .map((v, indexRound) => (round % 2 === 0 ? 360 / round / 2 + (360 / numberRounds) * indexRound : (360 / numberRounds) * indexRound));
 
       return {
-        delay,
         translate,
         scale,
         rotation
@@ -68,7 +66,7 @@
     <!-- group describing the particles as a backdrop -->
     <g mask="url(#mask-icons)">
       <g class="loaded">
-        {#each particles as {delay, translate, scale, rotation}} {#each rotation as rotate}
+        {#each particles as { translate, scale, rotation}} {#each rotation as rotate}
         <g transform="rotate({rotate}) translate(0 {translate}) rotate(-{rotate})">
           <circle r="1" transform="scale({scale})" />
         </g>

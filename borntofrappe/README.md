@@ -6,9 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add 4 and 0 icon
+- [x] replicate galaxy illustration with vanilla JavaScript
 
-- [ ] set up 404 with svelte
+  - [ ] experiment with illustration background (path and circle elements)
+
+- [ ] reconsider 404 icons
+
+- [ ] complete 404 page
 
 - [ ] create a background for the different sections
 
