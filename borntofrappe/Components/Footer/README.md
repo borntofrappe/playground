@@ -71,3 +71,7 @@ I am still experimenting with patterns, and how to "fill" the void left around t
 ```
 
 `userSpaceOnUse` as the size of the pattern would fluctuate excessively as the `<svg>` element changes in size.
+
+### Update
+
+I decided to remove the svg element. This is because using the element as a background left a lot to be desired in terms of responsiveness and customization. I'd like to have a shape that covers the footer height, doesn't crop out the nested SVG icon and can be changed in color with CSS, and at the time of writing I have no solution for that.

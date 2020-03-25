@@ -73,9 +73,13 @@
   const names = planets.map(({name}) => name);
 </script>
 
-<Galaxy {names} on:animationend="{() => {loadingComplete = true;}}"/>
 {#if loadingComplete}
   <Breadcrumbs {breadcrumbs} />
+{/if}
+
+<Galaxy {names} on:animationend="{() => {loadingComplete = true;}}"/>
+
+{#if loadingComplete}
   {#each planets as {name, copy, link, satellites, colors, tilt, clockwise}}
     <div in:fade id="{name}">
       <section>
@@ -111,7 +115,7 @@
   div section {
     max-width: 42em;
     width: 90vw;
-    margin: 2rem auto;
+    margin: 2.5rem auto;
   }
 
   div section h2 {

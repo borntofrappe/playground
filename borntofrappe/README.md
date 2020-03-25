@@ -6,11 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add padding-bottom on anchor links instead of margin-top on the nested elements. Expand clickable area
+- [x] move breadcrumb before galaxy. Order matters
 
-- [x] for prefers-reduced-motion add a subtle fade in
-
-- [x] avoid updating the icon color on hover
+- [x] update footer with more robust background
 
 - [ ] create a background for the different sections
 

@@ -57,7 +57,7 @@
         {/each}
       </g>
     </g>
-    <circle r="30" fill="none" stroke="{colors[colors.length - 1]}" stroke-width="0.2" />
+    <circle r="30" fill="none" stroke="{colors[5]}" stroke-width="0.2" />
   </g>
 
   <!-- orbit -->

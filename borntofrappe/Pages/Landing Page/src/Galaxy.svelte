@@ -16,7 +16,7 @@
     .fill("")
     .map((v, indexRounds) => {
       const delay = indexRounds * 0.1;
-      const translate = (size / 2.1 / rounds) * (indexRounds + 1);
+      const translate = (size / 2.25 / rounds) * (indexRounds + 1);
       const scale = (indexRounds + 1) ** 0.2;
 
       const numberRounds = round * (indexRounds + 1);
