@@ -5,24 +5,25 @@
 
   export let names;
 
-  const size = 480;
+  const size = 500;
   const iconSize = 100;
 
   const { length } = names;
 
+  // particles
   const round = length + 1;
   const rounds = length + 1;
   const particles = Array(rounds)
     .fill("")
     .map((v, indexRounds) => {
-      const delay = indexRounds * 0.1;
-      const translate = (size / 2.1 / rounds) * (indexRounds + 1);
-      const scale = (indexRounds + 1) ** 0.2;
+      const delay = indexRounds * 0.2;
+      const translate = (size / 2.5 / rounds) * (indexRounds + 1);
+      const scale = (indexRounds + 1) ** 0.3;
 
       const numberRounds = round * (indexRounds + 1);
       const rotation = Array(numberRounds)
         .fill("")
-        .map((v, indexRound) => (round % 2 == 0 ? 360 / round / 2 + (360 / numberRounds) * indexRound : (360 / numberRounds) * indexRound));
+        .map((v, indexRound) => (round % 2 === 0 ? 360 / round / 2 + (360 / numberRounds) * indexRound : (360 / numberRounds) * indexRound));
 
       return {
         delay,
@@ -33,7 +34,7 @@
     });
 </script>
 
-<nav aria-label="Page navigation">
+<nav>
   <!-- wrapping SVG -->
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{size / 2} -{size / 2} {size} {size}" width="{size}" height="{size}">
     <defs>
@@ -42,13 +43,12 @@
       the difference between the two boils down to the clockwise, counter-clockwise direction
       -->
       <path id="path" d="M 0 -32 a 32 32 0 0 1 0 64 32 32 0 0 1 0 -64" />
-      <path id="path-c" d="M 0 40 a 40 40 0 0 1 0 -80 40 40 0 0 1 0 80" />
+      <path id="path-c" d="M 0 39 a 39 39 0 0 1 0 -78 39 39 0 0 1 0 78" />
       <path id="path-cc" d="M 0 47 a 47 47 0 0 0 0 -94 47 47 0 0 0 0 94" />
 
       <!-- mask to show the text only as it exceeds the path element encircling the icons -->
       <mask id="mask-text">
-        <!-- <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" /> -->
-        <use transform="scale(2)" href="#path" fill="hsl(0, 0%, 100%)" />
+        <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" />
         <use href="#path" fill="hsl(0, 0%, 0%)" />
       </mask>
 
@@ -76,6 +76,9 @@
       </g>
     </g>
 
+    <!-- custom logo
+    see **Animation**
+    -->
     <g class="loading">
       <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
         <circle r="46" />
@@ -88,14 +91,12 @@
 
     <!-- group wrapping the different icons
     by translating the icons away from the center and scaling this group, you show them as if moving from the center
-
-    as the group has finished its animation dispatch the matching event
     -->
     <g class="loaded" on:animationend="{() => {dispatch('animationend');}}">
-      <!-- wrap each icon in an anchor link to make the shape click-able and focus-able -->
-      {#each names as name, i}
+      <!-- wrap each icon in an anchor name to make the shape click-able and focus-able -->
+      {#each names as {name, href}, i}
       <g transform="rotate({360 / names.length * i}) translate(0 -{Math.floor(size / 3)}) rotate({360 / names.length * i * -1})">
-        <a href="#{name}" aria-label="{name}">
+        <a href="{href}" aria-label="{name}">
           <g transform="translate(-{size / 6} -{size / 6})">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-{iconSize / 2} -{iconSize / 2} {iconSize} {iconSize}" width="{size / 3}" height="{size / 3}">
               <g transform="scale(0.9)">
@@ -103,7 +104,7 @@
                 <!-- rotate the text around the center -->
                 <g transform="rotate({360 / names.length * i})" mask="url(#mask-text)">
                   <g class="text">
-                    <text fill="currentColor" font-family="monospace" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12">
+                    <text fill="currentColor" font-weight="bold" letter-spacing="1" text-anchor="middle" font-size="12" font-family="monospace">
                       <textPath href="#{360 / names.length * i > 90 && 360 / names.length * i < 270 ? 'path-cc' : 'path-c'}" startOffset="50%">
                         {name}
                       </textPath>
@@ -111,7 +112,9 @@
                   </g>
                 </g>
 
-                <!-- re-scale the icon inside the wrapping path element -->
+                <!-- size the icon to cover a portion of the available viewBox
+              translate negative half to center
+              -->
                 <g transform="translate(-{iconSize / 6} -{iconSize / 6})">
                   {@html getIcon(name, iconSize / 3)}
                 </g>
@@ -134,46 +137,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    --transition-duration: 0.35s;
-
     --main-animation-duration: 4.5s;
     --main-animation-delay: 0.35s;
-    --support-animation-duration: 0.6s;
+    --support-animation-duration: 0.5s;
     --support-animation-delay: var(--main-animation-duration);
   }
   svg {
-    max-width: 40em;
-    width: 90vw;
+    max-width: 600px;
+    width: 100vmin;
     height: auto;
     display: block;
   }
   svg text {
     font-family: "Fira Code", monospace;
   }
-
-  /* for the hover/focus transition, update the color and scale of the icon */
-  a {
-    transform: scale(0.85);
-    transition: color 0.35s cubic-bezier(0.445, 0.05, 0.55, 0.95), transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: color var(--transition-duration) var(--transition-timing-function), transform var(--transition-duration) var(--ease-in-out-back);
-    outline: none;
-  }
-  a:hover,
-  a:focus {
-    transform: scale(1);
-  }
-  /* scale the group wrapping the text element to also show the label on hover/focus */
-  a .text {
-    transform: scale(0.5);
-    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: transform var(--transition-duration) var(--ease-out-back);
-  }
-  a:hover .text,
-  a:focus .text {
-    transform: scale(1);
-  }
-
-  /* animation properties */
   svg .loading {
     animation: transform-icon 4.5s 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
     animation: transform-icon var(--main-animation-duration) var(--main-animation-delay) var(--ease-in-out-back) both;
@@ -195,8 +172,34 @@
   }
 
   svg .loaded {
-    animation: transform-icons 0.6s 4.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    animation: transform-icons 0.5s 4.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
     animation: transform-icons var(--support-animation-duration) var(--support-animation-delay) var(--ease-out-back) both;
+  }
+
+  /* for the hover/focus transition, update the color and scale of the icon */
+  a {
+    color: inherit;
+    transform: scale(0.85);
+    transition: color 0.35s linear, transform 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
+    transition: color var(--transition-duration) linear, transform var(--transition-duration) var(--ease-in-out-back);
+    outline: none;
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    color: hsl(342, 80%, 50%);
+    color: var(--accent-color);
+    transform: scale(1);
+  }
+  /* scale the group wrapping the text element to also show the label on hover/focus */
+  a .text {
+    transform: scale(0.5);
+    transition: transform 0.35s cubic-bezier(0.68, -0.5, 0.265, 1.55);
+    transition: transform var(--transition-duration) var(--ease-out-back);
+  }
+  a:hover .text,
+  a:focus .text {
+    transform: scale(1);
   }
 
   @keyframes transform-icons {

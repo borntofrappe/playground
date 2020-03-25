@@ -72,6 +72,13 @@
     }
   }
 
+  /* it seems setting a different color compromises the global a:hover, a:focus */
+  footer a:hover,
+  footer a:focus {
+    color: hsl(342, 80%, 50%);
+    color: var(--accent-color);
+  }
+
   footer a:hover + svg,
   footer a:focus + svg {
     color: hsl(342, 80%, 50%);

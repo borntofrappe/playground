@@ -4,7 +4,9 @@
   import Footer from "./Footer.svelte";
   import Planet from "./Planet.svelte";
   import Link from "./Link.svelte";
+  import { fade } from "svelte/transition";
 
+  let loadingComplete = false;
   let breadcrumbs = [];
 
   const palette = {
@@ -71,28 +73,30 @@
   const names = planets.map(({name}) => name);
 </script>
 
-<Breadcrumbs {breadcrumbs} />
-<Galaxy {names} />
+<Galaxy {names} on:animationend="{() => {loadingComplete = true;}}"/>
+{#if loadingComplete}
+  <Breadcrumbs {breadcrumbs} />
+  {#each planets as {name, copy, link, satellites, colors, tilt, clockwise}}
+    <div in:fade id="{name}">
+      <section>
+        <h2>{name}</h2>
 
-{#each planets as {name, copy, link, satellites, colors, tilt, clockwise}}
-  <div id="{name}">
-    <section>
-      <h2>{name}</h2>
+        <Planet {name} {satellites} {colors} {tilt} {clockwise}  />
 
-      <Planet {name} {satellites} {colors} {tilt} {clockwise}  />
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque corporis aspernatur recusandae alias totam dolor magni. Totam dolor minus corporis! Officiis porro beatae aut! Sit asperiores rem voluptates cumque!</p>
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque corporis aspernatur recusandae alias totam dolor magni. Totam dolor minus corporis! Officiis porro beatae aut! Sit asperiores rem voluptates cumque!</p>
+        <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
+      </section>
+    </div>
+  {/each}
+  <Footer />
+{/if}
 
-      <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
-    </section>
-  </div>
-{/each}
 
-<Footer />
 
 <style>
   :global(body) {
-    overflow-x: hidden;
+    overflow-y: scroll;
   }
   div {
     min-height: 100vh;
@@ -135,12 +139,12 @@
 
   div section p {
     line-height: 2;
-    margin: 2rem 0 1rem;
+    margin: 1.5rem 0 1rem;
     font-size: 1.1rem;
   }
 
   div section :global(a) {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   @supports (shape-outside: circle()) {

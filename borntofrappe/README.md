@@ -6,21 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] experiment with `subgrid` in the blog page. Works on firefox only
+- [x] add animation to galaxy; consider prefers-reduced motion
 
-- [x] consider updating the name of the components. footer -> home, navigation -> galaxy, breadcrumb -> map
+- [x] update galaxy component in landing page
 
-  - [x] update only navigation, given the bespoke nature of the component
-
-  - [x] keep footer and breadcrumb, given the more standard use case
-
-- [ ] add animation to landing page; consider prefers-reduced motion
+- [x] fix annoying :hover and :focus state on the footer; does not update
 
 - [ ] create a background for the different sections
 
 - [ ] create a 404 page with an extra planet and the rocket
-
-- [ ] fix annoying :hover and :focus state on the footer; does not update
 
 - [ ] review icon naming convention
 
