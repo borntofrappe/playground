@@ -31,6 +31,7 @@
     /* replace with :after pseudo element */
     outline: none;
     position: relative;
+    padding-bottom: 0.75em;
   }
 
   /* outline */
@@ -51,7 +52,6 @@
   /* border bottom */
   a:before {
     pointer-events: none;
-    margin: 0.75em 0;
     position: absolute;
     top: 100%;
     left: 0%;
@@ -72,7 +72,7 @@
   /* rocket */
   a svg {
     pointer-events: none;
-    margin: 0.75em 0.5rem;
+    margin: 0 0.5rem;
     position: absolute;
     top: 100%;
     left: 0%;

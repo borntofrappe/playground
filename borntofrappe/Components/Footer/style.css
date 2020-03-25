@@ -99,7 +99,9 @@ footer a:focus + svg g {
   }
 }
 
-/* unsure about this, but I feel like updating the color of the icon when hovering on the icon itself */
+/* update the color of the icon when hovering on the icon itself
+might not make it to production
+*/
 footer svg:hover {
   color: hsl(342, 80%, 50%);
   color: var(--accent-color);

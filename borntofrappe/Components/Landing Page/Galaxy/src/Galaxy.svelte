@@ -253,17 +253,26 @@
     }
   }
 
+  /* add a subtle fade in for prefers-reduced-motion */
   @media screen and (prefers-reduced-motion: reduce) {
-    svg .loading,
     svg .loading #logo,
     svg .loading #b,
     svg .loading #accent {
       animation: none;
     }
-    /* necessary to trigger the animationend event */
+    svg .loading,
     svg .loaded {
-      animation-delay: 0s;
-      animation-duration: 0s;
+      animation: fade-in 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+      animation: fade-in var(--support-animation-duration) var(--ease-in-out-sine) both;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
   }
 </style>

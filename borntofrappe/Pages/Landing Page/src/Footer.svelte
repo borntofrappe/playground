@@ -96,9 +96,4 @@
       animation-play-state: paused;
     }
   }
-
-  footer svg:hover {
-    color: hsl(342, 80%, 50%);
-    color: var(--accent-color);
-  }
 </style>

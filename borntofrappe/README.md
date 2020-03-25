@@ -6,11 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add animation to galaxy; consider prefers-reduced motion
+- [x] add padding-bottom on anchor links instead of margin-top on the nested elements. Expand clickable area
 
-- [x] update galaxy component in landing page
+- [x] for prefers-reduced-motion add a subtle fade in
 
-- [x] fix annoying :hover and :focus state on the footer; does not update
+- [x] avoid updating the icon color on hover
 
 - [ ] create a background for the different sections
 
