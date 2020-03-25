@@ -6,13 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] move breadcrumb before galaxy. Order matters
+- [x] add 4 and 0 icon
 
-- [x] update footer with more robust background
+- [ ] set up 404 with svelte
 
 - [ ] create a background for the different sections
-
-- [ ] create a 404 page with an extra planet and the rocket
 
 - [ ] review icon naming convention
 
