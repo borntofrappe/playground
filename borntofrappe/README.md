@@ -8,9 +8,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [x] design code snippet component (re requires update to the script reading markdown)
 
-- [ ] markdown parser: update shiki script to match code snippet
+- [x] incorporate code snippet design
 
-- [ ] blog: write script producing the defs block
+- [x] add sparkles icon (and remove extra group element)
+
+- [x] remove defs block from utils and from blog page
+
+- [ ] markdown parser: update node script to match code snippet and inlining SVG icons
 
 - [ ] landing page
 

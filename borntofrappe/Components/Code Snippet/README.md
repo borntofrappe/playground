@@ -51,3 +51,7 @@ Leading to the following implementation in the `pre` element
   html
 </span>
 ```
+
+## Update
+
+Instead of creating the SVG element at the head of the document, try to add the SVG icons directly in the markup, importing the `getIcon` function and injecting the SVG syntax within the span element. The "defs" block tends to be less reliable than inlining the SVG icons directly, especially across browsers and when specifying the `viewBox` attribute on the SVG/use/symbol elements.

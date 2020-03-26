@@ -1,16 +1,8 @@
-// icon for the first article
-const icon = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="32" height="32">
-  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" fill="currentColor">
-      <path id="sparkle" d="M -10 0 a 10 10 0 0 0 10 -10 10 10 0 0 0 10 10 10 10 0 0 0 -10 10 10 10 0 0 0 -10 -10" />
-      <use href="#sparkle" transform="translate(-20 -20) scale(0.9)"/>
-      <use href="#sparkle" transform="translate(20 -25) scale(0.5)"/>
-      <use href="#sparkle" transform="translate(15 25) scale(0.8)"/>
-      <use href="#sparkle" transform="translate(-15 20) scale(0.4)"/>
-    </g>
-  </g>
-</svg>
-`;
+const icons = {
+	sparkles: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="42" height="42"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" fill="currentColor"><path id="sparkle" d="M -10 0 a 10 10 0 0 0 10 -10 10 10 0 0 0 10 10 10 10 0 0 0 -10 10 10 10 0 0 0 -10 -10" /><use href="#sparkle" transform="translate(-20 -20) scale(0.9)"/><use href="#sparkle" transform="translate(20 -25) scale(0.5)"/><use href="#sparkle" transform="translate(15 25) scale(0.8)"/><use href="#sparkle" transform="translate(-15 20) scale(0.4)"/></g></svg>`,
+}
+const getIcon = (icon, size = 42) => icons[icon] ? icons[icon].replace(/width="\d+"\s+height="\d+"/, `width="${size}" height="${size}"`) : icons["bug"].replace(/width="\d+"\s+height="\d+"/, `width="${size}" height="${size}"`);
+
 
 const articles = [
   {
@@ -62,7 +54,7 @@ articles
       <h2>
         <a href="/${slug}">
           ${title}
-          ${index === 0 ? `${icon}` : ''}
+          ${index === 0 ? `${getIcon("sparkles", 32)}` : ''}
         </a>
       </h2>
 
