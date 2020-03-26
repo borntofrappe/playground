@@ -11,7 +11,7 @@
   const planets = [
     {
       name: "blog",
-      satellites: ["idea", "write", "erase", "review", "publish"],
+      satellites: ["idea", "write", "edit", "review", "publish"],
     },
     {
       name: "freecodecamp",

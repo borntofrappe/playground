@@ -6,9 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] markdown parser: create script producing the code snippet component
+- [x] research export default vs. module.exports
 
-- [x] remove unnecessary whitespace from icons
+- [x] review icon naming convention
 
 - [ ] landing page
 
@@ -21,8 +21,6 @@ Here, I try to ease the development/design of the website by focusing on indepen
   - [ ] reconsider icons
 
   - [ ] add path elements in the top-left/bottom right corner
-
-- [ ] review icon naming convention
 
 - [ ] write copy for the different sections of the landing page
 

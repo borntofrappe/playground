@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="42" height="42">
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
+    <g stroke-width="8">
+      <path d="M 0 -20 a 16 16 0 0 1 16 -16 h 22 a 8 8 0 0 1 8 8 v 50 a 8 8 0 0 1 -8 8 h -30 a 8 8 0 0 0 -8 8 8 8 0 0 0 -8 -8 h -30 a 8 8 0 0 1 -8 -8 v -50 a 8 8 0 0 1 8 -8 h 22 a 16 16 0 0 1 16 16" />
+      <path d="M 0 -20 v 50" />
+    </g>
+    <g stroke-width="7">
+      <path d="M -30 -18 h 15" />
+      <path transform="scale(-1 1)" d="M -30 -18 h 15" />
+      <path d="M -30 -3 h 15" />
+      <path transform="scale(-1 1)" d="M -30 -3 h 15" />
+      <path d="M -30 12 h 15" />
+      <path transform="scale(-1 1)" d="M -30 12 h 15" />
+    </g>
+  </g>
+</svg>

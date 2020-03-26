@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const marked = require('marked');
 const shiki = require('shiki');
-const getIcon = require('./icons');
+const getIcon = require('./icons.js');
 
 const extname = '.md';
 

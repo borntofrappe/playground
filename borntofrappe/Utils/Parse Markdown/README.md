@@ -35,4 +35,18 @@ span
 
 Right before the code describing the snippet.
 
-The icon is included from the `icons.js` file, but using `module.exports`. Research why `export default` produces an error.
+### module.exports
+
+In the Svelte projects I export the `getIcon` function with ES6 modules.
+
+```js
+export default (icon, size = 42) => (...);
+```
+
+In the script however, I use the `module.exports` syntax.
+
+```js
+module.exports = (icon, size = 42) => (...);
+```
+
+This is because node doesn't support natively the ES6 features. The hope is that using a module bundler like Rollup (used by Sapper), there would be no need to switch to the second syntax.
