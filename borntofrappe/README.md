@@ -6,15 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] design code snippet component (re requires update to the script reading markdown)
+- [x] markdown parser: create script producing the code snippet component
 
-- [x] incorporate code snippet design
-
-- [x] add sparkles icon (and remove extra group element)
-
-- [x] remove defs block from utils and from blog page
-
-- [ ] markdown parser: update node script to match code snippet and inlining SVG icons
+- [x] remove unnecessary whitespace from icons
 
 - [ ] landing page
 
