@@ -6,21 +6,27 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] replicate galaxy illustration with vanilla JavaScript
+- [x] design code snippet component (re requires update to the script reading markdown)
 
-  - [ ] experiment with illustration background (path and circle elements)
+- [ ] markdown parser: update shiki script to match code snippet
 
-- [ ] reconsider 404 icons
+- [ ] blog: write script producing the defs block
 
-- [ ] complete 404 page
+- [ ] landing page
 
-- [ ] create a background for the different sections
+  - [ ] background for the different sections (pattern or path element)
+
+  - [ ] background for galaxy (reconsider particles)
+
+- [ ] 404 page
+
+  - [ ] reconsider icons
+
+  - [ ] add path elements in the top-left/bottom right corner
 
 - [ ] review icon naming convention
 
 - [ ] write copy for the different sections of the landing page
-
-- [ ] solve the sync-async mismatch between shiki and sapper
 
 ## Index
 

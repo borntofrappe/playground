@@ -90,23 +90,25 @@ main h2:after {
   }
 }
 
-/* style the code outside of pre elements with a solid background */
 main code {
   font-size: 0.9rem;
 }
-main p > code {
-  background: var(--accent-color);
-  color: var(--body-background);
-  border-radius: 0.2rem;
-  padding: 0.1rem 0.2rem;
+
+main > pre .shiki {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
 }
+
+main > pre {
+  margin: 0.2rem -0.5rem;
+  padding: 1rem;
+}
+main > pre code {
+  font-size: 0.8rem;
+}
+
 main pre {
   overflow-x: auto;
-  padding: 1rem;
-  margin: 0.2rem -0.5rem;
-}
-main pre code {
-  font-size: 0.8rem;
 }
 main pre::-webkit-scrollbar {
   height: 0.4rem;
@@ -118,10 +120,19 @@ main pre::-webkit-scrollbar-thumb {
   background: var(--accent-color);
   border-radius: 0.2rem;
 }
+
+main p > code {
+  background: var(--accent-color);
+  color: var(--body-background);
+  border-radius: 0.2rem;
+  padding: 0.1rem 0.2rem;
+}
+
 main ul {
   list-style-position: inside;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
+
 main a {
   border-bottom: 0.2rem solid var(--accent-color);
 }

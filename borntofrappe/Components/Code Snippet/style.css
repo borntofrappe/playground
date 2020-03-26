@@ -1,0 +1,67 @@
+/* single column layout */
+main {
+  width: 90vw;
+  max-width: 35em;
+  line-height: 2;
+  margin: 2rem auto 4rem;
+}
+
+main code {
+  font-size: 0.9rem;
+}
+
+main > pre .shiki,
+main > pre .language {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+main > pre .shiki {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+main > pre .language {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: color 0.2s ease-in-out;
+  background: var(--primary-8);
+  color: var(--grey-0);
+  font-family: "Hind Madurai", sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+}
+main > pre .language svg {
+  width: 1.25em;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+main > pre:hover .language {
+  color: var(--accent-4);
+}
+
+main > pre {
+  margin: 0.2rem -0.5rem;
+  padding: 1rem;
+}
+main > pre code {
+  font-size: 0.8rem;
+}
+
+main pre {
+  overflow-x: auto;
+}
+main pre::-webkit-scrollbar {
+  height: 0.4rem;
+}
+main pre::-webkit-scrollbar-track {
+  background: currentColor;
+}
+main pre::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 0.2rem;
+}
