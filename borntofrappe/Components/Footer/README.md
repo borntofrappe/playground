@@ -57,3 +57,15 @@ footer:before {
 ```
 
 Which leads to `19.3px` to guarantee at least 2 levels of the repeating pattern, and in turn `4.825px` to avoid cropping on the left.
+
+## Update
+
+To avoid having the edges of the path blurred, I update the syntax to have nice round numbers.
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 -20 100 40" width="100" height="40">
+  <g stroke="none" fill="currentColor">
+    <path d="M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0" />
+  </g>
+</svg>
+```

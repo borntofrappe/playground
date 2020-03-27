@@ -6,15 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] edge/cross browser
+- [x] update path and dot pattern
 
-  - [x] rewrite path element to avoid cropping
-
-  - [x] repeat background on footer pseudo element (inherit doesn't seem to work)
-
-  - [x] document footer
-
-- [x] remove pattern from sections
+- [x] add svg assets
 
 - [ ] landing page
 
