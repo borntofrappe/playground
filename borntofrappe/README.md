@@ -6,17 +6,23 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] temporarily remove larger animation from landing page
+- [x] section/footer pattern
 
-- [x] create pattern for section and footer component
+  - [x] formalize syntax (d attribute, viewbox)
 
-- [ ] section/footer pattern
+  - [x] add to pages
 
-  - [ ] formalize syntax (d attribute, viewbox)
+  - [x] consider reducing the footer's padding
 
-  - [ ] add to pages
+  - [x] update background size to avoid cropping the pattern
 
-  - [ ] consider reducing the footer's padding
+- [ ] edge/cross browser
+
+  - [ ] rewrite path element to avoid cropping
+
+  - [ ] repeat background on footer pseudo element (inherit doesn't seem to work)
+
+- [ ] consider removing div:before path element/replacing with a more appealing pattern
 
 - [ ] landing page
 

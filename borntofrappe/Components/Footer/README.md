@@ -75,3 +75,13 @@ I am still experimenting with patterns, and how to "fill" the void left around t
 ### Update
 
 Experimenting with the Section component, I ultimately decided to create a path element that is repeated horizontally to create a wave-like figure. Since it matches the footer rather nicely, I decided to try and incorporate the same above the footer.
+
+The only difference is that the path element is modified to have the change in height more prominent.
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 -19.3 100 38.6" width="100" height="38.6">
+  <g stroke="none" fill="currentColor">
+    <path d="M 0 -15 c 50 -15 50 15 100 0 c 50 -15 50 15 100 0 v 30 c -50 15 -50 -15 -100 0 c -50 15 -50 -15 -100 0" />
+  </g>
+</svg>
+```

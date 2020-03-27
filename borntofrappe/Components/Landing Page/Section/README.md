@@ -36,9 +36,9 @@ Most practically this means that the binary styling of odd/even illustrations ne
 I decided to experiment adding a frame at the top of each section. The idea is to have a path element repeated throughout the viewport's width:
 
 ```html
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 -19.3 100 38.6" width="100" height="38.6">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 -20.75 100 41.5" width="100" height="41.5">
   <g stroke="none" fill="currentColor">
-    <path d="M 0 -15 c 50 -15 50 15 100 0 c 50 -15 50 15 100 0 v 30 c -50 15 -50 -15 -100 0 c -50 15 -50 -15 -100 0" />
+    <path d="M 0 -17.9 c 50 -10 50 10 100 0 c 50 -10 50 10 100 0 v 35.8 c -50 10 -50 -10 -100 0 c -50 10 -50 -10 -100 0" />
   </g>
 </svg>
 ```
