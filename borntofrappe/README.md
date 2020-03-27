@@ -6,23 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] section/footer pattern
+- [x] edge/cross browser
 
-  - [x] formalize syntax (d attribute, viewbox)
+  - [x] rewrite path element to avoid cropping
 
-  - [x] add to pages
+  - [x] repeat background on footer pseudo element (inherit doesn't seem to work)
 
-  - [x] consider reducing the footer's padding
+  - [x] document footer
 
-  - [x] update background size to avoid cropping the pattern
-
-- [ ] edge/cross browser
-
-  - [ ] rewrite path element to avoid cropping
-
-  - [ ] repeat background on footer pseudo element (inherit doesn't seem to work)
-
-- [ ] consider removing div:before path element/replacing with a more appealing pattern
+- [x] remove pattern from sections
 
 - [ ] landing page
 

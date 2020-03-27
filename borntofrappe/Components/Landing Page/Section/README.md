@@ -30,28 +30,3 @@ Most practically this means that the binary styling of odd/even illustrations ne
 - section:nth-of-type(even) ...{}
 + div:nth-of-type(even) section ...{}
 ```
-
-## Pattern
-
-I decided to experiment adding a frame at the top of each section. The idea is to have a path element repeated throughout the viewport's width:
-
-```html
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 -20.75 100 41.5" width="100" height="41.5">
-  <g stroke="none" fill="currentColor">
-    <path d="M 0 -17.9 c 50 -10 50 10 100 0 c 50 -10 50 10 100 0 v 35.8 c -50 10 -50 -10 -100 0 c -50 10 -50 -10 -100 0" />
-  </g>
-</svg>
-```
-
-I am still figuring out the most appropriate shape, but the idea is to use the path element as a mask, for a background using the same pattern specified in the footer component, as well as blog and blog page headers.
-
-The specific `viewBox` attribute is to have the curve provide the perfect peak and valley matching the footer.
-
-```css
-div:before {
-  mask-position: 50% 0%;
-  -webkit-mask-position: 50% 0%;
-}
-```
-
-In this manner the heart icon included in the footer should be perfectly lulled in between the repeating pattern. See footer component for how that is going to look.
