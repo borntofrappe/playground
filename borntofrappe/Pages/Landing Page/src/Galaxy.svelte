@@ -249,25 +249,26 @@
   }
 
   /* add a subtle fade in for prefers-reduced-motion */
-  @media screen and (prefers-reduced-motion: reduce) {
-    svg .loading #logo,
-    svg .loading #b,
-    svg .loading #accent {
-      animation: none;
-    }
-    svg .loading,
-    svg .loaded {
-      animation: fade-in 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
-      animation: fade-in var(--support-animation-duration) var(--ease-in-out-sine) both;
-    }
+  /* uncomment media query to have the more complex animation in place */
+  /* @media screen and (prefers-reduced-motion: reduce) { */
+  svg .loading #logo,
+  svg .loading #b,
+  svg .loading #accent {
+    animation: none;
+  }
+  svg .loading,
+  svg .loaded {
+    animation: fade-in 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) both;
+    animation: fade-in var(--support-animation-duration) var(--ease-in-out-sine) both;
+  }
 
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
+  /* } */
 </style>

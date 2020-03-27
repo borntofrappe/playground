@@ -6,9 +6,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] research export default vs. module.exports
+- [x] temporarily remove larger animation from landing page
 
-- [x] review icon naming convention
+- [x] create pattern for section and footer component
+
+- [ ] section/footer pattern
+
+  - [ ] formalize syntax (d attribute, viewbox)
+
+  - [ ] add to pages
+
+  - [ ] consider reducing the footer's padding
 
 - [ ] landing page
 

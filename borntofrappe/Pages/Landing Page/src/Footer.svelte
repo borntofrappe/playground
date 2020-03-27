@@ -22,7 +22,6 @@
     padding: 3rem 1rem 2rem;
     text-align: center;
     position: relative;
-    margin-top: 2rem;
   }
 
   footer a {

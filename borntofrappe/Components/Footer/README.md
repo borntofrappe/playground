@@ -74,4 +74,4 @@ I am still experimenting with patterns, and how to "fill" the void left around t
 
 ### Update
 
-I decided to remove the svg element. This is because using the element as a background left a lot to be desired in terms of responsiveness and customization. I'd like to have a shape that covers the footer height, doesn't crop out the nested SVG icon and can be changed in color with CSS, and at the time of writing I have no solution for that.
+Experimenting with the Section component, I ultimately decided to create a path element that is repeated horizontally to create a wave-like figure. Since it matches the footer rather nicely, I decided to try and incorporate the same above the footer.
