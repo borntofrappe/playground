@@ -2,9 +2,9 @@
   import getIcon from "./icons.js";
 
   // svg appearance
-  export let name;
+  export let name = "";
   export let satellites = [];
-  export let colors = ["hsl(0, 65%, 20%)", "hsl(0, 70%, 30%)", "hsl(0, 75%, 45%)", "hsl(2, 80%, 50%)", "hsl(0, 90%, 55%)", "hsl(-3, 92%, 65%)", "hsl(-5, 95%, 70%)", "hsl(-8, 95%, 80%)", "hsl(-15, 100%, 90%)"];
+  export let colors = ["hsl(300, 65%, 20%)", "hsl(300, 70%, 30%)", "hsl(300, 75%, 45%)", "hsl(300, 80%, 50%)", "hsl(300, 90%, 55%)", "hsl(300, 92%, 65%)", "hsl(300, 95%, 70%)", "hsl(300, 95%, 80%)", "hsl(300, 100%, 90%)"];
   export let tilt = 0;
   export let clockwise = Math.random() > 0.5;
 

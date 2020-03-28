@@ -6,19 +6,31 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update footer and section
+- [x] update pages/landing page with new sections
 
-- [x] update pages to match component
+- [ ] consider icons for the new section:
 
-- [x] add pattern at the bottom of header elements
+  - [ ] running
 
-- [x] reconfigure the icons to lay on top of pattern
+  - [ ] [gaming](https://material.io/resources/icons/?icon=sports_esports&style=baseline)
 
-- [x] remove 404 page
+  - [ ] [world](https://material.io/resources/icons/?icon=public&style=baseline)
 
-- [x] update frontmatter blog post to nest the icons in span elements
+  - [ ] [home](https://material.io/resources/icons/?icon=home&style=baseline)
 
-- [ ] design icon for the additional section: running, playing games...
+  - [ ] [tea](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
+
+  - [ ] [palette](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
+
+  - [ ] [music note](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
+
+  - [ ] [puzzle](https://material.io/resources/icons/?icon=extension&style=baseline)
+
+  - [ ] [account](https://material.io/resources/icons/?icon=account_circle&style=baseline)
+
+  - [ ] [paw](https://material.io/resources/icons/?icon=pets&style=baseline)
+
+  - [ ] [translate](https://material.io/resources/icons/?icon=translate&style=baseline)
 
 - [ ] write copy for the different sections of the landing page
 

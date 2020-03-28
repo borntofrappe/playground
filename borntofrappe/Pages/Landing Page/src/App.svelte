@@ -87,12 +87,22 @@
 
         <Planet {name} {satellites} {colors} {tilt} {clockwise}  />
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae itaque corporis aspernatur recusandae alias totam dolor magni. Totam dolor minus corporis! Officiis porro beatae aut! Sit asperiores rem voluptates cumque!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?</p>
 
         <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
       </section>
     </div>
   {/each}
+
+  <!-- repeat the structure of the planets for the extra container -->
+  <div in:fade>
+    <section>
+      <h2>What else</h2>
+      <Planet />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?</p>
+    </section>
+  </div>
+
   <Footer />
 {/if}
 
@@ -108,8 +118,39 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
+    scroll-margin-top: 20px;
   }
-  div:nth-of-type(even) {
+  div:before {
+    background: inherit;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='none'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+    -webkit-mask-position: 50% 0%;
+    mask-position: 50% 0%;
+    position: absolute;
+    left: 0%;
+    bottom: 100%;
+    width: 100%;
+    height: 20px;
+  }
+  div:nth-last-of-type(even) {
+    color: hsl(0, 0%, 97%);
+    color: var(--grey-0);
+    background: hsl(230, 30%, 10%);
+    background: var(--primary-8);
+  }
+  /* update the fill of the rocket element */
+  div:nth-last-of-type(even) :global(a svg > g) {
+    fill: hsl(230, 30%, 10%);
+  }
+  div:nth-last-of-type(odd) {
+    color: hsl(230, 30%, 10%);
+    color: var(--primary-8);
+    background: hsl(0, 0%, 97%);
+    background: var(--grey-0);
+
     --accent-color: var(--primary-4);
   }
 

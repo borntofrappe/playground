@@ -61,7 +61,6 @@
     display: block;
     transform: translate(-50%, -50%);
     padding: 0.5rem;
-    margin-top: -10px;
 
     color: hsl(230, 30%, 10%);
     color: var(--body-color);
