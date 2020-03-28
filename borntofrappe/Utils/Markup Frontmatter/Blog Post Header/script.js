@@ -43,8 +43,10 @@ articles.forEach(article => {
       </h1>
       ${icons ?
       `<section>
-
-        ${icons.map(icon => getIcon(icon, 32)).join("")}
+        ${icons.map(icon => `
+          <span>
+            ${getIcon(icon, 32)}
+          </span>`).join("")}
       </section>`
       :
       ''

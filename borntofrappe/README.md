@@ -6,23 +6,19 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] fix footer: svg alignment and height
+- [x] update footer and section
 
-- [x] design sections design with pattern _and_ background
+- [x] update pages to match component
 
-- [ ] update footer in pages
+- [x] add pattern at the bottom of header elements
 
-- [ ] landing page:
+- [x] reconfigure the icons to lay on top of pattern
 
-  - [ ] update section
+- [x] remove 404 page
 
-  - [ ] consider adding a section
+- [x] update frontmatter blog post to nest the icons in span elements
 
-- [ ] 404 page
-
-  - [ ] reconsider icons
-
-  - [ ] add path elements in the top-left/bottom right corner
+- [ ] design icon for the additional section: running, playing games...
 
 - [ ] write copy for the different sections of the landing page
 
