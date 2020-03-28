@@ -6,15 +6,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update path and dot pattern
+- [x] fix footer: svg alignment and height
 
-- [x] add svg assets
+- [x] design sections design with pattern _and_ background
 
-- [ ] landing page
+- [ ] update footer in pages
 
-  - [ ] background for the different sections (pattern or path element)
+- [ ] landing page:
 
-  - [ ] background for galaxy (reconsider particles)
+  - [ ] update section
+
+  - [ ] consider adding a section
 
 - [ ] 404 page
 

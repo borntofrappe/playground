@@ -30,3 +30,9 @@ Most practically this means that the binary styling of odd/even illustrations ne
 - section:nth-of-type(even) ...{}
 + div:nth-of-type(even) section ...{}
 ```
+
+## Update
+
+Experimenting with different patterns, I've decided to include the SVG syntax created for the footer component, `pattern-wave`, right before each `div` element.
+
+In light of this change, I also changed the background of every other container, starting from the bottom to make sure the last container has a color/background combination contrasting the inevitable footer.
