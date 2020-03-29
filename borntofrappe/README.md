@@ -6,23 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] design icons for the new section:
+- [x] revise new icons to remove defs elements (tea, gaming) and improve syntax
 
-  - [x] running
+- [x] consider adjusting the icons with a transform attribute (tea, puzzle)
 
-  - [x] [world](https://material.io/resources/icons/?icon=public&style=baseline)
-
-  - [x] [tea](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
-
-  - [x] [gaming](https://material.io/resources/icons/?icon=sports_esports&style=baseline)
-
-  - [x] [puzzle](https://material.io/resources/icons/?icon=extension&style=baseline)
-
-- [ ] revise new icons to remove defs elements (tea, gaming) and improve syntax
-
-- [ ] consider adjusting the icons with a transform attribute (tea, puzzle)
-
-- [ ] update new section in landing page
+- [x] update new section in landing page
 
 - [ ] write copy for the different sections of the landing page
 

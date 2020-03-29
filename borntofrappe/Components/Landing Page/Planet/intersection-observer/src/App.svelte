@@ -28,6 +28,10 @@
     {
       name: "github",
       satellites: ["code", "repository", "branch", "pullRequest", ""],
+    },
+    {
+      name: "extra",
+      satellites: ["world", "running", "tea", "gaming", "puzzle"],
     }
   ].map(({ name, satellites }, index) => ({
     name,

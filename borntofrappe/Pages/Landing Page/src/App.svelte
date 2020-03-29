@@ -59,9 +59,14 @@
         copy: 'Explore history',
       },
       satellites: ["code", "repository", "branch", "pullRequest", ""]
+    },
+    {
+      name: "almost forgot",
+      copy: "In my endless quest to learn, I sort my notes and code in public repositories.",
+      satellites: ["world", "running", "tea", "gaming", "puzzle"]
     }
   ].map(({ name, copy, link, satellites }, index) => ({
-    name,
+    name: name.split(' ').join('-'),
     copy,
     link,
     satellites,
@@ -70,7 +75,7 @@
     clockwise: index % 2 === 0,
   }));
 
-  const names = planets.map(({name}) => name);
+  const names = planets.filter(({link}) => link).map(({name}) => name);
 </script>
 
 {#if loadingComplete}
@@ -83,25 +88,18 @@
   {#each planets as {name, copy, link, satellites, colors, tilt, clockwise}}
     <div in:fade id="{name}">
       <section>
-        <h2>{name}</h2>
+        <h2>{name.split('-')}</h2>
 
         <Planet {name} {satellites} {colors} {tilt} {clockwise}  />
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?</p>
 
-        <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
+        {#if link}
+          <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
+        {/if}
       </section>
     </div>
   {/each}
-
-  <!-- repeat the structure of the planets for the extra container -->
-  <div in:fade>
-    <section>
-      <h2>What else</h2>
-      <Planet />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?</p>
-    </section>
-  </div>
 
   <Footer />
 {/if}
