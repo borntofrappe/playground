@@ -6,31 +6,23 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update pages/landing page with new sections
+- [x] design icons for the new section:
 
-- [ ] consider icons for the new section:
+  - [x] running
 
-  - [ ] running
+  - [x] [world](https://material.io/resources/icons/?icon=public&style=baseline)
 
-  - [ ] [gaming](https://material.io/resources/icons/?icon=sports_esports&style=baseline)
+  - [x] [tea](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
 
-  - [ ] [world](https://material.io/resources/icons/?icon=public&style=baseline)
+  - [x] [gaming](https://material.io/resources/icons/?icon=sports_esports&style=baseline)
 
-  - [ ] [home](https://material.io/resources/icons/?icon=home&style=baseline)
+  - [x] [puzzle](https://material.io/resources/icons/?icon=extension&style=baseline)
 
-  - [ ] [tea](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
+- [ ] revise new icons to remove defs elements (tea, gaming) and improve syntax
 
-  - [ ] [palette](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
+- [ ] consider adjusting the icons with a transform attribute (tea, puzzle)
 
-  - [ ] [music note](https://material.io/resources/icons/?icon=emoji_food_beverage&style=baseline)
-
-  - [ ] [puzzle](https://material.io/resources/icons/?icon=extension&style=baseline)
-
-  - [ ] [account](https://material.io/resources/icons/?icon=account_circle&style=baseline)
-
-  - [ ] [paw](https://material.io/resources/icons/?icon=pets&style=baseline)
-
-  - [ ] [translate](https://material.io/resources/icons/?icon=translate&style=baseline)
+- [ ] update new section in landing page
 
 - [ ] write copy for the different sections of the landing page
 
