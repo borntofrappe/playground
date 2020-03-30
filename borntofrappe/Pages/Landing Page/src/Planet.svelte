@@ -7,6 +7,7 @@
   export let colors = ["hsl(300, 65%, 20%)", "hsl(300, 70%, 30%)", "hsl(300, 75%, 45%)", "hsl(300, 80%, 50%)", "hsl(300, 90%, 55%)", "hsl(300, 92%, 65%)", "hsl(300, 95%, 70%)", "hsl(300, 95%, 80%)", "hsl(300, 100%, 90%)"];
   export let tilt = 0;
   export let clockwise = Math.random() > 0.5;
+  export let shade = true;
 
   // intersection observer api
   // toggled a boolean according to whether or not the planet intersects with the window
@@ -57,7 +58,7 @@
         {/each}
       </g>
     </g>
-    <circle r="30" fill="none" stroke="{colors[5]}" stroke-width="0.2" />
+    <circle r="30" fill="none" stroke="{shade ? colors[0] : colors[colors.length - 1]}" stroke-width="0.2" />
   </g>
 
   <!-- orbit -->

@@ -6,13 +6,29 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] revise new icons to remove defs elements (tea, gaming) and improve syntax
+- [x] fix pixel imperfection with pseudo element and wavy pattern
 
-- [x] consider adjusting the icons with a transform attribute (tea, puzzle)
+- [x] fix circle around planet
 
-- [x] update new section in landing page
+- [ ] consider updating App.svelte to tie the styling to classes instead of nth-of-type selectors. Declarative.
+
+- [ ] consider adding the pattern following a media query checking the support of mask-image _or_ -webkit-mask-image. Padding/margin changes. [Logic in media queries](https://css-tricks.com/logic-in-media-queries/).
+
+- [ ] revise entire project starting from pages
 
 - [ ] write copy for the different sections of the landing page
+
+  - [ ] blog
+
+  - [ ] codepen
+
+  - [ ] freecodecamp
+
+  - [ ] twitter
+
+  - [ ] github
+
+  - [x] almost forgot
 
 ## Index
 

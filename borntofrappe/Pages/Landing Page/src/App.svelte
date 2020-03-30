@@ -17,7 +17,7 @@
   const planets = [
     {
       name: "blog",
-      copy: "Where I take a moment to save my journey as an aspiring developer, fledging designer, endless learner and long distance runner.",
+      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: '/blog',
         copy: 'Go to blog',
@@ -26,7 +26,7 @@
     },
     {
       name: "freecodecamp",
-      copy: "Where I started my journey as a self-taught web developer. With HTML, CSS, and gradually levelling up to JavaScript, React, and even a touch of back-end node.",
+      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: 'https://www.freecodecamp.org/borntofrappe',
         copy: 'Admire certifications',
@@ -35,7 +35,7 @@
     },
     {
       name: "codepen",
-      copy: "Think of something. Chances are, I made something similar on this amazing platform.",
+      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: 'https://codepen.io/borntofrappe',
         copy: 'Browse demos',
@@ -44,7 +44,7 @@
     },
     {
       name: "twitter",
-      copy: "People seem to appreciate my efforts. I try my best to respect expectations.",
+      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: 'https://twitter.com/borntofrappe',
         copy: 'Check profile',
@@ -53,7 +53,7 @@
     },
     {
       name: "github",
-      copy: "In my endless quest to learn, I sort my notes and code in public repositories.",
+      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: 'https://github.com/borntofrappe',
         copy: 'Explore history',
@@ -62,7 +62,7 @@
     },
     {
       name: "almost forgot",
-      copy: "In my endless quest to learn, I sort my notes and code in public repositories.",
+      copy: "My name is Gabriele Corti.<br/>Born and raised in Italy, I enjoyed a year in Germany, where I developed a lasting appreciation of the French language. Outside of VsCode, you'll find me running, nursing a cup of tea, or completing a video game.<br/>In that order.",
       satellites: ["world", "running", "tea", "gaming", "puzzle"]
     }
   ].map(({ name, copy, link, satellites }, index) => ({
@@ -73,6 +73,7 @@
     colors: index % 2 === 0 ? palette.accent : palette.primary,
     tilt: index % 2 === 0 ? 20 : -20,
     clockwise: index % 2 === 0,
+    shade: index % 2 === 0,
   }));
 
   const names = planets.filter(({link}) => link).map(({name}) => name);
@@ -85,14 +86,14 @@
 <Galaxy {names} on:animationend="{() => {loadingComplete = true;}}"/>
 
 {#if loadingComplete}
-  {#each planets as {name, copy, link, satellites, colors, tilt, clockwise}}
+  {#each planets as {name, copy, link, satellites, colors, tilt, clockwise, shade}}
     <div in:fade id="{name}">
       <section>
-        <h2>{name.split('-')}</h2>
+        <h2>{name.split('-').join(' ')}</h2>
 
-        <Planet {name} {satellites} {colors} {tilt} {clockwise}  />
+        <Planet {name} {satellites} {colors} {tilt} {clockwise} {shade} />
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?</p>
+        <p>{@html copy}</p>
 
         {#if link}
           <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
@@ -119,6 +120,7 @@
     scroll-margin-top: 20px;
   }
   div:before {
+    margin-bottom: -1px;
     background: inherit;
     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='none'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
