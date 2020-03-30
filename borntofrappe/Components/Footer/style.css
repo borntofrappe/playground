@@ -111,6 +111,11 @@ footer a:focus + svg g {
   animation-play-state: running;
 }
 
+footer svg:hover {
+  color: hsl(342, 80%, 50%);
+  color: var(--accent-color);
+}
+
 /* don't run the animation when the user prefers not to */
 @media (prefers-reduced-motion: reduce) {
   footer a:hover + svg g,
@@ -118,12 +123,4 @@ footer a:focus + svg g {
   footer svg:hover g {
     animation-play-state: paused;
   }
-}
-
-/* update the color of the icon when hovering on the icon itself
-might not make it to production
-*/
-footer svg:hover {
-  color: hsl(342, 80%, 50%);
-  color: var(--accent-color);
 }

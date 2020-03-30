@@ -5,7 +5,7 @@
 
   export let names;
 
-  const size = 480;
+  const size = 500;
   const iconSize = 100;
 
   const { length } = names;

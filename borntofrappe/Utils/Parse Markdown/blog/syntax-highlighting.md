@@ -5,8 +5,6 @@ brief: Adding syntax highlighting with shiki and async syntax.
 tags: css, js
 ---
 
-# Syntax Highlighting
-
 Following the instructions detailed in the mardkwon file **From Markdown to HTML**, I set out to include syntax highlighting with the aforementioned `shiki` module.
 
 ```js

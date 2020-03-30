@@ -35,7 +35,7 @@ a:focus:after {
 /* border bottom */
 a:before {
   pointer-events: none;
-  margin: 0.5em 0;
+  margin: 0.75em 0;
   position: absolute;
   top: 100%;
   left: 0%;
@@ -56,7 +56,7 @@ a:focus:before {
 /* rocket */
 a svg {
   pointer-events: none;
-  margin: 0.5em 0.5rem;
+  margin: 0.75em 0.5rem;
   position: absolute;
   top: 100%;
   left: 0%;
@@ -67,6 +67,7 @@ a svg {
   transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 a svg > g {
+  fill: hsl(0, 0%, 97%);
   fill: var(--body-background);
 }
 a:hover svg,
@@ -78,7 +79,6 @@ a:focus svg {
   a:nth-of-type(even):before {
     transform-origin: 100% 50%;
   }
-
   a:nth-of-type(even) svg > g {
     transform: scaleX(-1);
   }
@@ -87,7 +87,6 @@ a:focus svg {
     right: 50%;
     left: initial;
   }
-  /* it seems necessary to repeat the syntax */
   a:nth-of-type(even):hover svg,
   a:nth-of-type(even):focus svg {
     transform: translate(0%, -50%);

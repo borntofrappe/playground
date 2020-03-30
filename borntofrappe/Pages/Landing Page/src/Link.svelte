@@ -1,10 +1,10 @@
 <script>
-  export let linkLeft = true;
+  export let left = false;
   export let copy;
   export let href;
 </script>
 
-<a class:left="{linkLeft}" href="{href}">
+<a class:left {href}>
   {copy}
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="42" height="42">
     <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="none">
@@ -28,13 +28,10 @@
     --transition-duration: 0.5s;
     font-family: "Maven Pro", sans-serif;
     font-weight: 600;
-    /* replace with :after pseudo element */
     outline: none;
     position: relative;
-    padding-bottom: 0.75em;
   }
 
-  /* outline */
   a:after {
     outline: 0.1rem solid currentColor;
     position: absolute;
@@ -49,8 +46,8 @@
     opacity: 1;
   }
 
-  /* border bottom */
   a:before {
+    margin-top: 0.75em;
     pointer-events: none;
     position: absolute;
     top: 100%;
@@ -69,10 +66,9 @@
     transform: translate(0%, -50%) scale(1);
   }
 
-  /* rocket */
   a svg {
     pointer-events: none;
-    margin: 0 0.5rem;
+    margin: 0.75em 0.5rem;
     position: absolute;
     top: 100%;
     left: 0%;
@@ -83,6 +79,7 @@
     transition: transform var(--transition-duration) var(--transition-timing-function);
   }
   a svg > g {
+    fill: hsl(0, 0%, 97%);
     fill: var(--body-background);
   }
   a:hover svg,
@@ -94,7 +91,6 @@
     a.left:before {
       transform-origin: 100% 50%;
     }
-
     a.left svg {
       transform: translate(100%, -50%);
       right: 50%;
@@ -103,7 +99,6 @@
     a.left svg > g {
       transform: scaleX(-1);
     }
-    /* it seems necessary to repeat the syntax */
     a.left:hover svg,
     a.left:focus svg {
       transform: translate(0%, -50%);

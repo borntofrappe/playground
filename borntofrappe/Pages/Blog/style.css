@@ -9,9 +9,9 @@ header {
   color: hsl(0, 0%, 97%);
   color: var(--body-background);
   background-image: url("data:image/svg+xml,%3Csvg opacity='0.3' xmlns='http://www.w3.org/2000/svg' viewBox='-5 -5 10 10' width='20' height='20'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Ccircle r='1' /%3E%3Ccircle r='1' cx='5' cy='-5' /%3E%3Ccircle r='1' cx='5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='-5' /%3E%3C/g%3E%3C/svg%3E");
-  background-size: 20;
+  background-size: 20px;
   background-position: -5px -5px;
-  padding: 2rem 0 1rem;
+  padding: 2rem 0 0rem;
   max-width: 40em;
   width: 90vw;
   margin: 0rem auto;
@@ -22,6 +22,9 @@ header {
   align-items: flex-start;
   justify-content: space-evenly;
 }
+/* for browsers not supporting grid use a pseudo element to stretch the background across the viewport
+when grid is supported, remove the element and reset the properties necessary to set it up
+*/
 header:before {
   z-index: -5;
   content: "";
@@ -33,14 +36,14 @@ header:before {
   left: 50%;
   transform: translateX(-50%);
 }
+
 header:after {
   margin-top: -1px;
   background: hsl(230, 30%, 10%);
   background: var(--body-color);
   background-image: url("data:image/svg+xml,%3Csvg opacity='0.3' xmlns='http://www.w3.org/2000/svg' viewBox='-5 -5 10 10' width='20' height='20'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Ccircle r='1' /%3E%3Ccircle r='1' cx='5' cy='-5' /%3E%3Ccircle r='1' cx='5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='-5' /%3E%3C/g%3E%3C/svg%3E");
   background-size: 20px;
-  /* 6 to make up the -1px margin */
-  background-position: -5px 6px;
+  background-position: -5px -6.5px;
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='none'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 -20 100 40' width='100' height='40'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Cpath d='M 0 -15 c 50 -17.5 50 17.5 100 0 c 50 -17.5 50 17.5 100 0 v 30 c -50 17.5 -50 -17.5 -100 0 c -50 17.5 -50 -17.5 -100 0' /%3E%3C/g%3E%3C/svg%3E");
@@ -56,8 +59,8 @@ header:after {
   height: 20px;
   transform: scaleY(-1);
 }
-header > * {
-  margin: 1rem 0;
+header > * + * {
+  margin: 1.5rem 0;
 }
 header p {
   line-height: 1.75;
@@ -66,7 +69,7 @@ header p {
 main {
   max-width: 40em;
   width: 90vw;
-  margin: 3rem auto 4rem;
+  margin: 2.5rem auto 4rem;
 }
 /* vertical space between the articles */
 main > * + * {
@@ -89,20 +92,24 @@ article h2 a svg {
   width: 1.5em;
   height: auto;
 }
+
 article time {
-  background: var(--accent-background);
-  border-left: 0.2rem solid var(--accent-color);
   padding: 0.2rem 0.5rem;
   display: inline-block;
+  background: hsl(205, 100%, 90%);
+  background: var(--primary-0);
+  border-left: 0.2rem solid hsl(225, 55%, 45%);
+  border-left: 0.2rem solid var(--primary-5);
 }
-article p {
-  line-height: 2;
+article:first-of-type time {
+  background: hsl(325, 100%, 90%);
+  background: var(--accent-background);
+  border-left-color: hsl(342, 80%, 50%);
+  border-left-color: var(--accent-color);
 }
 
-/* keep the default accent only on the first article */
-article:not(:first-of-type) {
-  --accent-color: var(--primary-5);
-  --accent-background: var(--primary-0);
+article p {
+  line-height: 2;
 }
 
 article:first-of-type h2 {
@@ -186,7 +193,6 @@ nav a {
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
-  /* vertically align the accompanying icon */
   display: inline-flex;
   align-items: center;
 }
@@ -195,11 +201,11 @@ nav a svg {
   width: 1.5em;
   height: auto;
 }
+
 /* footer css */
 footer {
   --animation-duration: 2s;
   --animation-timing-function: var(--ease-in-out-sine);
-  --accent-color: var(--accent-4);
   color: hsl(0, 0%, 97%);
   color: var(--body-background);
   background: hsl(230, 30%, 10%);
@@ -211,6 +217,7 @@ footer {
   text-align: center;
   position: relative;
 }
+
 footer:before {
   background: hsl(230, 30%, 10%);
   background: var(--body-color);
@@ -237,7 +244,8 @@ footer a {
   font-family: "Maven Pro", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  border-bottom: 0.1rem solid var(--accent-4);
+  border-bottom: 0.1rem solid hsl(342, 80%, 50%);
+  border-bottom: 0.1rem solid var(--accent-color);
 }
 
 /*
@@ -297,6 +305,11 @@ footer a:focus + svg {
 footer a:hover + svg g,
 footer a:focus + svg g {
   animation-play-state: running;
+}
+
+footer a svg:hover {
+  color: hsl(342, 80%, 50%);
+  color: var(--accent-color);
 }
 
 /* don't run the animation when the user prefers not to */

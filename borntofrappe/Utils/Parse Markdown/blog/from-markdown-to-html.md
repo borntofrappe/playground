@@ -5,8 +5,6 @@ brief: A rambling explanation behind a script that could have used a few more pa
 tags: html, js
 ---
 
-# From markdown to HTML
-
 Using the `fs` module and the `marked` package, I set out to take this markdown file, consider the front matter and then spit out the matching markup.
 
 Bonus points if I manage to add syntax highlighting [shiki](https://github.com/octref/shiki).

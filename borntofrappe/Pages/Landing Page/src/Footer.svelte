@@ -11,7 +11,6 @@
   footer {
     --animation-duration: 2s;
     --animation-timing-function: var(--ease-in-out-sine);
-    --accent-color: var(--accent-4);
     color: hsl(0, 0%, 97%);
     color: var(--body-background);
     background: hsl(230, 30%, 10%);
@@ -49,7 +48,8 @@
     font-family: "Maven Pro", sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
-    border-bottom: 0.1rem solid var(--accent-4);
+    border-bottom: 0.1rem solid hsl(342, 80%, 50%);
+    border-bottom: 0.1rem solid var(--accent-color);
   }
 
   footer svg {
@@ -91,13 +91,6 @@
     }
   }
 
-  /* it seems setting a different color compromises the global a:hover, a:focus */
-  footer a:hover,
-  footer a:focus {
-    color: hsl(342, 80%, 50%);
-    color: var(--accent-color);
-  }
-
   footer a:hover + svg,
   footer a:focus + svg {
     color: hsl(342, 80%, 50%);
@@ -106,6 +99,11 @@
   footer a:hover + svg g,
   footer a:focus + svg g {
     animation-play-state: running;
+  }
+
+  footer svg:hover {
+    color: hsl(342, 80%, 50%);
+    color: var(--accent-color);
   }
 
   @media (prefers-reduced-motion: reduce) {

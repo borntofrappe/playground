@@ -25,20 +25,24 @@ article h2 a svg {
   width: 1.5em;
   height: auto;
 }
+
 article time {
-  background: var(--accent-background);
-  border-left: 0.2rem solid var(--accent-color);
   padding: 0.2rem 0.5rem;
   display: inline-block;
+  background: hsl(205, 100%, 90%);
+  background: var(--primary-0);
+  border-left: 0.2rem solid hsl(225, 55%, 45%);
+  border-left: 0.2rem solid var(--primary-5);
 }
-article p {
-  line-height: 2;
+article:first-of-type time {
+  background: hsl(325, 100%, 90%);
+  background: var(--accent-background);
+  border-left-color: hsl(342, 80%, 50%);
+  border-left-color: var(--accent-color);
 }
 
-/* keep the default accent only on the first article */
-article:not(:first-of-type) {
-  --accent-color: var(--primary-5);
-  --accent-background: var(--primary-0);
+article p {
+  line-height: 2;
 }
 
 article:first-of-type h2 {

@@ -1,7 +1,6 @@
 <script>
   import getIcon from "./icons.js";
 
-  // svg appearance
   export let name = "";
   export let satellites = [];
   export let colors = ["hsl(300, 65%, 20%)", "hsl(300, 70%, 30%)", "hsl(300, 75%, 45%)", "hsl(300, 80%, 50%)", "hsl(300, 90%, 55%)", "hsl(300, 92%, 65%)", "hsl(300, 95%, 70%)", "hsl(300, 95%, 80%)", "hsl(300, 100%, 90%)"];
@@ -9,8 +8,6 @@
   export let clockwise = Math.random() > 0.5;
   export let shade = true;
 
-  // intersection observer api
-  // toggled a boolean according to whether or not the planet intersects with the window
   let planet;
   let observed = false;
   $: {
@@ -29,7 +26,6 @@
 </script>
 
 <svg bind:this="{planet}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
-  <!-- be sure to provide a unique id for the clipPath and mask element -->
   <defs>
     <clipPath id="clip-planet-{name}">
       <circle r="30" />

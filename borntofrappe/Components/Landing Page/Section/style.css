@@ -43,9 +43,9 @@ div:nth-last-of-type(odd) {
   --accent-color: var(--primary-4);
 }
 div section {
-  max-width: 40em;
+  max-width: 42em;
   width: 90vw;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
 }
 
 div section h2 {
@@ -83,36 +83,6 @@ div section a {
   font-size: 1.1rem;
   border-bottom: 0.2rem solid hsl(342, 80%, 50%);
   border-bottom: 0.2rem solid var(--accent-color);
-
-  display: inline-flex;
-  flex-direction: row-reverse;
-  align-items: center;
-}
-
-div section a svg {
-  display: block;
-  width: auto;
-  height: 1em;
-  margin-right: 0.5rem;
-  transform: scaleX(-1);
-}
-
-div:nth-of-type(even) a {
-  flex-direction: row;
-}
-div:nth-of-type(even) a svg {
-  margin-right: initial;
-  margin-left: 0.5rem;
-  transform: initial;
-}
-
-div section a svg path {
-  transition: stroke-dashoffset 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: stroke-dashoffset var(--transition-duration) var(--transition-timing-function);
-}
-div section a:hover svg path,
-div section a:focus svg path {
-  stroke-dashoffset: 0;
 }
 
 @supports (shape-outside: circle()) {
@@ -144,11 +114,7 @@ div section a:focus svg path {
     flex-direction: row;
     font-size: 1rem;
   }
-  div section a svg {
-    margin-right: initial;
-    margin-left: 0.5rem;
-    transform: initial;
-  }
+
   div section > svg,
   div section:nth-of-type(even) > svg {
     order: 1;

@@ -39,13 +39,14 @@
     colors: index === 0 ? palette.accent : palette.primary,
     tilt: index % 2 === 0 ? 20 : -20,
     clockwise: index % 2,
+    shade: index % 2 === 0,
   }));
 
 </script>
 
 {#each planets as {name, satellites, colors, tilt, clockwise}}
   <Filler />
-  <Planet {name} {satellites} {colors} {tilt} {clockwise}  />
+  <Planet {name} {satellites} {colors} {tilt} {clockwise} {shade} />
 {/each}
 
 <!-- <Planet  /> -->

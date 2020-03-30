@@ -1,9 +1,10 @@
 <script>
   import Breadcrumbs from "./Breadcrumbs.svelte";
   import Galaxy from "./Galaxy.svelte";
-  import Footer from "./Footer.svelte";
   import Planet from "./Planet.svelte";
   import Link from "./Link.svelte";
+  import Footer from "./Footer.svelte";
+
   import { fade } from "svelte/transition";
 
   let loadingComplete = false;
@@ -96,7 +97,7 @@
         <p>{@html copy}</p>
 
         {#if link}
-          <Link href="{link.href}" copy="{link.copy}" linkLeft="{clockwise}"/>
+          <Link href="{link.href}" copy="{link.copy}" left="{clockwise}"/>
         {/if}
       </section>
     </div>
@@ -144,6 +145,7 @@
   /* update the fill of the rocket element */
   div:nth-last-of-type(even) :global(a svg > g) {
     fill: hsl(230, 30%, 10%);
+    fill: var(--primary-8);
   }
   div:nth-last-of-type(odd) {
     color: hsl(230, 30%, 10%);
