@@ -9,3 +9,18 @@ svg {
   height: auto;
   display: block;
 }
+
+a {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.5), color 0.4s ease-in-out;
+  transform: scale(0.9);
+}
+a .text {
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+a:hover,
+a:focus,
+a:hover .text,
+a:focus .text {
+  transform: scale(1);
+}

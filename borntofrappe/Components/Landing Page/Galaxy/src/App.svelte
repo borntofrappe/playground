@@ -7,23 +7,23 @@
   const names = [
     {
       name: "blog",
-      href: "/blog"
+      href: "#"
     },
     {
       name: "codepen",
-      href: "https://codepen.io/borntofrappe"
+      href: "#"
     },
     {
       name: "freecodecamp",
-      href: "https://www.freecodecamp.org/borntofrappe"
+      href: "#"
     },
     {
       name: "twitter",
-      href: "https://twitter.com/borntofrappe"
+      href: "#"
     },
     {
       name: "github",
-      href: "https://github.com/borntofrappe"
+      href: "#"
     }
   ];
 
@@ -58,6 +58,7 @@
 
 
 <style>
+  /* show the scrollbar by default to avoid the jump as the sections are introduced */
   :global(body) {
     overflow-y: scroll;
   }

@@ -10,7 +10,6 @@ body {
 footer {
   --animation-duration: 2s;
   --animation-timing-function: var(--ease-in-out-sine);
-  --accent-color: var(--accent-4);
   color: hsl(0, 0%, 97%);
   color: var(--body-background);
   background: hsl(230, 30%, 10%);
@@ -22,6 +21,7 @@ footer {
   text-align: center;
   position: relative;
 }
+
 footer:before {
   background: hsl(230, 30%, 10%);
   background: var(--body-color);
@@ -48,7 +48,8 @@ footer a {
   font-family: "Maven Pro", sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  border-bottom: 0.1rem solid var(--accent-4);
+  border-bottom: 0.1rem solid hsl(342, 80%, 50%);
+  border-bottom: 0.1rem solid var(--accent-color);
 }
 
 /*

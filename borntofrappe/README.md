@@ -6,15 +6,25 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] fix pixel imperfection with pseudo element and wavy pattern
+- [x] add experiments folder
 
-- [x] fix circle around planet
+- [ ] Landing page. Consider updating App.svelte to tie the styling to classes instead of nth-of-type selectors. Declarative.
 
-- [ ] consider updating App.svelte to tie the styling to classes instead of nth-of-type selectors. Declarative.
+- [ ] Blog post header. Consider adding a heading/paragraph in the section presenting the tags (icons) for screen readers. `.screen-reader` class.
 
-- [ ] consider adding the pattern following a media query checking the support of mask-image _or_ -webkit-mask-image. Padding/margin changes. [Logic in media queries](https://css-tricks.com/logic-in-media-queries/).
+- [ ] consider adding the pattern following a media query checking the support of mask-image _or_ -webkit-mask-image. Padding/margin change. [Logic in media queries](https://css-tricks.com/logic-in-media-queries/).
 
-- [ ] revise entire project starting from pages
+- [ ] revise everything
+
+  - [x] components
+
+  - [x] design guide
+
+  - [ ] experiments
+
+  - [ ] pages
+
+  - [ ] utils
 
 - [ ] write copy for the different sections of the landing page
 
@@ -39,6 +49,10 @@ Building blocks behind the website. Breadcrumbs, footer...
 ### Design Guide
 
 Systems governing the design of the website. Colors, icons...
+
+### Experiments
+
+Projects not meant to be incorporated in the website. Offseth path, theme toggle...
 
 ### Pages
 

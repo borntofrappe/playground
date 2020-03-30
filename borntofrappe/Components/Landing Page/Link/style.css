@@ -34,6 +34,7 @@ a:focus:after {
 
 /* border bottom */
 a:before {
+  pointer-events: none;
   margin: 0.5em 0;
   position: absolute;
   top: 100%;
@@ -44,6 +45,7 @@ a:before {
   background: currentColor;
   transform-origin: 0% 50%;
   transform: translate(0%, -50%) scale(0);
+  transition: transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 a:hover:before,
@@ -61,6 +63,7 @@ a svg {
   width: 100%;
   height: 1.5em;
   transform: translate(-50%, -50%);
+  transition: transform 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 a svg > g {
@@ -72,21 +75,21 @@ a:focus svg {
 }
 
 @media (min-width: 40rem) {
-  a.left:before {
+  a:nth-of-type(even):before {
     transform-origin: 100% 50%;
   }
 
-  a.left svg > g {
+  a:nth-of-type(even) svg > g {
     transform: scaleX(-1);
   }
-  a.left svg {
+  a:nth-of-type(even) svg {
     transform: translate(100%, -50%);
     right: 50%;
     left: initial;
   }
   /* it seems necessary to repeat the syntax */
-  a.left:hover svg,
-  a.left:focus svg {
+  a:nth-of-type(even):hover svg,
+  a:nth-of-type(even):focus svg {
     transform: translate(0%, -50%);
   }
 }

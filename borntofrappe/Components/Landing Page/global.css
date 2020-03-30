@@ -86,6 +86,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   border: 0.2rem solid currentColor;
   border-radius: 0.5rem;
+  background: hsl(342, 80%, 50%);
   background: var(--accent-color);
 }
 

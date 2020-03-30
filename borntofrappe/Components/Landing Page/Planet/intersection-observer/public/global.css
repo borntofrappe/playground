@@ -86,6 +86,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   border: 0.2rem solid currentColor;
   border-radius: 0.5rem;
+  background: hsl(342, 80%, 50%);
   background: var(--accent-color);
 }
 
@@ -114,13 +115,4 @@ h2 {
 
 code {
   font-family: "Fira Code", monospace;
-}
-
-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.5;
 }

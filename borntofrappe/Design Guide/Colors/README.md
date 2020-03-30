@@ -8,7 +8,7 @@
 
 ### Primary
 
-Starting from the background of the Palenight theme in VSCode and modifying the lightness and saturation values.
+Starting from the background of the Palenight theme in VsCode and modifying the lightness and saturation values.
 
 ```css
 :root {
@@ -73,61 +73,5 @@ In the CSS, additional custom properties describe different parts of the design.
   --accent-color: var(--accent-5);
   --selection-color: var(--grey-0);
   --selection-background: var(--accent-4);
-}
-```
-
-### Selectors
-
-- selection
-
-```css
-::selection {
-  color: hsl(0, 0%, 97%);
-  color: var(--selection-color);
-  background: hsl(340, 90%, 55%);
-  background: var(--selection-background);
-}
-```
-
-- body
-
-```css
-body {
-  color: hsl(230, 30%, 10%);
-  color: var(--body-color);
-  background: hsl(0, 0%, 97%);
-  background: var(--body-background);
-}
-```
-
-- links
-
-```css
-a {
-  color: inherit;
-  outline-color: hsl(342, 80%, 50%);
-  outline-color: var(--accent-color);
-}
-a:hover,
-a:focus {
-  color: hsl(342, 80%, 50%);
-  color: var(--accent-color);
-}
-```
-
-- scrollbar
-
-```css
-body::-webkit-scrollbar {
-  width: 0.8rem;
-}
-body::-webkit-scrollbar-track {
-  background: currentColor;
-}
-body::-webkit-scrollbar-thumb {
-  border: 0.2rem solid currentColor;
-  border-radius: 0.5rem;
-  color: hsl(342, 80%, 50%);
-  background: var(--accent-color);
 }
 ```

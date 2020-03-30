@@ -31,18 +31,10 @@ Most practically this means that the binary styling of odd/even illustrations ne
 + div:nth-of-type(even) section ...{}
 ```
 
-## Update
+## Styling
 
-Experimenting with different patterns, I've decided to include the SVG syntax created for the footer component, `pattern-wave`, right before each `div` element.
+Experimenting with different patterns, I've decided to:
 
-In light of this change, I also changed the background of every other container, starting from the bottom to make sure the last container has a color/background combination contrasting the inevitable footer.
+- style every other container with a different background/color combination
 
-## scroll-margin-top
-
-This is ultimately for the landing page, but to show the section _before_ the pattern of the section which follows, I decided to add a `scroll-margin-top` to the div container.
-
-```css
-div {
-  scroll-margin-top: 20px;
-}
-```
+- include the pattern created for the footer component right before each `div` element. A pixel margin is specified to make sure the pattern blends in the container.

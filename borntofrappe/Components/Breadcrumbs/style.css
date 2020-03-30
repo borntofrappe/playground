@@ -9,7 +9,6 @@ nav a {
   font-weight: 700;
   font-size: 0.95rem;
   text-decoration: none;
-  /* vertically align the accompanying icon */
   display: inline-flex;
   align-items: center;
 }

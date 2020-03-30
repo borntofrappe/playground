@@ -24,7 +24,6 @@ main > pre .shiki {
 main > pre .language {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  transition: color 0.2s ease-in-out;
   color: hsl(0, 0%, 97%);
   color: var(--body-background);
   background: hsl(230, 30%, 10%);
@@ -38,6 +37,7 @@ main > pre .language {
   align-items: center;
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
+  transition: color 0.2s ease-in-out;
 }
 main > pre .language svg {
   width: 1.25em;
@@ -46,6 +46,7 @@ main > pre .language svg {
 }
 
 main > pre:hover .language {
+  color: hsl(340, 90%, 55%);
   color: var(--accent-4);
 }
 
@@ -67,6 +68,7 @@ main pre::-webkit-scrollbar-track {
   background: currentColor;
 }
 main pre::-webkit-scrollbar-thumb {
+  background: hsl(342, 80%, 50%);
   background: var(--accent-color);
   border-radius: 0.2rem;
 }
