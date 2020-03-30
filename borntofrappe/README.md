@@ -6,25 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add experiments folder
+- [x] revise everything but pages
 
-- [ ] Landing page. Consider updating App.svelte to tie the styling to classes instead of nth-of-type selectors. Declarative.
+- [x] move blog and blog post components to the matching folder
 
-- [ ] Blog post header. Consider adding a heading/paragraph in the section presenting the tags (icons) for screen readers. `.screen-reader` class.
+- [ ] update pages
 
-- [ ] consider adding the pattern following a media query checking the support of mask-image _or_ -webkit-mask-image. Padding/margin change. [Logic in media queries](https://css-tricks.com/logic-in-media-queries/).
-
-- [ ] revise everything
-
-  - [x] components
-
-  - [x] design guide
-
-  - [ ] experiments
-
-  - [ ] pages
-
-  - [ ] utils
+- [ ] for the landing page, consider styling the elements through classes instead of `nth-of-type` selectors
 
 - [ ] write copy for the different sections of the landing page
 

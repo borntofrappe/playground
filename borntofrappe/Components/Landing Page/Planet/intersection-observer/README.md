@@ -1,10 +1,6 @@
 # Intersection Observer
 
-A couple of notes on the project, especially due my lack of practice with the API. In the **res** folder you find a first implementation using vanilla JS. I found this one to be the a great starting point.
-
-## res
-
-A series of `section` elements are sized to cover the entirety of the viewport. A particular class is then added to highlight when each element is observed by the API.
+In the **res** folder I created a smaller project to exercise with the API. The project specifies a series of `section` elements, are sized to cover the entirety of the viewport. A particular class is then added to highlight when each element is observed by the API.
 
 ```css
 section.observed {
@@ -86,20 +82,20 @@ The idea is to assign a class to the illustrations as they are in the range of t
 Initialize a variable.
 
 ```js
-let illustration;
+let planet;
 ```
 
 Bind the element to said variable.
 
 ```html
-<svg bind:this="{illustration}"></svg>
+<svg bind:this="{planet}"></svg>
 ```
 
 Since the variable is `undefined` at first, I used [declarative statements](https://svelte.dev/tutorial/reactive-statements) to make sure the intersection logic works if the api is available and if the element is bound.
 
 ```js
 $: {
-  if (window.IntersectionObserver && illustration) {
+  if (window.IntersectionObserver && planet) {
   }
 }
 ```
@@ -132,7 +128,7 @@ I'll rewrite the syntax to be more concise, but to reiterate the API's logic.
 
    ```js
    const observer = new IntersectionObserver(callback, options);
-   observer.observe(illustration);
+   observer.observe(planet);
    ```
 
 1. callback
@@ -148,9 +144,3 @@ I'll rewrite the syntax to be more concise, but to reiterate the API's logic.
 And it seems to work. Using a threshold of `0` as well, although it is more difficult to see the animation stop (look at the DOM tree to see the class being removed).
 
 I've decreased the duration of the animation to also make it more obvious. Scroll back, and it will start from the previous point.
-
-## Update
-
-Considering the implementation in the landing page, I updated the component so that its name and attributes are more meaningful. `Illustration.svelte` has now become `Planet.svelte`, and the styling applied through the index has now being moved to dedicated variables like `colors`, `tilt` and `clockwise`.
-
-This also makes it easier to provide default values where the arguments not included in the component, which perhaps opens up the possibility to use the component for a 404 page.

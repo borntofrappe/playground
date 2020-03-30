@@ -21,7 +21,6 @@
       observer.observe(rocket);
     }
   }
-  $: console.log(observed);
 </script>
 
 <style>
