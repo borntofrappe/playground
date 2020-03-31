@@ -6,13 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update pages to match components
+- [x] landing page
 
-- [ ] landing page
+  - [x] style with classes instead of `nth-of-type` selectors
 
-  - [ ] consider styling the elements through classes instead of `nth-of-type` selectors
+  - [x] add an `id` field for the planets
 
-  - [ ] consider adding an `id` field for the planets
+  - [x] update shade label to 'dark'
 
 - [ ] write copy for the different sections of the landing page
 

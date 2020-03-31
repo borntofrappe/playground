@@ -67,17 +67,18 @@
       satellites: ["world", "running", "tea", "gaming", "puzzle"]
     }
   ].map(({ name, copy, link, satellites }, index) => ({
-    name: name.split(' ').join('-'),
+    id: name.split(' ').join('-'),
+    name,
     copy,
     link,
     satellites,
     colors: index % 2 === 0 ? palette.accent : palette.primary,
     tilt: index % 2 === 0 ? 20 : -20,
     clockwise: index % 2 === 0,
-    shade: index % 2 === 0,
+    dark: index % 2 === 0,
   }));
 
-  const names = planets.filter(({link}) => link).map(({name}) => name);
+  const names = planets.filter(({link}) => link).map(({name}) => name.toLowerCase());
 </script>
 
 {#if loadingComplete}
@@ -87,12 +88,12 @@
 <Galaxy {names} on:animationend="{() => {loadingComplete = true;}}"/>
 
 {#if loadingComplete}
-  {#each planets as {name, copy, link, satellites, colors, tilt, clockwise, shade}}
-    <div in:fade id="{name}">
+  {#each planets as {id, name, copy, link, satellites, colors, tilt, clockwise, dark}}
+    <div in:fade id="{name}" class:dark>
       <section>
-        <h2>{name.split('-').join(' ')}</h2>
+        <h2>{name}</h2>
 
-        <Planet {name} {satellites} {colors} {tilt} {clockwise} {shade} />
+        <Planet {id} {satellites} {colors} {tilt} {clockwise} {dark} />
 
         <p>{@html copy}</p>
 
@@ -136,25 +137,37 @@
     width: 100%;
     height: 20px;
   }
-  div:nth-last-of-type(even) {
+  div {
+    color: hsl(230, 30%, 10%);
+    color: var(--primary-8);
+    background: hsl(0, 0%, 97%);
+    background: var(--grey-0);
+  }
+
+  div:not(.dark) :global(a),
+  div:not(.dark) :global(a) {
+    outline-color: hsl(222, 60%, 50%);
+    outline-color: var(--primary-4);
+  }
+
+  div:not(.dark) :global(a:hover),
+  div:not(.dark) :global(a:focus) {
+    color: hsl(222, 60%, 50%);
+    color:  var(--primary-4);
+  }
+
+  div.dark {
     color: hsl(0, 0%, 97%);
     color: var(--grey-0);
     background: hsl(230, 30%, 10%);
     background: var(--primary-8);
   }
-  /* update the fill of the rocket element */
-  div:nth-last-of-type(even) :global(a svg > g) {
+
+  div.dark :global(a svg > g) {
     fill: hsl(230, 30%, 10%);
     fill: var(--primary-8);
   }
-  div:nth-last-of-type(odd) {
-    color: hsl(230, 30%, 10%);
-    color: var(--primary-8);
-    background: hsl(0, 0%, 97%);
-    background: var(--grey-0);
 
-    --accent-color: var(--primary-4);
-  }
 
   div section {
     max-width: 42em;
@@ -169,9 +182,9 @@
   }
 
   div :global(section > svg) {
-    float: left;
+    float: right;
     margin: 2rem 0;
-    margin-right: 2.5rem;
+    margin-left: 2.5rem;
     display: block;
     max-width: 28em;
     width: 100%;
@@ -179,10 +192,10 @@
     color: hsl(342, 80%, 50%);
     color: var(--accent-color);
   }
-  div:nth-of-type(even) :global(section > svg) {
-    float: right;
-    margin-right: initial;
-    margin-left: 2.5rem;
+  div.dark :global(section > svg) {
+    float: left;
+    margin-left: initial;
+    margin-right: 2.5rem;
   }
 
   div section p {
@@ -199,8 +212,11 @@
     div :global(section > svg) {
       shape-outside: circle();
     }
-    div:nth-of-type(even) {
+    div {
       text-align: right;
+    }
+    div.dark {
+      text-align: initial;
     }
   }
 
@@ -225,7 +241,7 @@
       font-size: 1rem;
     }
     div :global(section > svg),
-    div:nth-of-type(even) :global(section > svg) {
+    div.dark :global(section > svg) {
       order: 1;
       align-self: center;
       margin: initial;

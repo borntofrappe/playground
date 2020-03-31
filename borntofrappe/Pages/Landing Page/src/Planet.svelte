@@ -1,12 +1,12 @@
 <script>
   import getIcon from "./icons.js";
 
-  export let name = "";
+  export let id = "";
   export let satellites = [];
-  export let colors = ["hsl(300, 65%, 20%)", "hsl(300, 70%, 30%)", "hsl(300, 75%, 45%)", "hsl(300, 80%, 50%)", "hsl(300, 90%, 55%)", "hsl(300, 92%, 65%)", "hsl(300, 95%, 70%)", "hsl(300, 95%, 80%)", "hsl(300, 100%, 90%)"];
+  export let colors = ["hsl(340, 65%, 20%)", "hsl(340, 70%, 30%)", "hsl(340, 75%, 45%)", "hsl(342, 80%, 50%)", "hsl(340, 90%, 55%)", "hsl(337, 92%, 65%)", "hsl(335, 95%, 70%)", "hsl(332, 95%, 80%)", "hsl(325, 100%, 90%)"];
   export let tilt = 0;
   export let clockwise = Math.random() > 0.5;
-  export let shade = true;
+  export let dark = true;
 
   let planet;
   let observed = false;
@@ -27,11 +27,11 @@
 
 <svg bind:this="{planet}" class:clockwise class:observed style="color: {colors[4]};" viewBox="-50 -50 100 100" width="200" height="200">
   <defs>
-    <clipPath id="clip-planet-{name}">
+    <clipPath id="clip-planet-{id}">
       <circle r="30" />
     </clipPath>
 
-    <mask id="mask-satellites-{name}">
+    <mask id="mask-satellites-{id}">
       <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" />
       <g fill="hsl(0, 0%, 0%)">
         <g class="rotate">
@@ -47,18 +47,18 @@
 
   <!-- planet -->
   <g transform="rotate({tilt})">
-    <g clip-path="url(#clip-planet-{name})">
+    <g clip-path="url(#clip-planet-{id})">
       <g transform="translate(0 -70)">
         {#each colors as color, index}
         <ellipse stroke="none" fill="{color}" cx="0" cy="70" rx="{35 + (15 / colors.length * index)}" ry="30" transform="scale({1 - (0.6 / colors.length * index)})" />
         {/each}
       </g>
     </g>
-    <circle r="30" fill="none" stroke="{shade ? colors[0] : colors[colors.length - 1]}" stroke-width="0.2" />
+    <circle r="30" fill="none" stroke="{dark ? colors[0] : colors[colors.length - 1]}" stroke-width="0.2" />
   </g>
 
   <!-- orbit -->
-  <g mask="url(#mask-satellites-{name})">
+  <g mask="url(#mask-satellites-{id})">
     <circle class="rotate" r="42" stroke-dasharray="1 2" stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="0.5" />
   </g>
 
