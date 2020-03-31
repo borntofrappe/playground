@@ -6,9 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add icon to landing page (purely aesthetic)
+- [x] update header section margin
 
-- [x] fix margin in blog post header and matching page. Allow to scroll horizontally
+- [x] remove unnecessary styles for blog post media query
+
+- [x] restructure header pattern to avoid cropping with the pseudo element
 
 - [ ] write copy for the different sections of the landing page
 
