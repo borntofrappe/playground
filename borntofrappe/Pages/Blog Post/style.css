@@ -49,23 +49,39 @@ header section {
   left: 50%;
   top: 100%;
   transform: translate(-50%, -50%);
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  max-width: 100%;
 }
+header section::-webkit-scrollbar {
+  height: 0.2rem;
+  transform: rotate(0.5turn);
+}
+header section::-webkit-scrollbar-track {
+  background: currentColor;
+}
+header section::-webkit-scrollbar-thumb {
+  background: hsl(342, 80%, 50%);
+  background: var(--accent-color);
+}
+
 header section span {
-  width: 62px;
-  height: 62px;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
   color: hsl(230, 30%, 10%);
   color: var(--body-color);
   background: hsl(0, 0%, 97%);
   background: var(--body-background);
-  border: 5px solid currentColor;
-  /* (100 - 62) / 2
+  border: 0.4rem solid currentColor;
+  /* (100 - 56) / 2
   100: width of the pattern
-  62: size of the icon
+  56: size of the icon
   */
-  margin: 19px;
+  margin: 8px 22px;
   border-radius: 50%;
-  padding: 10px;
+  padding: 0.6rem;
   transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: color var(--transition-duration) var(--transition-timing-function);
   display: inline-block;

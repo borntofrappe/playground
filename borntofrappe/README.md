@@ -6,13 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] landing page
+- [x] add icon to landing page (purely aesthetic)
 
-  - [x] style with classes instead of `nth-of-type` selectors
-
-  - [x] add an `id` field for the planets
-
-  - [x] update shade label to 'dark'
+- [x] fix margin in blog post header and matching page. Allow to scroll horizontally
 
 - [ ] write copy for the different sections of the landing page
 

@@ -29,6 +29,12 @@ const articles = [
     brief: 'The first article of this very website, and hopefully not the last.',
     tags: 'html, css',
     slug: 'up-and-running'
+  },
+  {
+    title: 'Horizontal scroll',
+    date: '2020-2-20',
+    tags: 'html, css, js, js, html, css',
+    slug: 'horizontal-scroll'
   }
 ];
 
