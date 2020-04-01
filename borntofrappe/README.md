@@ -6,19 +6,19 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update header section margin
+- [x] remove `0` and `4` icons
 
-- [x] remove unnecessary styles for blog post media query
+- [x] update selection color for `:not(.dark)` containers to match in palette
 
-- [x] restructure header pattern to avoid cropping with the pseudo element
+- [x] fix ::selection on edge browser. [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
 
 - [ ] write copy for the different sections of the landing page
 
   - [ ] blog
 
-  - [ ] codepen
-
   - [ ] freecodecamp
+
+  - [ ] codepen
 
   - [ ] twitter
 

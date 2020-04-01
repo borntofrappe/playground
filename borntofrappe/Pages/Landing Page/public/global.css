@@ -65,8 +65,8 @@ html {
 ::selection {
   color: hsl(0, 0%, 97%);
   color: var(--grey-0);
-  background: hsl(340, 90%, 55%);
-  background: var(--accent-4);
+  background-color: hsl(340, 90%, 55%);
+  background-color: var(--accent-4);
 }
 
 body {

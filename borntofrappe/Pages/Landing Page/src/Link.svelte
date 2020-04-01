@@ -24,7 +24,6 @@
 
 <style>
   a {
-    margin-bottom: 0.75em;
     --transition-duration: 0.5s;
     font-family: "Maven Pro", sans-serif;
     font-weight: 600;

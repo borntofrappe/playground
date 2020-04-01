@@ -21,7 +21,7 @@
       copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: '/blog',
-        copy: 'Go to blog',
+        copy: 'Look for articles',
       },
       satellites: ["idea", "write", "edit", "review", "publish"]
     },
@@ -48,7 +48,7 @@
       copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: 'https://twitter.com/borntofrappe',
-        copy: 'Check profile',
+        copy: 'Be sure to follow me',
       },
       satellites: ["like", "comment", "retweet", "directMessage", "notificationBell"]
     },
@@ -57,13 +57,13 @@
       copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
       link: {
         href: 'https://github.com/borntofrappe',
-        copy: 'Explore history',
+        copy: 'Double-check history',
       },
       satellites: ["code", "repository", "branch", "pullRequest", ""]
     },
     {
       name: "almost forgot",
-      copy: "My name is Gabriele Corti.<br/>Born and raised in Italy, I enjoyed a year in Germany, where I developed a lasting appreciation of the French language. Outside of VsCode, you'll find me running, nursing a cup of tea, or completing a video game.<br/>In that order.",
+      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?.",
       satellites: ["world", "running", "tea", "gaming", "puzzle"]
     }
   ].map(({ name, copy, link, satellites }, index) => ({
@@ -144,6 +144,13 @@
     background: var(--grey-0);
   }
 
+  div:not(.dark) :global(::selection) {
+    color: hsl(0, 0%, 97%);
+    color: var(--grey-0);
+    background-color: hsl(222, 60%, 50%);
+    background-color: var(--primary-4);
+  }
+
   div:not(.dark) :global(a),
   div:not(.dark) :global(a) {
     outline-color: hsl(222, 60%, 50%);
@@ -183,8 +190,8 @@
 
   div :global(section > svg) {
     float: right;
-    margin: 2rem 0;
-    margin-left: 2.5rem;
+    margin: 2.5rem 0;
+    margin-left: 2rem;
     display: block;
     max-width: 28em;
     width: 100%;
@@ -200,7 +207,7 @@
 
   div section p {
     line-height: 2;
-    margin: 1.5rem 0 1rem;
+    margin: 3rem 0 1rem;
     font-size: 1.1rem;
   }
 
@@ -220,7 +227,7 @@
     }
   }
 
-  @media (max-width: 42rem) {
+  @media (max-width: 48rem) {
     div section {
       display: flex;
       align-items: flex-start;
