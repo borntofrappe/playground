@@ -6,11 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] remove `0` and `4` icons
+- [x] utils
 
-- [x] update selection color for `:not(.dark)` containers to match in palette
+  - [x] remove unnecessary project
 
-- [x] fix ::selection on edge browser. [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
+  - [x] rename existing efforts with a consistent format
+
+  - [x] introduce new utility for opengraph assets
 
 - [ ] write copy for the different sections of the landing page
 
@@ -20,9 +22,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
   - [ ] codepen
 
-  - [ ] twitter
+  - [x] twitter
 
-  - [ ] github
+  - [x] github
 
   - [x] almost forgot
 

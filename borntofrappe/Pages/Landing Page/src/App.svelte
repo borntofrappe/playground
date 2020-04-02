@@ -27,7 +27,7 @@
     },
     {
       name: "freecodecamp",
-      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
+      copy: "HTML, CSS, JavaScript, React, D3, even a touch of Node, Express and back-end development; these challenges lit a fire that burns to this day.<br/>Looking forward, I now hope to contribute back to the ever helpful curriculum as I learn the Python language.",
       link: {
         href: 'https://www.freecodecamp.org/borntofrappe',
         copy: 'Admire certifications',
@@ -36,7 +36,7 @@
     },
     {
       name: "codepen",
-      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
+      copy: "Practice, practice, practice.",
       link: {
         href: 'https://codepen.io/borntofrappe',
         copy: 'Browse demos',
@@ -45,7 +45,7 @@
     },
     {
       name: "twitter",
-      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
+      copy: "I share my progress almost daily.<br/>It started as a way to keep myself accountable, but with time, I realized people would actually appreciate my continuous efforts.<br/>I try to keep up with expectations, and that has certainly helped me to write code in more quantity and higher quality.",
       link: {
         href: 'https://twitter.com/borntofrappe',
         copy: 'Be sure to follow me',
@@ -54,7 +54,7 @@
     },
     {
       name: "github",
-      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?",
+      copy: "Most of the code I produce is public and available for all to review, fork and improve.<br/>I take joy when I have the chance to participate in open source projects, and with similar pride, I show off the stickers, shirts and general swag awarded for these contributions.",
       link: {
         href: 'https://github.com/borntofrappe',
         copy: 'Double-check history',
@@ -63,7 +63,7 @@
     },
     {
       name: "almost forgot",
-      copy: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo illum voluptatum cumque similique laborum voluptate nostrum ut molestiae, unde praesentium excepturi et, quibusdam incidunt aliquid qui adipisci vitae. Possimus?.",
+      copy: "My name is Gabriele Corti.<br/>Born and raised in Italy, I enjoyed a year in Germany, where I developed a lasting appreciation of the French language. Outside of VsCode, you'll find me running, nursing a cup of tea, or enjoying a dated video game.<br/>In that order.",
       satellites: ["world", "running", "tea", "gaming", "puzzle"]
     }
   ].map(({ name, copy, link, satellites }, index) => ({
