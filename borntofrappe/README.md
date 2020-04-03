@@ -8,11 +8,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [ ] meta tags
 
-  - [x] research protocols and practical examples
+  - [x] create png and svg icons
 
-  - [x] distill essential tags
+  - [ ] design images for routes
 
-  - [ ] create assets for icons and images, in the appropriate format and sizes
+    - [ ] landing page
+
+    - [ ] blog
+
+    - [x] blog post
+
+  - [ ] research puppeteer for blog post
 
 - [ ] copy for the different sections of the landing page
 
