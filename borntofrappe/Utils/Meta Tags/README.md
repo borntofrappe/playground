@@ -71,3 +71,7 @@ For the title and description, consider this table as a starting point.
 | Blog Post | borntofrappe / blog / css-animation-paused | A specific use case for a specific CSS property. SVG                                                  |
 
 For the individual blog post, try to include the content received from the frontmatter object, both in the title/description and the different tags for og:, twitter: and most interestingly :article
+
+## Images
+
+In the three separate folder at this level you find a first, but rather convincing version of the asset which is meant to be shown on each twitter card. What is left is creating the puppeteer script to produce the `.png` files, and the script also customizing the blog post card with a given title and set of tags.

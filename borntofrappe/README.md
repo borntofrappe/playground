@@ -10,11 +10,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
   - [x] create png and svg icons
 
-  - [ ] design images for routes
+  - [x] design images for routes
 
-    - [ ] landing page
+    - [x] landing page
 
-    - [ ] blog
+    - [x] blog
 
     - [x] blog post
 
