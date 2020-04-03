@@ -45,7 +45,7 @@
     },
     {
       name: "twitter",
-      copy: "I share my progress almost daily.<br/>It started as a way to keep myself accountable, but with time, I realized people would actually appreciate my continuous efforts.<br/>I try to keep up with expectations, and that has certainly helped me to write code in more quantity and higher quality.",
+      copy: "I share my progress almost daily.<br/>It started as a way to keep myself accountable, but with time, I realized people would actually appreciate my continuous efforts.<br/>I try to keep up with expectations, and that has certainly helped me to write more and better code.",
       link: {
         href: 'https://twitter.com/borntofrappe',
         copy: 'Be sure to follow me',

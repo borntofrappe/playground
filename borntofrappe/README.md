@@ -6,15 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] utils
+Priorities.
 
-  - [x] remove unnecessary project
-
-  - [x] rename existing efforts with a consistent format
-
-  - [x] introduce new utility for opengraph assets
-
-- [ ] write copy for the different sections of the landing page
+- [ ] copy for the different sections of the landing page
 
   - [ ] blog
 
@@ -28,7 +22,37 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
   - [x] almost forgot
 
+- [ ] shift focus to the content of the blog
+
+  - [x] CSS Animation Paused
+
+  - [ ] ...
+
+- [ ] move the website to the sapper template
+
+## Roadmap
+
+Upcoming features and useful resources.
+
+- [ ] rss feed
+
+  - [ ] https://www.w3.org/2005/Atom
+
+  - [ ] https://educationlinks.fyi/feed.xml
+
+- [ ] og:image
+
+  - [x] https://ogp.me/
+
+  - [x] https://www.swyx.io/writing/jamstack-og-images#what-is-og-image
+
+  - [ ] https://github.com/puppeteer/puppeteer
+
+- [ ] meta tags. Look at websites for the different tags included in the head of each document.
+
 ## Index
+
+A word or two on the different folders.
 
 ### Components
 
