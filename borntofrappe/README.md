@@ -6,19 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [ ] meta tags
+- [x] fix layout for meta images
 
-  - [x] create png and svg icons
+- [ ] puppeteer script
 
-  - [x] design images for routes
+  - [ ] take a screenshot
 
-    - [x] landing page
-
-    - [x] blog
-
-    - [x] blog post
-
-  - [ ] research puppeteer for blog post
+  - [ ] customize blog post
 
 - [ ] copy for the different sections of the landing page
 

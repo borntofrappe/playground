@@ -2,24 +2,6 @@
 
 In the `<head>` of each document I plan to incorporate several `<meta>` tags.
 
-## Reference
-
-Protocols/docs describing the different property and attributes
-
-- [Open Graph Protocol](https://ogp.me/)
-
-- [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
-
-A few website to see the implementation in practice.
-
-- [CSS Tricks](https://css-tricks.com/)
-
-- [Smashing Magazine](https://www.smashingmagazine.com/)
-
-- [swyx](https://www.swyx.io/)
-
-- [Piccalilli](http://piccalil.li/)
-
 ## Notes
 
 `index.html` describes every possible meta tag I plan to incorporate in the website. I separated them by topic, but here a few notes:
@@ -74,4 +56,26 @@ For the individual blog post, try to include the content received from the front
 
 ## Images
 
-In the three separate folder at this level you find a first, but rather convincing version of the asset which is meant to be shown on each twitter card. What is left is creating the puppeteer script to produce the `.png` files, and the script also customizing the blog post card with a given title and set of tags.
+In the three separate folder at this level you find a first version of the layout I intend to include in the `og:image` and `twitter:image` meta tag.
+
+I tried to be consistent in the design of the three projects, but I also managed to include nice visuals in terms of the SVG icons designed for the larger website. The aspect ratio is `2:1` and the grid is built to allocate the first SVG illustration in the middle of the wave-like pattern surrounding the `main` element. There is a bit of negative margin to push the text back to the left, but given the purpose of the project, it's more than acceptable to tolerate this minutia. There's also no need to test the layout on different browsers/configurations as the page is meant to be opened only through a puppeteer script, to take a screenshot.
+
+## Puppeteer
+
+## Reference
+
+Protocols/docs describing the different property and attributes
+
+- [Open Graph Protocol](https://ogp.me/)
+
+- [Twitter Cards](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)
+
+A few website to see the implementation in practice.
+
+- [CSS Tricks](https://css-tricks.com/)
+
+- [Smashing Magazine](https://www.smashingmagazine.com/)
+
+- [swyx](https://www.swyx.io/)
+
+- [Piccalilli](http://piccalil.li/)
