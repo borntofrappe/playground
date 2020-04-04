@@ -6,15 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] change color palette for meta assets
+- [x] change central icon from B to rocket
 
-- [x] add mask element to SVG illustrations
+- [x] clean up svg syntax
 
-- [ ] puppeteer script
+- [x] take static screenshot
 
-  - [x] take a screenshot
+- [x] add files to static folder
 
-  - [ ] customize blog post
+- [ ] create script to include frontmatter in blog post asset
 
 - [ ] copy for the different sections of the landing page
 

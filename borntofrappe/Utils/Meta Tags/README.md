@@ -1,8 +1,8 @@
 # Meta Tags
 
-In the `<head>` of each document I plan to incorporate several `<meta>` tags.
+In the `<head>` of each document I plan to incorporate several `<meta>` tags. With this project I develop the structure of these tags, as well as the necessary static assets.
 
-## Notes
+## Head
 
 `index.html` describes every possible meta tag I plan to incorporate in the website. I separated them by topic, but here a few notes:
 
@@ -32,7 +32,7 @@ In the `<head>` of each document I plan to incorporate several `<meta>` tags.
 
   There is a range for both, but settle on a definite value of `500x500` and `1000x500`
 
-## Values
+### Values
 
 While most value change according to the final URL and content, here a few pointers.
 
@@ -54,13 +54,17 @@ For the title and description, consider this table as a starting point.
 
 For the individual blog post, try to include the content received from the frontmatter object, both in the title/description and the different tags for og:, twitter: and most interestingly :article
 
+## Icons
+
+These are produced with the utility project **PNG Icons**, in the specified three sizes.
+
 ## Images
 
 In the three separate folder at this level you find a first version of the layout I intend to include in the `og:image` and `twitter:image` meta tag.
 
 I tried to be consistent in the design of the three projects, but I also managed to include nice visuals in terms of the SVG icons designed for the larger website. The aspect ratio is `2:1` and the grid is built to allocate the first SVG illustration in the middle of the wave-like pattern surrounding the `main` element. There is a bit of negative margin to push the text back to the left, but given the purpose of the project, it's more than acceptable to tolerate this minutia. There's also no need to test the layout on different browsers/configurations as the page is meant to be opened only through a puppeteer script, to take a screenshot.
 
-## Puppeteer
+### Puppeteer
 
 [The official docs](https://github.com/puppeteer/puppeteer) already provide an example on how to take a screenshot. For instance and for `github.com`, here's how I went replicating the code.
 
@@ -91,11 +95,39 @@ const puppeteer = require("puppeteer");
 
 It's basically the same as in the docs, with the only difference being the url/path and the size of the image. Since I'm interested in capturing the meta assets with the `1000x500` size, I updated the viewport accordingly.
 
-This takes care of taking a screenshot, but for an existing. live website. For local files, it requires more logic to serve the `html` making up the different assets.
+This takes care of taking a screenshot, but for an existing, live website. For local files, it requires more logic to serve the `html` making up the different assets.
+
+Apparently, it works using the absolute path:
+
+```js
+await page.goto(".../playground/borntofrappe/Utils/Meta Tags/Blog/index.html");
+```
+
+However, looking at the docs for the node platform, the `path` module allows to retrieve the correct path with the [`resolve` function](https://nodejs.org/docs/latest/api/path.html#path_path_resolve_paths).
+
+```js
+await page.goto(path.resolve("../Blog/index.html"));
+```
+
+It is manual and repetitive, but since the image for the blog and landing page is meant to be static, the screenshots can be created as follows.
+
+```js
+await page.goto(path.resolve("../Blog/index.html"));
+await page.screenshot({ path: "blog.png" });
+
+await page.goto(path.resolve("../Landing Page/index.html"));
+await page.screenshot({ path: "landing-page.png" });
+```
+
+It works, but sometimes it doesn't show the entire text. The docs do specify an option to wait until the page is shown completely. Refer to [this section](https://github.com/puppeteer/puppeteer/blob/v2.1.1/docs/api.md#framegotourl-options) of the docs.
+
+```js
+await page.goto(path.resolve("../Blog/index.html"), { waitUntil: "networkidle0" });
+```
 
 ## Reference
 
-Protocols/docs describing the different property and attributes
+Protocols/docs describing the different property and attributes.
 
 - [Open Graph Protocol](https://ogp.me/)
 
