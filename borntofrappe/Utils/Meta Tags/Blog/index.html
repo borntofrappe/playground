@@ -10,20 +10,31 @@
   <body>
     <main>
       <svg viewBox="-50 -50 100 100" width="300" height="300">
-        <g transform="translate(-41 -41)">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="82" height="82">
-            <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-              <circle r="46" stroke-width="6" />
-              <g transform="scale(0.85)">
-                <path d="M -10 -13 q 0 -8 -8 -10" stroke-dasharray="14.01 18.5" stroke-dashoffset="-4.5" />
-                <path d="M -10 -13 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" stroke-dasharray="114.2 146.28" stroke-dashoffset="-9.145" />
-              </g>
+        <defs>
+          <mask id="mask">
+            <rect x="-50" y="-50" width="100" height="100" fill="hsl(0, 0%, 100%)" />
+            <g fill="hsl(0, 0%, 0%)">
+              <circle transform="translate(31 31)" r="17" />
             </g>
-          </svg>
+          </mask>
+        </defs>
+
+        <g mask="url(#mask)">
+          <g transform="translate(-41 -41)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="82" height="82">
+              <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                <circle r="46" stroke-width="8" />
+                <g transform="scale(0.9)">
+                  <path d="M -10 -13 q 0 -8 -8 -10" stroke-dasharray="14.01 18.5" stroke-dashoffset="-4.5" />
+                  <path d="M -10 -13 h 15 a 8 8 0 0 1 0 16 h -4 h 4 a 10 10 0 0 1 0 20 h -15 v -36" stroke-dasharray="114.2 146.28" stroke-dashoffset="-9.145" />
+                </g>
+              </g>
+            </svg>
+          </g>
         </g>
         <g transform="translate(12 12)">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="38" height="38">
-            <circle fill="var(--background)" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" r="45" />
+            <circle fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" r="45" />
             <g transform="scale(0.6)">
               <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
                 <g stroke-width="8">

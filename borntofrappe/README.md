@@ -6,11 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] fix layout for meta images
+- [x] change color palette for meta assets
+
+- [x] add mask element to SVG illustrations
 
 - [ ] puppeteer script
 
-  - [ ] take a screenshot
+  - [x] take a screenshot
 
   - [ ] customize blog post
 

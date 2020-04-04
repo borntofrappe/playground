@@ -62,6 +62,37 @@ I tried to be consistent in the design of the three projects, but I also managed
 
 ## Puppeteer
 
+[The official docs](https://github.com/puppeteer/puppeteer) already provide an example on how to take a screenshot. For instance and for `github.com`, here's how I went replicating the code.
+
+```bash
+npm i puppetteer
+```
+
+It installs a version of chromium, which might take a while.
+
+Then in node-land.
+
+```js
+const puppeteer = require("puppeteer");
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.setViewport({
+    width: 1000,
+    height: 500,
+  });
+  await page.goto("https://github.com");
+  await page.screenshot({ path: "screenshot.png" });
+
+  await browser.close();
+})();
+```
+
+It's basically the same as in the docs, with the only difference being the url/path and the size of the image. Since I'm interested in capturing the meta assets with the `1000x500` size, I updated the viewport accordingly.
+
+This takes care of taking a screenshot, but for an existing. live website. For local files, it requires more logic to serve the `html` making up the different assets.
+
 ## Reference
 
 Protocols/docs describing the different property and attributes
