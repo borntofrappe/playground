@@ -6,13 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] change central icon from B to rocket
+- [x] redesign meta assets
 
-- [x] clean up svg syntax
+- [ ] watch https://www.youtube.com/watch?v=hlI6xGfBjkQ and https://www.youtube.com/watch?v=7Z9rrryIOC4
 
-- [x] take static screenshot
-
-- [x] add files to static folder
+- [ ] reconsider design system (more vibrant colors, consistent spacing)
 
 - [ ] create script to include frontmatter in blog post asset
 
