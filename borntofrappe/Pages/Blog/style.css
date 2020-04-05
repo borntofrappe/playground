@@ -54,12 +54,14 @@ header:after {
   -webkit-mask-position: 50% 0%;
   mask-position: 50% 0%;
   position: absolute;
-  left: 0%;
+  /* consider the entirety of the viewport by default
+  ! resize if grid is supported to consider the header's width  */
   top: 100%;
-  width: 100%;
+  left: 50%;
+  width: 100vw;
   /* half the pattern's own height */
   height: 20px;
-  transform: scaleY(-1);
+  transform: translateX(-50%) scaleY(-1);
 }
 header > * + * {
   margin: 1.5rem 0;
@@ -164,6 +166,9 @@ article:first-of-type h2 {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 40em) 1fr;
     grid-column-gap: 5vw;
+  }
+  header:after {
+    width: 100%;
   }
   header > * {
     grid-column: 2;

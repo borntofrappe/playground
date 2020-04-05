@@ -6,17 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] redesign meta assets
+- [x] fix header pattern for browsers not supporting grid
 
-- [x] redefine color palette with 11 saturated picks
+- [x] update colors for meta assets
 
-- [x] update global.css
-
-- [x] update components
-
-- [x] update pages
-
-- [x] watch https://www.youtube.com/watch?v=hlI6xGfBjkQ and https://www.youtube.com/watch?v=7Z9rrryIOC4
+- [ ] reconsider accent v primary colors
 
 - [ ] update spacing (unilateral margin?)
 

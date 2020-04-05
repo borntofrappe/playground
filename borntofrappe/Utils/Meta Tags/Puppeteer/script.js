@@ -2,7 +2,8 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 
 (async () => {
-  const browser = await puppeteer.launch();
+  // toggle to false to see the program in action :p
+  const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage();
     await page.setViewport({
     width: 1000,
