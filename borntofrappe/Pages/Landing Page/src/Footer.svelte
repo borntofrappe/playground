@@ -11,9 +11,9 @@
   footer {
     --animation-duration: 2s;
     --animation-timing-function: var(--ease-in-out-sine);
-    color: hsl(0, 0%, 97%);
+    color: hsl(215, 10%, 97%);
     color: var(--body-background);
-    background: hsl(230, 30%, 10%);
+    background: hsl(220, 100%, 5%);
     background: var(--body-color);
     background-image: url("data:image/svg+xml,%3Csvg opacity='0.3' xmlns='http://www.w3.org/2000/svg' viewBox='-5 -5 10 10' width='20' height='20'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Ccircle r='1' /%3E%3Ccircle r='1' cx='5' cy='-5' /%3E%3Ccircle r='1' cx='5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='-5' /%3E%3C/g%3E%3C/svg%3E");
     background-size: 20px;
@@ -23,7 +23,7 @@
     position: relative;
   }
   footer:before {
-    background: hsl(230, 30%, 10%);
+    background: hsl(220, 100%, 5%);
     background: var(--body-color);
     background-image: url("data:image/svg+xml,%3Csvg opacity='0.3' xmlns='http://www.w3.org/2000/svg' viewBox='-5 -5 10 10' width='20' height='20'%3E%3Cg stroke='none' fill='hsl(0, 0%25, 0%25)'%3E%3Ccircle r='1' /%3E%3Ccircle r='1' cx='5' cy='-5' /%3E%3Ccircle r='1' cx='5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='5' /%3E%3Ccircle r='1' cx='-5' cy='-5' /%3E%3C/g%3E%3C/svg%3E");
     background-size: 20px;
@@ -48,7 +48,7 @@
     font-family: "Maven Pro", sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
-    border-bottom: 0.1rem solid hsl(342, 80%, 50%);
+    border-bottom: 0.1rem solid hsl(340, 90%, 55%);
     border-bottom: 0.1rem solid var(--accent-color);
   }
 
@@ -62,9 +62,9 @@
     transform: translate(-50%, -50%);
     padding: 0.5rem;
 
-    color: hsl(230, 30%, 10%);
+    color: hsl(220, 100%, 5%);
     color: var(--body-color);
-    background: hsl(0, 0%, 97%);
+    background: hsl(215, 10%, 97%);
     background: var(--body-background);
 
     border: 0.4rem solid currentColor;
@@ -93,7 +93,7 @@
 
   footer a:hover + svg,
   footer a:focus + svg {
-    color: hsl(342, 80%, 50%);
+    color: hsl(340, 90%, 55%);
     color: var(--accent-color);
   }
   footer a:hover + svg g,
@@ -102,7 +102,7 @@
   }
 
   footer svg:hover {
-    color: hsl(342, 80%, 50%);
+    color: hsl(340, 90%, 55%);
     color: var(--accent-color);
   }
 

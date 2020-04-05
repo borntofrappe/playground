@@ -8,9 +8,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 - [x] redesign meta assets
 
-- [ ] watch https://www.youtube.com/watch?v=hlI6xGfBjkQ and https://www.youtube.com/watch?v=7Z9rrryIOC4
+- [x] redefine color palette with 11 saturated picks
 
-- [ ] reconsider design system (more vibrant colors, consistent spacing)
+- [x] update global.css
+
+- [x] update components
+
+- [x] update pages
+
+- [x] watch https://www.youtube.com/watch?v=hlI6xGfBjkQ and https://www.youtube.com/watch?v=7Z9rrryIOC4
+
+- [ ] update spacing (unilateral margin?)
 
 - [ ] create script to include frontmatter in blog post asset
 

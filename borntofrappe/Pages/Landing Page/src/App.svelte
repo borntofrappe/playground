@@ -11,8 +11,32 @@
   let breadcrumbs = [];
 
   const palette = {
-    primary: ["hsl(230, 30%, 10%)", "hsl(225, 40%, 20%)", "hsl(225, 50%, 30%)", "hsl(225, 55%, 45%)", "hsl(222, 60%, 50%)", "hsl(220, 75%, 60%)", "hsl(210, 80%, 70%)", "hsl(205, 90%, 80%)", "hsl(205, 100%, 90%)"],
-    accent: ["hsl(340, 65%, 20%)", "hsl(340, 70%, 30%)", "hsl(340, 75%, 45%)", "hsl(342, 80%, 50%)", "hsl(340, 90%, 55%)", "hsl(337, 92%, 65%)", "hsl(335, 95%, 70%)", "hsl(332, 95%, 80%)", "hsl(325, 100%, 90%)"]
+    primary: [
+      "hsl(220, 100%, 5%)",
+      "hsl(218, 100%, 17%)",
+      "hsl(216, 98%, 25%)",
+      "hsl(215, 96%, 32%)",
+      "hsl(214, 95%, 36%)",
+      "hsl(212, 92%, 43%)",
+      "hsl(210, 83%, 53%)",
+      "hsl(208, 88%, 62%)",
+      "hsl(206, 93%, 73%)",
+      "hsl(204, 100%, 86%)",
+      "hsl(202, 100%, 95%)"
+    ],
+    accent: [
+      "hsl(350, 100%, 8%)",
+      "hsl(347, 100%, 19%)",
+      "hsl(345, 95%, 27%)",
+      "hsl(345, 96%, 33%)",
+      "hsl(342, 92%, 39%)",
+      "hsl(340, 85%, 46%)",
+      "hsl(340, 90%, 55%)",
+      "hsl(339, 90%, 67%)",
+      "hsl(336, 93%, 77%)",
+      "hsl(335, 100%, 86%)",
+      "hsl(330, 100%, 95%)"
+    ]
   };
 
   const planets = [
@@ -138,15 +162,15 @@
     height: 20px;
   }
   div {
-    color: hsl(230, 30%, 10%);
-    color: var(--primary-8);
-    background: hsl(0, 0%, 97%);
-    background: var(--grey-0);
+    color: hsl(215, 22%, 5%);
+    color: var(--grey-0);
+    background: hsl(215, 10%, 97%);
+    background: var(--grey-10);
   }
 
   div:not(.dark) :global(::selection) {
-    color: hsl(0, 0%, 97%);
-    color: var(--grey-0);
+    color: hsl(215, 10%, 97%);
+    color: var(--grey-10);
     background-color: hsl(222, 60%, 50%);
     background-color: var(--primary-4);
   }
@@ -164,15 +188,15 @@
   }
 
   div.dark {
-    color: hsl(0, 0%, 97%);
-    color: var(--grey-0);
-    background: hsl(230, 30%, 10%);
-    background: var(--primary-8);
+    color: hsl(215, 10%, 97%);
+    color: var(--grey-10);
+    background: hsl(215, 22%, 5%);
+    background: var(--grey-0);
   }
 
   div.dark :global(a svg > g) {
-    fill: hsl(230, 30%, 10%);
-    fill: var(--primary-8);
+    fill: hsl(215, 22%, 5%);
+    fill: var(--grey-0);
   }
 
 

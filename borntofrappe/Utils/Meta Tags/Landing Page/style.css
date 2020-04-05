@@ -6,7 +6,7 @@
 
 body {
   --color: hsl(220, 100%, 5%);
-  --background: hsl(215, 35%, 97%);
+  --background: hsl(215, 10%, 97%);
   --accent: hsl(340, 90%, 55%);
 }
 

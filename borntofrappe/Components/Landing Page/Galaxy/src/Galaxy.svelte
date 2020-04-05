@@ -27,7 +27,7 @@
       return {
         translate,
         scale,
-        rotation
+        rotation,
       };
     });
 </script>
@@ -185,7 +185,7 @@
   }
   a:hover,
   a:focus {
-    color: hsl(342, 80%, 50%);
+    color: hsl(340, 90%, 55%);
     color: var(--accent-color);
     transform: scale(1);
   }

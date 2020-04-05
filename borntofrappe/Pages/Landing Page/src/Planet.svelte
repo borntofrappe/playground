@@ -3,7 +3,7 @@
 
   export let id = "";
   export let satellites = [];
-  export let colors = ["hsl(340, 65%, 20%)", "hsl(340, 70%, 30%)", "hsl(340, 75%, 45%)", "hsl(342, 80%, 50%)", "hsl(340, 90%, 55%)", "hsl(337, 92%, 65%)", "hsl(335, 95%, 70%)", "hsl(332, 95%, 80%)", "hsl(325, 100%, 90%)"];
+  export let colors = ["hsl(330, 100%, 95%)", "hsl(335, 100%, 86%)", "hsl(336, 93%, 77%)", "hsl(339, 90%, 67%)", "hsl(340, 90%, 55%)", "hsl(340, 85%, 46%)", "hsl(342, 92%, 39%)", "hsl(345, 96%, 33%)", "hsl(345, 95%, 27%)", "hsl(347, 100%, 19%)", "hsl(350, 100%, 8%)"];
   export let tilt = 0;
   export let clockwise = Math.random() > 0.5;
   export let dark = true;
@@ -13,8 +13,8 @@
   $: {
     if (window.IntersectionObserver && planet) {
       const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
+        (entries) => {
+          entries.forEach((entry) => {
             observed = entry.isIntersecting;
           });
         },
@@ -50,7 +50,7 @@
     <g clip-path="url(#clip-planet-{id})">
       <g transform="translate(0 -70)">
         {#each colors as color, index}
-        <ellipse stroke="none" fill="{color}" cx="0" cy="70" rx="{35 + (15 / colors.length * index)}" ry="30" transform="scale({1 - (0.6 / colors.length * index)})" />
+        <ellipse stroke="none" fill="{color}" cx="0" cy="70" rx="{35 + (15 / colors.length * index)}" ry="33" transform="scale({1 - (0.65 / colors.length * index)})" />
         {/each}
       </g>
     </g>

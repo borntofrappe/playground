@@ -67,7 +67,7 @@ a svg {
   transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 a svg > g {
-  fill: hsl(0, 0%, 97%);
+  fill: hsl(215, 10%, 97%);
   fill: var(--body-background);
 }
 a:hover svg,

@@ -12,8 +12,8 @@
   --timing-function-accent: cubic-bezier(0.215, 0.61, 0.355, 1); /* cubic ease-out */
 }
 body {
-  background: hsl(0, 0%, 97%);
-  color: hsl(230, 30%, 10%);
+  background: hsl(215, 10%, 97%);
+  color: hsl(220, 100%, 5%);
   display: flex;
   justify-content: center;
   align-items: center;
