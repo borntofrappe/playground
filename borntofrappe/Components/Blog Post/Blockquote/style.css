@@ -14,8 +14,11 @@ blockquote {
   font-style: italic;
   padding: 0.5rem;
   padding-left: 2.75rem;
+  color: hsl(347, 100%, 19%);
   color: var(--accent-1);
+  background: hsl(330, 100%, 92%);
   background: var(--accent-10);
+  border-bottom: 0.2rem solid hsl(340, 90%, 55%);
   border-bottom: 0.2rem solid var(--accent-6);
   position: relative;
 }
@@ -38,7 +41,10 @@ blockquote:before {
 }
 
 blockquote.primary {
-  border-bottom-color: var(--primary-6);
+  color: hsl(218, 100%, 15%);
   color: var(--primary-1);
+  background: hsl(205, 100%, 92%);
   background: var(--primary-10);
+  border-bottom-color: var(--primary-6);
+  border-bottom-color: hsl(210, 85%, 55%);
 }

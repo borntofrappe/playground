@@ -6,17 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] design blog post components
+- [x] update custom properties in code snippet, table, blockquote
 
-  - [x] header
-
-  - [x] code snippet
-
-  - [x] blockquote
-
-  - [x] table
-
-- [ ] update custom properties in code snippet, table, blockquote
+- [ ] reconsider color of text (take as a reference blog post components)
 
 - [ ] reconsider planet illustration with an additional flag (`isHome`) and icon (`telescope.svg`)
 
