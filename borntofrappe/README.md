@@ -6,7 +6,7 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [ ] design blog post components
+- [x] design blog post components
 
   - [x] header
 
@@ -14,7 +14,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
   - [x] blockquote
 
-  - [ ] table
+  - [x] table
+
+- [ ] update custom properties in code snippet, table, blockquote
 
 - [ ] reconsider planet illustration with an additional flag (`isHome`) and icon (`telescope.svg`)
 

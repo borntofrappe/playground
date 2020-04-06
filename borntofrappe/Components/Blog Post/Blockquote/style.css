@@ -13,7 +13,7 @@ blockquote {
   /* margin-left: 2rem; */
   font-style: italic;
   padding: 0.5rem;
-  padding-left: 3rem;
+  padding-left: 2.75rem;
   color: var(--accent-1);
   background: var(--accent-10);
   border-bottom: 0.2rem solid var(--accent-6);
@@ -30,8 +30,8 @@ blockquote:before {
   mask-repeat: no-repeat;
   opacity: 0.18;
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 1.75rem;
+  height: 1.75rem;
   left: 0.5rem;
   top: 50%;
   transform: translate(0%, -50%);
