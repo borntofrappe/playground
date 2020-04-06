@@ -6,13 +6,15 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] fix header pattern for browsers not supporting grid
+- [x] update static assets to use `hsl(220, 100%, 8%)` and `hsl(340, 90%, 55%)`
 
-- [x] update colors for meta assets
+- [x] update according to components/sections
 
-- [ ] reconsider accent v primary colors
+  - [x] grey-1/grey-9 for the color of smaller text
 
-- [ ] update spacing (unilateral margin?)
+  - [x] smaller planet size
+
+- [ ] describe spacing system
 
 - [ ] create script to include frontmatter in blog post asset
 
