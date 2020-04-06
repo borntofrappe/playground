@@ -6,15 +6,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update static assets to use `hsl(220, 100%, 8%)` and `hsl(340, 90%, 55%)`
+- [ ] design blog post components
 
-- [x] update according to components/sections
+  - [x] header
 
-  - [x] grey-1/grey-9 for the color of smaller text
+  - [x] code snippet
 
-  - [x] smaller planet size
+  - [x] blockquote
 
-- [ ] describe spacing system
+  - [ ] table
+
+- [ ] reconsider planet illustration with an additional flag (`isHome`) and icon (`telescope.svg`)
 
 - [ ] create script to include frontmatter in blog post asset
 
