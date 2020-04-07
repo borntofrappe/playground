@@ -1,6 +1,21 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 
+const paths = [
+  {
+    html: '../Blog/index.html',
+    png: '../Static/blog.png'
+  },
+  {
+    html: '../Blog Post/index.html',
+    png: '../Static/blog-post.png'
+  },
+  {
+    html: '../Landing Page/index.html',
+    png: '../Static/landing-page.png'
+  },
+];
+
 (async () => {
   // toggle to false to see the program in action :p
   const browser = await puppeteer.launch({headless: true});
@@ -10,14 +25,9 @@ const path = require('path');
     height: 500
   });
 
-  await page.goto(path.resolve('../Blog/index.html'), { waitUntil: 'networkidle0'});
-  await page.screenshot({path: '../Static/blog.png'});
-
-  await page.goto(path.resolve('../Blog Post/index.html'), { waitUntil: 'networkidle0'});
-  await page.screenshot({path: '../Static/blog-post.png'});
-
-  await page.goto(path.resolve('../Landing Page/index.html'), { waitUntil: 'networkidle0'});
-  await page.screenshot({path: '../Static/landing-page.png'});
-
+  for(const { html, png } of paths) {
+    await page.goto(path.resolve(html), { waitUntil: 'networkidle0'});
+    await page.screenshot({path: png});
+  }
   await browser.close();
 })();

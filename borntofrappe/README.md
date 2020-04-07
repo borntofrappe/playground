@@ -6,13 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update custom properties in code snippet, table, blockquote
+- [x] update puppeteer script to consider an array of paths
 
-- [ ] reconsider color of text (take as a reference blog post components)
+- [x] create permalink.svg and reconsider the h2 elements
 
-- [ ] reconsider planet illustration with an additional flag (`isHome`) and icon (`telescope.svg`)
+  - [ ] modify renderer to add a permalink `<a>` element?
 
-- [ ] create script to include frontmatter in blog post asset
+- [ ] create script parsing markdown _and_ creating opengraph images
 
 - [ ] copy for the different sections of the landing page
 
@@ -27,14 +27,6 @@ Here, I try to ease the development/design of the website by focusing on indepen
   - [x] github
 
   - [x] almost forgot
-
-- [ ] rss feed
-
-  - [ ] https://www.w3.org/2005/Atom
-
-  - [ ] https://educationlinks.fyi/feed.xml
-
-- [ ] move the website to the sapper template
 
 ## Index
 
