@@ -6,13 +6,11 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update puppeteer script to consider an array of paths
+- [x] create script producing the markdown files and the png images
 
-- [x] create permalink.svg and reconsider the h2 elements
+- [x] update previous script to create a directory if necessary
 
-  - [ ] modify renderer to add a permalink `<a>` element?
-
-- [ ] create script parsing markdown _and_ creating opengraph images
+- [ ] modify renderer to add a permalink `<a>` element?
 
 - [ ] copy for the different sections of the landing page
 

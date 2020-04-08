@@ -50,3 +50,11 @@ module.exports = (icon, size = 42) => (...);
 ```
 
 This is because node doesn't support natively the ES6 features. The hope is that using a module bundler like Rollup (used by Sapper), there would be no need to switch to the second syntax.
+
+## Puppeteer Images
+
+```bash
+node script-puppeteer
+```
+
+With this script I try not only to create markdown files, but to produce the images for opengraph `og:` tags. For this project I also created a utility function to check if a directory exist, and create one if required. I might use this function in the previous scripts to ensure the code works sans existing folder.

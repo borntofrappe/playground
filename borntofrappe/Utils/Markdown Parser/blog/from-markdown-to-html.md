@@ -2,7 +2,7 @@
 title: From markdown to HTML
 date: 2020-2-24
 brief: A rambling explanation behind a script that could have used a few more packages.
-tags: html, js
+tags: html, js, node
 ---
 
 Using the `fs` module and the `marked` package, I set out to take this markdown file, consider the front matter and then spit out the matching markup.
@@ -24,7 +24,7 @@ In the current folder, I'm able to read the files with two variants.
 
 ```js
 fs.readdir("./", (err, files) => {
-  files.forEach(file => {
+  files.forEach((file) => {
     if (path.extname(file) === ".md") {
       console.log(file);
     }
@@ -36,7 +36,7 @@ fs.readdir("./", (err, files) => {
 
 ```js
 const files = fs.readdirSync("./", "utf-8");
-files.forEach(file => {
+files.forEach((file) => {
   if (path.extname(file) === ".md") {
     console.log(file);
   }
@@ -50,8 +50,8 @@ Let's stick with the latter for the time being.
 To read the content of the actual file, once again, there's an async and sync variant.
 
 ```js
-const markdownFiles = files.filter(file => path.extname(file) === ".md");
-markdownFiles.forEach(file => {
+const markdownFiles = files.filter((file) => path.extname(file) === ".md");
+markdownFiles.forEach((file) => {
   const markdown = fs.readFileSync(`./${file}`, { encoding: "utf-8" });
   console.log(markdown);
 });
@@ -109,7 +109,7 @@ const keyValue = frontmatter
   // array of strings
   .match(/\w+:\s.+/g)
   // 2d array describing the key-value pairs
-  .map(pair => pair.split(": "));
+  .map((pair) => pair.split(": "));
 ```
 
 And then create an object describing the different pairs in the desired schema.
@@ -119,7 +119,7 @@ const keyValue = frontmatter
   // array of strings
   .match(/\w+:\s.+/g)
   // 2d array describing the key-value pairs
-  .map(pair => pair.split(": "))
+  .map((pair) => pair.split(": "))
   // object separating the pairs
   .reduce((acc, curr) => {
     acc[curr[0]] = curr[1];
@@ -134,7 +134,7 @@ const content = markdown.slice(frontmatter.length).trim();
 
 console.log(
   Object.assign(keyValue, {
-    html: marked(content)
+    html: marked(content),
   })
 );
 ```

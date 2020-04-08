@@ -2,8 +2,9 @@ const path = require("path");
 const fs = require("fs");
 const marked = require('marked');
 const shiki = require('shiki');
-const {getIcon} = require('./utils/icons.js');
-const {checkDir} = require('./utils/utility.js');
+const { getIcon } = require('./utils/icons.js');
+const { makeImages } = require('./utils/puppeteer.js');
+const { checkDir } = require('./utils/utility.js');
 
 const extname = '.md';
 
@@ -12,6 +13,7 @@ shiki.getHighlighter({
 }).then(highlighter => {
   const files = fs.readdirSync('./blog', 'utf-8');
   const markdownFiles = files.filter((file) => path.extname(file) === extname);
+
 
   const renderer = new marked.Renderer();
   renderer.code = (code, lang) => {
@@ -30,9 +32,12 @@ shiki.getHighlighter({
 
     return Object.assign(keyValue, { slug, html: marked(content, { renderer }) });
   })
-  posts.forEach(({ slug, html}) => {
+
+  posts.forEach(({ slug, html }) => {
     const filePath = `./pages/${slug}.html`;
     checkDir(filePath);
     fs.writeFileSync(filePath, html);
-  })
+  });
+
+  makeImages(posts);
 });

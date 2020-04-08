@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const marked = require('marked');
 const shiki = require('shiki');
+const {checkDir} = require('./utils/utility.js');
 
 const extname = '.md';
 
@@ -29,6 +30,8 @@ shiki.getHighlighter({
     return Object.assign(keyValue, { slug, html: marked(content) });
   })
   posts.forEach(({ slug, html}) => {
-    fs.writeFileSync(`./pages/${slug}.html`, html);
+    const filePath = `./pages/${slug}.html`;
+    checkDir(filePath);
+    fs.writeFileSync(filePath, html);
   })
 });
