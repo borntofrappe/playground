@@ -6,9 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] create script producing the markdown files and the png images
+- [x] harmonize script format
 
-- [x] update previous script to create a directory if necessary
+- [x] update markdown parser
+
+- [x] create markup, og:assets on the basis of markdown files
+
+- [ ] document node scripts
 
 - [ ] modify renderer to add a permalink `<a>` element?
 

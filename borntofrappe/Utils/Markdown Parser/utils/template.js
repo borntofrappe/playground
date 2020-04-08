@@ -169,11 +169,15 @@ module.exports.getHtml = (title, icons = []) => `
 
       <div>
         <h1>${title}</h1>
-        ${icons.map(icon => `
+        ${icons
+          .map(
+            icon => `
           <span>
           ${getIcon(icon, 42)}
           </span>
-        `).join('')}
+        `
+          )
+          .join('')}
       </div>
     </main>
   </body>
