@@ -16,7 +16,7 @@ On top of `marked`, this script uses the `shiki` module to add syntax highlighti
 
 ## script-renderer
 
-The renderer from the shiki package is modified to further customize code snippets. Here I added a `<span>` element as well as an icon matching the snippet's own language.
+The renderer from the shiki package is modified to further customize code snippets and headings. Snippets include a `<span>` element with the language's name, as well as a matching icon. Headings include an anchor link to provide a permalink option, and a reference to the particular section.
 
 ## script-puppeteer
 

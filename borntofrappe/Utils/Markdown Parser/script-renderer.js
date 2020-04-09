@@ -16,6 +16,23 @@ shiki
     const markdownFiles = files.filter(file => path.extname(file) === extname);
 
     const renderer = new marked.Renderer();
+
+    renderer.heading = (text, level) => {
+      const id = text
+        .split(' ')
+        .map(word => word.toLowerCase())
+        .join('-');
+
+      return `
+        <h${level} id="${id}" class="permalink">
+          ${text}
+          <a href="#${id}" aria-label="permalink">
+            ${getIcon('permalink', 22)}
+          </a>
+        </h${level}>
+    `;
+    };
+
     renderer.code = (code, lang) =>
       `<pre><span class="language">${getIcon(
         lang,

@@ -9,7 +9,7 @@ Using the `fs` module and the `marked` package, I set out to take this markdown 
 
 Bonus points if I manage to add syntax highlighting [shiki](https://github.com/octref/shiki).
 
-## fs && path
+## fs and path
 
 To find the actual file, it seems I need the `path` module as well.
 
@@ -59,7 +59,7 @@ markdownFiles.forEach((file) => {
 
 I used the `filter` method to consider only the markdown files. `markdown` describes now the actual content. A string.
 
-## marked && front matter
+## marked and front matter
 
 The `markdown` string can be processed with the `marked` module.
 

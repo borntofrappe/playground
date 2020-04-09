@@ -6,13 +6,9 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update and document node script
+- [x] add heading component
 
-  - [x] Markdown parser
-
-  - [x] Meta tags
-
-- [ ] modify renderer to add a permalink `<a>` element?
+- [x] modify renderer and h{x} headings to add permalink
 
 - [ ] copy for the different sections of the landing page
 

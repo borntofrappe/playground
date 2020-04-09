@@ -1,0 +1,52 @@
+/* single column layout */
+main {
+  width: 90vw;
+  max-width: 35em;
+  margin: 2rem auto 4rem;
+}
+/* to force vertical scroll */
+main > * + * {
+  margin-top: 20vh;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+.permalink {
+  display: flex;
+  align-items: center;
+}
+.permalink a {
+  opacity: 0.25;
+  margin-left: 0.5rem;
+  width: 1.1em;
+  height: 1.1em;
+  transition-property: opacity, color;
+  transition-duration: 0.25s;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition-timing-function: var(--transition-timing-function);
+}
+.permalink a:hover,
+.permalink a:focus {
+  opacity: 1;
+  color: hsl(340, 90%, 55%);
+  color: var(--accent-color);
+}
+.permalink a svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
