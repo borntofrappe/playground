@@ -1,12 +1,12 @@
 # Meta Tags
 
-In the `<head>` of each document I plan to incorporate several `<meta>` tags. With this project I develop the structure of these tags, as well as the necessary static assets.
+In the `<head>` of each document I plan to incorporate several `<meta>` tags. With this project I develop the markup for these tags, as well as the necessary static assets. Refer to the **static** folder for these.
 
 ## Head
 
-`index.html` describes every possible meta tag I plan to incorporate in the website. I separated them by topic, but here a few notes:
+`index.html` describes every possible meta tag. I separated them by topic, but here a few notes:
 
-- for the icon, consider four tags
+- for the icon, consider four assets
 
   - svg
 
@@ -16,7 +16,7 @@ In the `<head>` of each document I plan to incorporate several `<meta>` tags. Wi
 
   - png for apple devices 180x180
 
-  I am aware that more icons are necessary for additional sizes/resolutions/platforms, but I made the decision to focus on the most important ones. A weight off one's shoulder.
+  I am aware that more icons are necessary for additional sizes/resolutions/platforms, but I made the decision to focus on these four exclusively. A weight off one's shoulder.
 
 - once an RSS feed is developed, refer to it using the appropriate type
 
@@ -36,7 +36,7 @@ In the `<head>` of each document I plan to incorporate several `<meta>` tags. Wi
 
 While most value change according to the final URL and content, here a few pointers.
 
-- **type**: use `website` or `article`.
+- **type**: use `website` or `article` for the blog posts
 
 - **site_name**, `borntofrappe`
 
@@ -49,10 +49,10 @@ For the title and description, consider this table as a starting point.
 | Pages     | Title                                      | Description                                                                                           |
 | --------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
 | Root      | borntofrappe                               | Personal website for one Gabriele Corti. Aspiring developer, fledging designer, long distance runner. |
-| Blog      | borntofrappe / blog                        | Verbose articles on HTML, CSS, SVG, and anything that might pique the author's interest.              |
+| Blog      | borntofrappe / blog                        | Verbose articles on HTML, CSS, SVG, and anything that might pique my interest.                        |
 | Blog Post | borntofrappe / blog / css-animation-paused | A specific use case for a specific CSS property. SVG                                                  |
 
-For the individual blog post, try to include the content received from the frontmatter object, both in the title/description and the different tags for og:, twitter: and most interestingly :article
+For the individual blog post, try to include the content received from the frontmatter object, both in the title/description and the different `:og` tags.
 
 ## Icons
 
@@ -60,9 +60,9 @@ These are produced with the utility project **PNG Icons**, in the specified thre
 
 ## Images
 
-In the three separate folder at this level you find a first version of the layout I intend to include in the `og:image` and `twitter:image` meta tag.
+In the three separate folder at this level you find a first version of the layout I intend to include in the `og:image` and `twitter:image` meta tags.
 
-I tried to be consistent in the design of the three projects, but I also managed to include nice visuals in terms of the SVG icons designed for the larger website. The aspect ratio is `2:1` and the grid is built to allocate the first SVG illustration in the middle of the wave-like pattern surrounding the `main` element. There is a bit of negative margin to push the text back to the left, but given the purpose of the project, it's more than acceptable to tolerate this minutia. There's also no need to test the layout on different browsers/configurations as the page is meant to be opened only through a puppeteer script, to take a screenshot.
+I tried to be consistent in the design of the three projects, but I also managed to include the same visuals I developed in the larger website. The aspect ratio is `2:1` and the grid is built to allocate the first SVG illustration in the middle of the wave-like pattern surrounding the `main` element. There is a bit of negative margin to push the text back to the left, but given the purpose of the project, it's more than acceptable to tolerate this one-off measure. There's also no need to test the layout on different browsers/configurations as the page is meant to be opened only through a puppeteer script.
 
 ### Puppeteer
 
@@ -109,20 +109,30 @@ However, looking at the docs for the node platform, the `path` module allows to 
 await page.goto(path.resolve("../Blog/index.html"));
 ```
 
-It is manual and repetitive, but since the image for the blog and landing page is meant to be static, the screenshots can be created as follows.
+With an array of paths, I create a screenshot for the three different files using a `for of` loop.
 
 ```js
-await page.goto(path.resolve("../Blog/index.html"));
-await page.screenshot({ path: "blog.png" });
+const paths = [
+  {
+    html: "../Blog/index.html",
+    png: "../Static/blog.png",
+  },
+  // continues
+];
 
-await page.goto(path.resolve("../Landing Page/index.html"));
-await page.screenshot({ path: "landing-page.png" });
+(async () => {
+  // previous code
+  for (const { html, png } of paths) {
+    await page.goto(path.resolve(html));
+    await page.screenshot({ path: png });
+  }
+})();
 ```
 
 It works, but sometimes it doesn't show the entire text. The docs do specify an option to wait until the page is shown completely. Refer to [this section](https://github.com/puppeteer/puppeteer/blob/v2.1.1/docs/api.md#framegotourl-options) of the docs.
 
 ```js
-await page.goto(path.resolve("../Blog/index.html"), { waitUntil: "networkidle0" });
+await page.goto(path.resolve(html), { waitUntil: "networkidle0" });
 ```
 
 ## Reference

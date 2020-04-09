@@ -1,60 +1,35 @@
-# Parse Markdown
+# Markdown parser
 
 With this project I develop the script which reads through markdown documents and creates the data structure ultimately picked up by Sapper to create the relevant pages.
 
-```bash
-node script
-```
+There are actually a multitude of scripts, as well as a **utils** folder with more helpful code. In increments, these are:
 
-Running the script should read the markdown files in the `blog` folder and create an `html` document in the `pages` folder. These `.html` files are however just a proof of concept more than the final result. The goal of the script is first and foremost creating an object with the markup and frontmatter.
+## script
 
-## Syntax Highlighting
+Using `marked` and native modules like `path` and `fs`, this script reads the markdown documents in the **blog** folder and produces the necessary markup in the **pages** folder.
 
-```bash
-node script-syntax
-```
+This script also uses the `checkDir` function, which creates the **pages** folder if need be.
 
-With this script I tried my luck including syntax highlighting with the `shiki` package. It is asynchronous, and I am unsure as how to fit this with the synchronous nature of Sapper.
+## script-syntax
 
-## Marked Renderer
+On top of `marked`, this script uses the `shiki` module to add syntax highlighting for the code snippets.
 
-```bash
-node script-renderer
-```
+## script-renderer
 
-With this script I modify the markdown produced for code snippets, using a custom `renderer`. The idea is to include the syntax analyzed in the **Code Snippet** component.
+The renderer from the shiki package is modified to further customize code snippets. Here I added a `<span>` element as well as an icon matching the snippet's own language.
 
-Including the following `span` element
+## script-puppeteer
 
-```pug
-span
-  svg
-    use(href=#{language})
-  {language}
-```
+Building on top of the utils project for the meta tags, this script produces the necessary markup with `marked` and then creates the static assets for the open graph protocol.
 
-Right before the code describing the snippet.
+## utils
 
-### module.exports
+This folder is home to a few scripts, primarily used by the `script-puppeteer` script.
 
-In the Svelte projects I export the `getIcon` function with ES6 modules.
+- `icons` provide the SVG syntax for a limited set of icons. More are created for the website, but these will suffice for the smaller project
 
-```js
-export default (icon, size = 42) => (...);
-```
+- `puppeteer` replicates the code developed in the **Meta Tags** utility, to take a screenshot tailored to to the blog post frontmatter
 
-In the script however, I use the `module.exports` syntax.
+- `template` takes the markup/stylesheet created for the blog post and returns it with a template string. The title and icons are modified on the basis of the input arguments
 
-```js
-module.exports = (icon, size = 42) => (...);
-```
-
-This is because node doesn't support natively the ES6 features. The hope is that using a module bundler like Rollup (used by Sapper), there would be no need to switch to the second syntax.
-
-## Puppeteer Images
-
-```bash
-node script-puppeteer
-```
-
-With this script I try not only to create markdown files, but to produce the images for opengraph `og:` tags. For this project I also created a utility function to check if a directory exist, and create one if required. I might use this function in the previous scripts to ensure the code works sans existing folder.
+- `utility`, for lack of a better word, describes the function which checks if a directory exist. If it doesn't, it creates the same container
