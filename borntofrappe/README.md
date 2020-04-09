@@ -6,23 +6,27 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] add heading component
+- [x] fix static images with correct font
 
-- [x] modify renderer and h{x} headings to add permalink
+- [x] move section design to experiment
 
-- [ ] copy for the different sections of the landing page
+- [ ] redesign landing page
 
-  - [ ] blog
+  - [ ] icons
 
-  - [ ] freecodecamp
+    - [ ] telescope
 
-  - [ ] codepen
+    - [ ] astronaut
 
-  - [x] twitter
+    - [ ] moon
 
-  - [x] github
+    - [ ] capsule
 
-  - [x] almost forgot
+    - [ ] space station
+
+  - [ ] stars and constellations for different sections
+
+  - [ ] planet component for final section
 
 ## Index
 
@@ -46,4 +50,4 @@ Routes of the website. Blog, blog post...
 
 ### Utils
 
-Scripts and helper projects. Frontmatter markdown, icon maker...
+Scripts and helper projects. Markdown parser, meta tags...
