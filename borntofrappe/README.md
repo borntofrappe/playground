@@ -6,6 +6,8 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
+- [x] design list component
+
 - [ ] redesign landing page
 
   - [ ] icons

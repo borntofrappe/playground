@@ -1,0 +1,94 @@
+/* single column layout */
+main {
+  width: 90vw;
+  max-width: 35em;
+  margin: 1rem auto;
+}
+/* just for this project to separate the elements */
+main > * + * {
+  margin-top: 2rem;
+}
+ol,
+ul {
+  list-style: none;
+  margin-left: 1.75em;
+}
+ul > * + *,
+ol > * + * {
+  margin-top: 0.6rem;
+}
+ul ul,
+ol ol {
+  margin-top: 0.6rem;
+  margin-left: 1.5rem;
+}
+li {
+  line-height: 1.6;
+}
+
+/* ordered list */
+ol {
+  counter-reset: custom-counter;
+}
+ol li {
+  counter-increment: custom-counter;
+  position: relative;
+}
+
+ol li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  font-size: 0.9em;
+  left: -0.35em;
+  width: 1.7em;
+  height: 1.7em;
+  transform: translate(-100%, 0%);
+  background: var(--accent-6);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100' %3E%3Cg fill='none' stroke='currentColor' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M 0 -45 q -18 10 -36 10 v 55 c 8 15 20 20 35 25 c 15 -5 27 -10 35 -25 v -55 q -18 0 -36 -10' /%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100' %3E%3Cg fill='none' stroke='currentColor' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M 0 -45 q -18 10 -36 10 v 55 c 8 15 20 20 35 25 c 15 -5 27 -10 35 -25 v -55 q -18 0 -36 -10' /%3E%3C/g%3E%3C/svg%3E");
+  mask-size: 100%;
+  -webkit-mask-size: 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+ol li:after {
+  content: counter(custom-counter);
+  position: absolute;
+  left: -0.36em;
+  top: 0rem;
+  line-height: 1.7em;
+  width: 1.7em;
+  height: 1.7em;
+  transform: translate(-100%, 0%);
+  text-align: center;
+  font-size: 0.9em;
+  font-family: "Maven Pro";
+  font-weight: 700;
+  color: var(--accent-6);
+}
+ol ol li:after {
+  content: "." counter(custom-counter);
+}
+
+/* unordered list */
+ul li {
+  position: relative;
+}
+ul li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  font-size: 0.9em;
+  left: -0.35em;
+  width: 1.7em;
+  height: 1.7em;
+  transform: translate(-100%, 0%);
+  background: var(--accent-6);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100' %3E%3Cg fill='none' stroke='currentColor' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M 0 -45 q -18 10 -36 10 v 55 c 8 15 20 20 35 25 c 15 -5 27 -10 35 -25 v -55 q -18 0 -36 -10' /%3E%3Cpath d='M -17 -0 l 12 12 21 -21' /%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100' %3E%3Cg fill='none' stroke='currentColor' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M 0 -45 q -18 10 -36 10 v 55 c 8 15 20 20 35 25 c 15 -5 27 -10 35 -25 v -55 q -18 0 -36 -10' /%3E%3Cpath d='M -17 -0 l 12 12 21 -21' /%3E%3C/g%3E%3C/svg%3E");
+  mask-size: 100%;
+  -webkit-mask-size: 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
