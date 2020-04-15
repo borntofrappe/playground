@@ -6,10 +6,6 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] fix static images with correct font
-
-- [x] move section design to experiment
-
 - [ ] redesign landing page
 
   - [ ] icons
