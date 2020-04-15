@@ -6,25 +6,27 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] design list component
+- [x] fix and complete lists component
 
-- [ ] redesign landing page
+- [x] icons
 
-  - [ ] icons
+  - [x] badge
 
-    - [ ] telescope
+  - [x] check
 
-    - [ ] astronaut
+  - [x] chevron
 
-    - [ ] moon
+- [ ] graphics (more complex than icons)
 
-    - [ ] capsule
+  - [ ] telescope
 
-    - [ ] space station
+  - [ ] astronaut
 
-  - [ ] stars and constellations for different sections
+  - [ ] moon
 
-  - [ ] planet component for final section
+  - [ ] capsule
+
+  - [ ] space station
 
 ## Index
 
