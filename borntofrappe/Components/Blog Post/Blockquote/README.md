@@ -39,9 +39,13 @@ The following syntax is included in a pseudo element to highlight the blockquote
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100" width="42" height="42">
   <g stroke-width="10" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" fill="currentColor">
     <path d="M -23 -27 c -20 8 -37.5 72 0 72 a 16 16 0 0 0 0 -32 c -20 0 -15 -35 0 -40" />
-    <path opacity="0.8" d="M 29 -45 c -20 8 -37.5 72 0 72 a 16 16 0 0 0 0 -32 c -20 0 -15 -35 0 -40" />
+    <path d="M 29 -45 c -20 8 -37.5 72 0 72 a 16 16 0 0 0 0 -32 c -20 0 -15 -35 0 -40" />
   </g>
 </svg>
 ```
 
-It's actually included in the `mask-image` property so to use the color of the blockquote and carve out the desired shape.
+It's actually included in the `url()` function of the `content`, `background-image` or `mask-image` properties.
+
+```css
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100' width='42' height='42'%3E%3Cg stroke-width='10' stroke='currentColor' stroke-linejoin='round' stroke-linecap='round' fill='currentColor'%3E%3Cpath d='M -23 -27 c -20 8 -37.5 72 0 72 a 16 16 0 0 0 0 -32 c -20 0 -15 -35 0 -40' /%3E%3Cpath d='M 29 -45 c -20 8 -37.5 72 0 72 a 16 16 0 0 0 0 -32 c -20 0 -15 -35 0 -40' /%3E%3C/g%3E%3C/svg%3E");
+```

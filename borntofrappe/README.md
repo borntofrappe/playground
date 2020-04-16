@@ -6,9 +6,17 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update icon
+- [x] update blockquote component
 
-- [ ] graphics (more complex than icons)
+- [x] add quote.svg
+
+- [ ] review
+
+  - [ ] code snippet theme
+
+  - [ ] table row
+
+- [ ] graphics
 
   - [ ] telescope
 
