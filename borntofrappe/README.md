@@ -6,15 +6,7 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] fix and complete lists component
-
-- [x] icons
-
-  - [x] badge
-
-  - [x] check
-
-  - [x] chevron
+- [x] update icon
 
 - [ ] graphics (more complex than icons)
 

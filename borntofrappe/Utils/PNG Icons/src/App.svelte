@@ -2,7 +2,7 @@
   import Canvas from "./Canvas.svelte";
 
   let size = 200;
-  let color = "rgb(0, 0, 0)";
+  let color = "rgb(10, 12, 16)";
   $: download = `icon-${size}`;
 
   let href;
