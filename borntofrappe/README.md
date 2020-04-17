@@ -6,15 +6,13 @@ Here, I try to ease the development/design of the website by focusing on indepen
 
 ## TODOS
 
-- [x] update blockquote component
+- [x] minor fixes
 
-- [x] add quote.svg
+  - [x] table font and measures
 
-- [ ] review
+  - [x] snippet font
 
-  - [ ] code snippet theme
-
-  - [ ] table row
+  - [x] heading permalink size
 
 - [ ] graphics
 
