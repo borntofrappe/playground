@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 5%);
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+body > * + * {
+  margin-top: 1.5rem;
+}
+
+svg {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+svg.bounce {
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+@keyframes bounce {
+  to {
+    transform: scale(1.5);
+  }
+}
